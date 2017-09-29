@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+  # REDIS
+  link-docker-redis:
+    image: "redis:alpine"
+
+
+  # wx_service_cluster
+  # wx_service_cluster
+  # wx_service_cluster
+
+  wx_service_51011:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /root/logs/service:/go/src/GRE3000/logs
+    ports:
+      - "51011:8080"
