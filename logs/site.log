@@ -20165,3 +20165,118 @@
 2017/09/30 00:52:11 [I] [asm_amd64.s:2197] http server Running on http://:8080
 2017/09/30 00:53:10 [I] [asm_amd64.s:2197] http server Running on http://:8080
 2017/09/30 01:02:44 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:28:17 [E] [template.go:174] parse template err: topic/detail.tpl template: topic/detail.tpl:13: function "timeago" not defined
+2017/09/30 09:28:17 [E] [template.go:174] parse template err: user/detail.tpl template: user/detail.tpl:16: function "timeago" not defined
+2017/09/30 09:28:17 [E] [template.go:174] parse template err: index.tpl template: index.tpl:31: function "timeago" not defined
+2017/09/30 09:28:17 [E] [template.go:174] parse template err: layout/layout.tpl template: layout/layout.tpl:48: function "haspermission" not defined
+2017/09/30 09:28:17 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:29:24 [E] [template.go:174] parse template err: topic/detail.tpl template: topic/detail.tpl:13: function "timeago" not defined
+2017/09/30 09:29:24 [E] [template.go:174] parse template err: user/detail.tpl template: user/detail.tpl:16: function "timeago" not defined
+2017/09/30 09:29:24 [E] [template.go:174] parse template err: index.tpl template: index.tpl:31: function "timeago" not defined
+2017/09/30 09:29:24 [E] [template.go:174] parse template err: layout/layout.tpl template: layout/layout.tpl:48: function "haspermission" not defined
+2017/09/30 09:29:24 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:34:21 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:34:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 123.944601ms|   match|[44m GET     [0m /     r:/
+2017/09/30 09:34:58 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] the request url is  /
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] Handler crashed with error runtime error: integer divide by zero
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:42
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/Topic.go:47
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:27
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:35:01 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 09:35:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    300.455µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] the request url is  /
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] Handler crashed with error runtime error: integer divide by zero
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:42
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/Topic.go:47
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:27
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:36:06 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 09:36:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    105.686µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] the request url is  /
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] Handler crashed with error runtime error: integer divide by zero
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:42
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/Topic.go:47
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:27
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:36:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 09:36:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    137.628µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:37:34 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] the request url is  /
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] Handler crashed with error runtime error: integer divide by zero
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:42
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/Topic.go:47
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:27
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:37:37 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 09:37:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    337.474µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:39:41 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:40:33 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    239.371µs| nomatch|[44m GET     [0m /2 
+2017/09/30 09:40:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  94.741187ms|   match|[44m GET     [0m /w    r:/w
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] the request url is  /
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] Handler crashed with error runtime error: integer divide by zero
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:42
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/Topic.go:47
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:27
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:40:50 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 09:42:57 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] the request url is  /
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] Handler crashed with error runtime error: integer divide by zero
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:42
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/Topic.go:47
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:27
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:43:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 09:43:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    305.878µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:44:42 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:44:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.529232ms|   match|[44m GET     [0m /     r:/
+2017/09/30 09:44:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    400.539µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/09/30 09:44:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    167.187µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/09/30 09:44:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    139.571µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/09/30 09:44:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    103.219µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/09/30 09:44:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    407.965µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:47:26 [I] [asm_amd64.s:2197] http server Running on http://:8080

@@ -1,75 +1,77 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Jolly</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/index_page.css">
-</head>
-
-<body>
-<div class="vi">
-    <div class="sidebar">
-
-        <div class="header">
-            <h1>Jolly</h1>
-            <div class="quote">
-                <p class="quote-text animate-init">我的征途，是星辰大海。</p>
-                <p class="quote-author animate-init"> —— <strong>磊</strong></p>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <ul class="nav nav-pills">
+          <li id="tab_0"><a href="/?tab=all">全部</a></li>
+          {{range .Sections}}
+          <li id="tab_{{.Id}}"><a href="/?s={{.Id}}">{{.Name}}</a></li>
+          {{end}}
+        </ul>
+      </div>
+      <div class="panel-body paginate-bot">
+        {{range .Page.List}}
+        <div class="media">
+          <div class="media-left">
+            <a href="/user/{{.User.Username}}"><img src="{{.User.Avatar}}" class="avatar" alt="{{.User.Username}}"></a>
+          </div>
+          <div class="media-body">
+            <div class="title">
+              <a href="/topic/{{.Id}}">{{.Title}}</a>
             </div>
+            <p class="gray">
+              <span class="label label-primary">{{.Section.Name}}</span>
+              <span>•</span>
+              <span><a href="/user/{{.User.Username}}">{{.User.Username}}</a></span>
+              <span class="hidden-sm hidden-xs">•</span>
+              <span class="hidden-sm hidden-xs">{{.ReplyCount}}个回复</span>
+              <span class="hidden-sm hidden-xs">•</span>
+              <span class="hidden-sm hidden-xs">{{.View}}次浏览</span>
+              <span>•</span>
+              <span>{{.InTime | timeago}}</span>
+              {{if .LastReplyUser}}
+                <span>•</span>
+                <span>最后回复来自 <a href="/user/{{.LastReplyUser.Username}}">{{.LastReplyUser.Username}}</a></span>
+              {{end}}
+            </p>
+          </div>
         </div>
-
-        <div class="menu">
-            <a href="https://github.com/Jolly23" class="animate-init">GitHub</a>
-            <a href="https://jolly23.com" class="animate-init">个人博客</a>
-        </div>
-
-        <div class="location">
-            <i class="location-icon"></i>
-            <span class="location-text animate-init">Hohhot - China</span>
-        </div>
-
+        <div class="divide mar-top-5"></div>
+        {{end}}
+        <ul id="page"></ul>
+      </div>
     </div>
-
-    <div class="content">
-        <span class="close">close</span>
-    </div>
+  </div>
+  <div class="col-md-3">
+    {{if .IsLogin}}
+      <dev class="hidden-sm hidden-xs">
+      {{template "components/user_info.tpl" .}}
+      </dev>
+      {{template "components/topic_create.tpl" .}}
+    {{else}}
+      <dev class="hidden-sm hidden-xs">
+      {{template "components/welcome.tpl" .}}
+      </dev>
+    {{end}}
+  </div>
 </div>
-
-
-<script type="text/javascript" src="../static/js/index_page.js"></script>
-<script>
-    $(document).ready(function () {
-        var delay = 1;
-        var DELAY_STEP = 200;
-        var animationOptions = {opacity: 1, top: 0};
-
-        $('h1').animate(animationOptions).promise().pipe(animateMain).pipe(animateLocationIcon);
-
-        function animateMain() {
-            var dfd = $.Deferred();
-            var els = $('.animate-init');
-            var size = els.size();
-
-            els.each(function (index, el) {
-                delay++;
-                $(el).delay(index * DELAY_STEP).animate(animationOptions);
-                (size - 1 === index) && dfd.resolve();
-            });
-            return dfd.promise();
+<script type="text/javascript" src="/static/js/bootstrap-paginator.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $("#tab_{{.S}}").addClass("active");
+    $("#page").bootstrapPaginator({
+      currentPage: '{{.Page.PageNo}}',
+      totalPages: '{{.Page.TotalPage}}',
+      bootstrapMajorVersion: 3,
+      size: "small",
+      onPageClicked: function(e,originalEvent,type,page){
+        var s = {{.S}};
+        if (s > 0) {
+          window.location.href = "/?p=" + page + "&s={{.S}}"
+        } else {
+          window.location.href = "/?p=" + page
         }
-
-        function animateLocationIcon() {
-            $('.location-icon').delay(delay * DELAY_STEP).animate({
-                opacity: 1,
-                top: 0
-            }).promise().done(animationQuote);
-        }
-
-        function animationQuote() {
-        }
+      }
     });
+  });
 </script>
-</body>
-</html>

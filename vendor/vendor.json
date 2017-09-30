@@ -1,0 +1,173 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"path": "appengine/cloudsql",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "60mJ5p/W8CHWQEp8sYpDusWex4U=",
+			"path": "github.com/Knetic/govaluate",
+			"revision": "89a078c30383b31e1b72bec86907910914227d9f",
+			"revisionTime": "2017-08-15T16:40:41Z"
+		},
+		{
+			"checksumSHA1": "g+4AgCjxvotVLox53tnXxjXuBnQ=",
+			"path": "github.com/astaxie/beego",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "Dk/08vzJWklLpNiKGnLwmOzABOs=",
+			"path": "github.com/astaxie/beego/cache",
+			"revision": "cab8458c1c4a5a3b4bf5192922be620e6dede15b",
+			"revisionTime": "2017-05-19T13:19:18Z"
+		},
+		{
+			"checksumSHA1": "HAvOTxc0XfTq+QLSO3mh/C+HeAw=",
+			"path": "github.com/astaxie/beego/cache/redis",
+			"revision": "cab8458c1c4a5a3b4bf5192922be620e6dede15b",
+			"revisionTime": "2017-05-19T13:19:18Z"
+		},
+		{
+			"checksumSHA1": "zgHK1vxUJDZTXAPCw+Bls7St0Ks=",
+			"path": "github.com/astaxie/beego/config",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "9J9Yez8RBxCcxynZL4KCW0+ZTRU=",
+			"path": "github.com/astaxie/beego/context",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "MXGs366RP4mY+x7vtP8V0ko4iPM=",
+			"path": "github.com/astaxie/beego/context/param",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "Nx9dKuRvpEeNHhnpTb0yVy1t/JE=",
+			"path": "github.com/astaxie/beego/grace",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "aNA3HBmv8A9mezI/ZW92Po9I5GE=",
+			"path": "github.com/astaxie/beego/logs",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "F/QDhEIA/VGeWmaRlIi52jMdu8E=",
+			"path": "github.com/astaxie/beego/orm",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "qGvZUP7mTKGvMa3ui7kqLJQiXNc=",
+			"path": "github.com/astaxie/beego/session",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "EOoY9qbCsWnu5FlZZnMKUKkLcMk=",
+			"path": "github.com/astaxie/beego/toolbox",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "W7HBzu7HlF18vCfNPgax7xvHXB0=",
+			"path": "github.com/astaxie/beego/utils",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"revisionTime": "2017-07-18T16:56:48Z"
+		},
+		{
+			"checksumSHA1": "6nS+9B3f6ul+uF9qE7ygYabZk6w=",
+			"path": "github.com/casbin/casbin",
+			"revision": "003fefe2be664b9da9976ae87275c29103d1f730",
+			"revisionTime": "2017-05-22T13:02:34Z"
+		},
+		{
+			"checksumSHA1": "yLflUKsTqYveUZ4NA+oVkuv6Gs4=",
+			"path": "github.com/casbin/casbin/config",
+			"revision": "003fefe2be664b9da9976ae87275c29103d1f730",
+			"revisionTime": "2017-05-22T13:02:34Z"
+		},
+		{
+			"checksumSHA1": "3iCrjOgMuO2QopZi0n8iQ7yltvA=",
+			"path": "github.com/casbin/casbin/model",
+			"revision": "003fefe2be664b9da9976ae87275c29103d1f730",
+			"revisionTime": "2017-05-22T13:02:34Z"
+		},
+		{
+			"checksumSHA1": "TZh+iS+mO2jrb+Im1sT4f6YwI2U=",
+			"path": "github.com/casbin/casbin/persist",
+			"revision": "003fefe2be664b9da9976ae87275c29103d1f730",
+			"revisionTime": "2017-05-22T13:02:34Z"
+		},
+		{
+			"checksumSHA1": "eMdSquOosOoc4VwVr+GVFhu4Sbw=",
+			"path": "github.com/casbin/casbin/rbac",
+			"revision": "003fefe2be664b9da9976ae87275c29103d1f730",
+			"revisionTime": "2017-05-22T13:02:34Z"
+		},
+		{
+			"checksumSHA1": "J3dX/NMTvHqQnvPKoHFgQIvyKEM=",
+			"path": "github.com/casbin/casbin/util",
+			"revision": "003fefe2be664b9da9976ae87275c29103d1f730",
+			"revisionTime": "2017-05-22T13:02:34Z"
+		},
+		{
+			"checksumSHA1": "2UmMbNHc8FBr98mJFN1k8ISOIHk=",
+			"path": "github.com/garyburd/redigo/internal",
+			"revision": "ac91d6ff49bd0d278a90201de77a4f8ad9628e25",
+			"revisionTime": "2017-04-26T21:28:18Z"
+		},
+		{
+			"checksumSHA1": "JGpryYlTJdjhQZWjK+8FPjqqAzw=",
+			"path": "github.com/garyburd/redigo/redis",
+			"revision": "ac91d6ff49bd0d278a90201de77a4f8ad9628e25",
+			"revisionTime": "2017-04-26T21:28:18Z"
+		},
+		{
+			"checksumSHA1": "N5D1aYGZh5OUVArhFW0voidER3A=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "26471af196a17ee75a22e6481b5a5897fb16b081",
+			"revisionTime": "2017-08-22T21:48:09Z"
+		},
+		{
+			"checksumSHA1": "A3ymiEhz0WaT+sfK1aJhlqhf41o=",
+			"path": "github.com/lib/pq",
+			"revision": "e42267488fe361b9dc034be7a6bffef5b195bceb",
+			"revisionTime": "2017-08-10T06:12:20Z"
+		},
+		{
+			"checksumSHA1": "q5SZBWFVC3wOIzftf+l/h5WLG1k=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "e42267488fe361b9dc034be7a6bffef5b195bceb",
+			"revisionTime": "2017-08-10T06:12:20Z"
+		},
+		{
+			"checksumSHA1": "OZpv1QDSDG23bzSk/7auPQRB2Qg=",
+			"path": "github.com/russross/blackfriday",
+			"revision": "4048872b16cc0fc2c5fd9eacf0ed2c2fedaa0c8c",
+			"revisionTime": "2017-07-28T17:53:26Z"
+		},
+		{
+			"checksumSHA1": "V/1QdFSVF6ziQHdPZyyXkB5SSzA=",
+			"path": "github.com/sluu99/uuid",
+			"revision": "1dd34a9ad6c0e8dec93107f9c7425ea5713f78e1",
+			"revisionTime": "2013-03-06T16:26:36Z"
+		},
+		{
+			"checksumSHA1": "ikom5T8qOMPaOsl8gfeeGXeOKCE=",
+			"path": "github.com/xeonx/timeago",
+			"revision": "714e6695c468c22fb6431a914d8c5f9d19fa2367",
+			"revisionTime": "2017-07-07T12:34:13Z"
+		}
+	],
+	"rootPath": "GRE3000"
+}

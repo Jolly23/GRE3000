@@ -10,6 +10,12 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/lib/pq"
+
+
+
+	_ "GRE3000/templates"
+	_ "GRE3000/utils"
+
 )
 
 func init() {
@@ -34,7 +40,15 @@ func init() {
 		new(models.UsersList),
 		new(models.UserLogs),
 		new(models.UserWordsStudy),
+		new(models.User),
+		new(models.Topic),
+		new(models.Section),
+		new(models.Reply),
+		new(models.ReplyUpLog),
+		new(models.Role),
+		new(models.Permission),
 	)
+
 	orm.DefaultTimeLoc = time.UTC
 	orm.RunSyncdb(const_conf.BeeGoOrmAlias, false, true)
 	orm.Debug = true

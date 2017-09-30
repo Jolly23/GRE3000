@@ -35,4 +35,7 @@ const (
 
 	LogsMethod = "file"
 	LogsConfig = `{"filename":"logs/site.log"}`
+
+
+	PageSize = 20
 )
