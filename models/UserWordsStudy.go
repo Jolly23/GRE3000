@@ -15,21 +15,13 @@ func (u *Common) UserWordsStudy() string {
 	return "words_study"
 }
 
-func BuildWordsListForUser(username string) bool {
+func BuildWordsListForUser(id int) bool {
 	o := orm.NewOrm()
-
-	var tableOfUser UsersList
-	var currentUser UsersList
-	err := o.QueryTable(tableOfUser).Filter("Username", username).One(&currentUser)
-
-	if err == orm.ErrNoRows {
-		return false
-	}
 	// 注入前删除已有
-	o.Raw("DELETE FROM user_words_study WHERE user_id = ?", currentUser.Id).Exec()
+	o.Raw("DELETE FROM user_words_study WHERE user_id = ?", id).Exec()
 	var wordsList []*UserWordsStudy
 	for _, eachWord := range LoadWords() {
-		wordsList = append(wordsList, &UserWordsStudy{UserId: currentUser.Id, WordId: eachWord.Id})
+		wordsList = append(wordsList, &UserWordsStudy{UserId: id, WordId: eachWord.Id})
 	}
 	o.InsertMulti(len(wordsList), wordsList)
 

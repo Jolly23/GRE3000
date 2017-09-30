@@ -2,8 +2,8 @@ package routers
 
 import (
 	"GRE3000/controllers"
-	"github.com/astaxie/beego"
 	"GRE3000/filters"
+	"github.com/astaxie/beego"
 )
 
 func init() {
@@ -13,8 +13,6 @@ func init() {
 
 	beego.Router("/cookie", &controllers.CookieController{}, "get:Test")
 	beego.Router("/cookie2", &controllers.CookieController{}, "get:Test2")
-
-
 
 	beego.Router("/", &controllers.IndexController{}, "GET:Index")
 	beego.Router("/login", &controllers.IndexController{}, "GET:LoginPage")

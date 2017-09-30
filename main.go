@@ -11,11 +11,8 @@ import (
 	"github.com/astaxie/beego/orm"
 	_ "github.com/lib/pq"
 
-
-
 	_ "GRE3000/templates"
 	_ "GRE3000/utils"
-
 )
 
 func init() {
@@ -37,7 +34,6 @@ func init() {
 	orm.RegisterModel(
 		new(models.Common),
 		new(models.WordsList),
-		new(models.UsersList),
 		new(models.UserLogs),
 		new(models.UserWordsStudy),
 		new(models.User),

@@ -1,24 +1,25 @@
 package models
 
 import (
-	"time"
-	"github.com/astaxie/beego/orm"
-	"strconv"
 	"GRE3000/utils"
+	"github.com/astaxie/beego/orm"
 	"github.com/casbin/casbin"
+	"strconv"
+	"time"
 )
 
 type User struct {
-	Id        int `orm:"pk;auto"`
-	Username  string `orm:"unique"`
+	Id        int         `orm:"pk;auto;index"`
+	Username  string      `orm:"unique;index"`
 	Password  string
-	Token     string `orm:"unique"`
+	Token     string      `orm:"unique;index"`
 	Avatar    string
-	Email     string `orm:"null"`
-	Url       string `orm:"null"`
-	Signature string `orm:"null;size(1000)"`
-	InTime    time.Time `orm:"auto_now_add;type(datetime)"`
-	Roles     []*Role `orm:"rel(m2m)"`
+	Email     string      `orm:"null"`
+	Url       string      `orm:"null"`
+	Signature string      `orm:"null;size(1000)"`
+	Operation []*UserLogs `orm:"reverse(many)"`
+	InTime    time.Time   `orm:"auto_now_add;type(datetime)"`
+	Roles     []*Role     `orm:"rel(m2m)"`
 }
 
 var Enforcer *casbin.Enforcer = nil

@@ -5,7 +5,7 @@ import (
 )
 
 type Section struct {
-	Id   int `orm:"pk;auto"`
+	Id   int    `orm:"pk;auto"`
 	Name string `orm:"unique"`
 }
 

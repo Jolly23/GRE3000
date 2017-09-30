@@ -23,10 +23,8 @@ const (
 	BeeGoXSRFKey    = "ASb&ADGaEmGQnp2XdTEc5NFw0Al0bKx$P1o61eJJF7$2b$1EoETzKXQuYh"
 	BeeGoXSRFExpire = 3600
 
-
-
-	RedisPort = "6379"
-	RedisAddress = "link-docker-redis" + ":" + RedisPort
+	RedisPort     = "6379"
+	RedisAddress  = "link-docker-redis" + ":" + RedisPort
 	RedisPassword = ""
 	RedisNumber   = 0
 
@@ -35,7 +33,6 @@ const (
 
 	LogsMethod = "file"
 	LogsConfig = `{"filename":"logs/site.log"}`
-
 
 	PageSize = 20
 )

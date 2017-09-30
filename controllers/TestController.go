@@ -10,6 +10,6 @@ type TestController struct {
 }
 
 func (c *TestController) Index() {
-	models.BuildWordsListForUser("jolly")
+	models.BuildWordsListForUser(1)
 	c.Ctx.WriteString("OK")
 }

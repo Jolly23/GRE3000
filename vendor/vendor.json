@@ -3,10 +3,6 @@
 	"ignore": "test",
 	"package": [
 		{
-			"path": "appengine/cloudsql",
-			"revision": ""
-		},
-		{
 			"checksumSHA1": "60mJ5p/W8CHWQEp8sYpDusWex4U=",
 			"path": "github.com/Knetic/govaluate",
 			"revision": "89a078c30383b31e1b72bec86907910914227d9f",

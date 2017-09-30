@@ -11,7 +11,7 @@ type Permission struct {
 	Url              string
 	Name             string
 	Description      string
-	Roles            []*Role `orm:"reverse(many)"`
+	Roles            []*Role       `orm:"reverse(many)"`
 	ChildPermissions []*Permission `orm:"-"`
 }
 

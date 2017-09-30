@@ -1,12 +1,12 @@
 package utils
 
 import (
-	"time"
-	"github.com/xeonx/timeago"
-	"github.com/russross/blackfriday"
-	"github.com/astaxie/beego"
 	"GRE3000/models"
 	"GRE3000/utils"
+	"github.com/astaxie/beego"
+	"github.com/russross/blackfriday"
+	"github.com/xeonx/timeago"
+	"time"
 )
 
 func FormatTime(time time.Time) string {

@@ -1,17 +1,21 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
-	"GRE3000/models"
+	"GRE3000/const_conf"
 	"GRE3000/filters"
+	"GRE3000/models"
+	"github.com/astaxie/beego"
+	"net/http"
 	"regexp"
 	"strconv"
-	"net/http"
-	"GRE3000/const_conf"
 )
 
 type UserController struct {
 	beego.Controller
+}
+
+func (c *UserController) Prepare() {
+	c.EnableXSRF = false
 }
 
 func (c *UserController) Detail() {
@@ -49,7 +53,7 @@ func (c *UserController) Setting() {
 		}
 	}
 	if len(signature) > 1000 {
-		flash.Error("个人签名长度不能超过1000字符");
+		flash.Error("个人签名长度不能超过1000字符")
 		flash.Store(&c.Controller)
 		c.Redirect("/user/setting", 302)
 		return
@@ -102,7 +106,7 @@ func (c *UserController) UpdateAvatar() {
 		c.Redirect("/user/setting", 302)
 		return
 	} else {
-		c.SaveToFile("avatar", "static/upload/avatar/" + h.Filename)
+		c.SaveToFile("avatar", "static/upload/avatar/"+h.Filename)
 		_, user := filters.IsLogin(c.Ctx)
 		user.Avatar = "/static/upload/avatar/" + h.Filename
 		models.UpdateUser(&user)
@@ -113,65 +117,65 @@ func (c *UserController) UpdateAvatar() {
 }
 
 func (c *UserController) List() {
-    c.Data["PageTitle"] = "用户列表"
-    c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)
-    p, _ := strconv.Atoi(c.Ctx.Input.Query("p"))
-    if p == 0 {
-        p = 1
-    }
-    c.Data["Page"] = models.PageUser(p, const_conf.PageSize)
-    c.Layout = "layout/layout.tpl"
-    c.TplName = "user/list.tpl"
+	c.Data["PageTitle"] = "用户列表"
+	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)
+	p, _ := strconv.Atoi(c.Ctx.Input.Query("p"))
+	if p == 0 {
+		p = 1
+	}
+	c.Data["Page"] = models.PageUser(p, const_conf.PageSize)
+	c.Layout = "layout/layout.tpl"
+	c.TplName = "user/list.tpl"
 }
 
 func (c *UserController) Edit() {
-    c.Data["PageTitle"] = "配置角色"
-    c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)
-    id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
-    if id > 0 {
-        ok, user := models.FindUserById(id)
-        if ok {
-            c.Data["User"] = user
-            c.Data["Roles"] = models.FindRoles()
-            c.Data["UserRoles"] = models.FindUserRolesByUserId(id)
-            c.Layout = "layout/layout.tpl"
-            c.TplName = "user/edit.tpl"
-        } else {
-            c.Ctx.WriteString("用户不存在")
-        }
-    } else {
-        c.Ctx.WriteString("用户不存在")
-    }
+	c.Data["PageTitle"] = "配置角色"
+	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)
+	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
+	if id > 0 {
+		ok, user := models.FindUserById(id)
+		if ok {
+			c.Data["User"] = user
+			c.Data["Roles"] = models.FindRoles()
+			c.Data["UserRoles"] = models.FindUserRolesByUserId(id)
+			c.Layout = "layout/layout.tpl"
+			c.TplName = "user/edit.tpl"
+		} else {
+			c.Ctx.WriteString("用户不存在")
+		}
+	} else {
+		c.Ctx.WriteString("用户不存在")
+	}
 }
 
 func (c *UserController) Update() {
-    c.Data["PageTitle"] = "配置角色"
-    c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)
-    id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
-    roleIds := c.GetStrings("roleIds")
-    if id > 0 {
-        models.DeleteUserRolesByUserId(id)
-        for _, v := range roleIds {
-            roleId, _ := strconv.Atoi(v)
-            models.SaveUserRole(id, roleId)
-        }
-        c.Redirect("/user/list", 302)
-    } else {
-        c.Ctx.WriteString("用户不存在")
-    }
+	c.Data["PageTitle"] = "配置角色"
+	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)
+	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
+	roleIds := c.GetStrings("roleIds")
+	if id > 0 {
+		models.DeleteUserRolesByUserId(id)
+		for _, v := range roleIds {
+			roleId, _ := strconv.Atoi(v)
+			models.SaveUserRole(id, roleId)
+		}
+		c.Redirect("/user/list", 302)
+	} else {
+		c.Ctx.WriteString("用户不存在")
+	}
 }
 
 func (c *UserController) Delete() {
-    id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
-    if id > 0 {
-        ok, user := models.FindUserById(id)
-        if ok {
-            models.DeleteTopicByUser(&user)
-            models.DeleteReplyByUser(&user)
-            models.DeleteUser(&user)
-        }
-        c.Redirect("/user/list", 302)
-    } else {
-        c.Ctx.WriteString("用户不存在")
-    }
+	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
+	if id > 0 {
+		ok, user := models.FindUserById(id)
+		if ok {
+			models.DeleteTopicByUser(&user)
+			models.DeleteReplyByUser(&user)
+			models.DeleteUser(&user)
+		}
+		c.Redirect("/user/list", 302)
+	} else {
+		c.Ctx.WriteString("用户不存在")
+	}
 }

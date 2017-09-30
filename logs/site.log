@@ -20280,3 +20280,205 @@
 2017/09/30 09:44:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    103.219µs|   match|[44m GET     [0m /static/imgs/avatar.png
 2017/09/30 09:44:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    407.965µs|   match|[44m GET     [0m /favicon.ico
 2017/09/30 09:47:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:50:02 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:50:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   6.076326ms|   match|[44m GET     [0m /     r:/
+2017/09/30 09:50:06 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    300.543µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/09/30 09:50:06 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    293.126µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/09/30 09:50:06 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     89.045µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/09/30 09:50:06 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     70.771µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/09/30 09:50:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    318.046µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:50:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.391075ms|   match|[44m GET     [0m /     r:/
+2017/09/30 09:50:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    143.895µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:50:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.140713ms|   match|[44m GET     [0m /     r:/
+2017/09/30 09:50:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    116.976µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 09:51:14 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 09:51:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.162146ms|   match|[44m GET     [0m /login   r:/login
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] the request url is  /login
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] Handler crashed with error '_xsrf' argument missing from POST
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/context/context.go:80
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/context/context.go:164
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:649
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:788
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 09:51:22 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 10:17:30 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:17:37 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:17:41 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:18:52 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:19:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   6.781369ms|   match|[44m GET     [0m /     r:/
+2017/09/30 10:19:02 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    367.163µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/09/30 10:19:02 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    352.802µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/09/30 10:19:02 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    506.857µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/09/30 10:26:30 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:27:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.500666ms|   match|[44m GET     [0m /     r:/
+2017/09/30 10:27:21 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     410.06µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/09/30 10:27:21 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    199.994µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/09/30 10:27:21 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     99.865µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/09/30 10:27:21 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     77.556µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/09/30 10:27:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|        405µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 10:28:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:28:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 112.178248ms|   match|[44m GET     [0m /test   r:/test
+2017/09/30 10:29:10 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:29:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:33:45 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:33:58 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:35:56 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:35:57 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:35:58 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:36:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 116.474206ms|   match|[44m GET     [0m /test   r:/test
+2017/09/30 10:36:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   6.711659ms|   match|[44m GET     [0m /     r:/
+2017/09/30 10:36:03 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    191.796µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/09/30 10:36:03 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     89.059µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/09/30 10:36:03 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    122.988µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/09/30 10:36:03 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     69.309µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/09/30 10:36:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    888.907µs|   match|[44m GET     [0m /login   r:/login
+2017/09/30 10:36:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    840.855µs|   match|[44m GET     [0m /register   r:/register
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] the request url is  /register
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/management_api.go:69
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/rbac_api.go:24
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:143
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:93
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 10:36:11 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 10:40:24 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:40:31 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   9.576079ms|   match|[46m POST    [0m /register   r:/register
+2017/09/30 10:40:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.421931ms|   match|[44m GET     [0m /     r:/
+2017/09/30 10:40:31 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    279.721µs|   match|[44m GET     [0m /favicon.ico
+2017/09/30 10:41:32 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:41:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.020935ms|   match|[44m GET     [0m /register   r:/register
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] the request url is  /register
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/management_api.go:69
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/rbac_api.go:24
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:143
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:93
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 10:41:45 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 10:45:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.033042ms|   match|[44m GET     [0m /     r:/
+2017/09/30 10:45:31 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    303.987µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/09/30 10:45:31 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    329.142µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/09/30 10:45:31 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     92.101µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/09/30 10:45:31 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     69.643µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] the request url is  /topic/1
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:140
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/enforcer.go:155
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:121
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/templates/Template.go:21
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:668
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:536
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:433
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:406
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:261
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:237
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:240
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:195
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:178
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/html/template/template.go:134
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/template.go:64
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:263
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:214
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:194
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:827
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 10:45:32 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] the request url is  /topic/1
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:140
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/enforcer.go:155
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:121
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/templates/Template.go:21
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:668
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:536
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:433
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:406
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:261
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:237
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:240
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:195
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:178
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/html/template/template.go:134
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/template.go:64
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:263
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:214
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:194
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:827
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 10:45:36 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/09/30 10:49:01 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/09/30 10:49:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.396377ms|   match|[44m GET     [0m /     r:/
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] the request url is  /topic/1
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:140
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/enforcer.go:155
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:121
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/templates/Template.go:21
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:668
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:536
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:433
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:406
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:261
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:237
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:240
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:195
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:178
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/html/template/template.go:134
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/template.go:64
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:263
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:214
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:194
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:827
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
