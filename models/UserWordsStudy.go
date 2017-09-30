@@ -25,12 +25,12 @@ func BuildWordsListForUser(username string) bool {
 	if err == orm.ErrNoRows {
 		return false
 	}
-
+	// 注入前删除已有
+	o.Raw("DELETE FROM user_words_study WHERE user_id = ?", currentUser.Id).Exec()
 	var wordsList []*UserWordsStudy
 	for _, eachWord := range LoadWords() {
 		wordsList = append(wordsList, &UserWordsStudy{UserId: currentUser.Id, WordId: eachWord.Id})
 	}
-
 	o.InsertMulti(len(wordsList), wordsList)
 
 	return true
