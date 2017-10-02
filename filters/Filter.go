@@ -46,4 +46,5 @@ var GoToLastWord = func(ctx *context.Context) {
 			ctx.Redirect(302, ctx.Input.Site()+ctx.Input.URL()+"#"+word)
 		}
 	}
+	return
 }
