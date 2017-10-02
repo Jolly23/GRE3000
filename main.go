@@ -4,7 +4,6 @@ import (
 	"GRE3000/const_conf"
 	"GRE3000/models"
 	_ "GRE3000/routers"
-	"fmt"
 	"time"
 
 	"github.com/astaxie/beego"
@@ -19,7 +18,7 @@ func init() {
 	beego.LoadAppConfig("ini", const_conf.BeeGoConfiguration)
 	beego.SetLogger(const_conf.LogsMethod, const_conf.LogsConfig)
 	orm.RegisterDataBase(
-		const_conf.BeeGoOrmAlias, const_conf.DatabaseType, const_conf.dbSource,
+		const_conf.BeeGoOrmAlias, const_conf.DatabaseType, const_conf.DbSource,
 		const_conf.BeeGoOrmMaxIdle, const_conf.BeeGoOrmMaxConn,
 	)
 	orm.RegisterModel(

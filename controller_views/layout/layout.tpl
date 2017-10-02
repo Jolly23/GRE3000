@@ -23,7 +23,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style="color:#fff;" href="/">小偲BBS</a>
+        <span><a class="navbar-brand" style="color:#fff;" href="/">Jolly需要背单词？</a></span>
+        <span><a class="navbar-brand" style="color:#22ffff;" href="/w">背单词吧</a></span>
       </div>
       <div id="navbar" class="navbar-collapse collapse header-navbar">
         <ul class="nav navbar-nav navbar-right">

@@ -1,11 +1,11 @@
 package filters
 
 import (
+	"GRE3000/const_conf"
 	"GRE3000/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"strconv"
-	"GRE3000/const_conf"
 )
 
 func IsLogin(ctx *context.Context) (bool, models.User) {

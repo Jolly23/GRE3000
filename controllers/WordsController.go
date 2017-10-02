@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"GRE3000/models"
-	"fmt"
 	"github.com/astaxie/beego"
+	"GRE3000/filters"
+	"GRE3000/models"
+	"strconv"
 )
 
 type WordsController struct {
@@ -11,11 +12,38 @@ type WordsController struct {
 }
 
 func (c *WordsController) Index() {
-	list := models.LoadWords()
+	isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
+	c.Data["IsLogin"], c.Data["UserInfo"] = isLogin, UserInfo
 
-	for k, v := range list {
-		fmt.Println(k, v)
+	var rawWordsList []*models.WordsList
+	var userWordsList []*models.UserWordsStudy
+
+	if isLogin {
+		userWordsList = models.LoadWordsListForUser(&UserInfo)
+	} else {
+		rawWordsList = models.LoadRawWords()
 	}
-	c.Data["json"] = &list
+
+	c.Data["PageTitle"] = "单词表"
+	c.Data["RawWords"] = &rawWordsList
+	c.Data["UserWords"] = &userWordsList
+
+	c.Layout = "layout/layout.tpl"
+	c.TplName = "words/test.tpl"
+}
+
+func (c *WordsController) IncrMark() {
+	id := c.Ctx.Input.Param(":id")
+	userWordId, _ := strconv.Atoi(id)
+	if userWordId > 0 {
+		isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
+		if isLogin {
+			userWord := models.FindUserWordByWordId(&UserInfo, userWordId)
+			models.IncrWordMark(userWord)
+			c.Data["json"] = map[string]int{"ErrCode": 0}
+		}
+		c.Data["json"] = map[string]int{"ErrCode": 1}
+	}
+	c.Data["json"] = map[string]int{"ErrCode": -1}
 	c.ServeJSON()
 }

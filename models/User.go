@@ -9,10 +9,10 @@ import (
 )
 
 type User struct {
-	Id        int         `orm:"pk;auto;index"`
-	Username  string      `orm:"unique;index"`
+	Id        int    `orm:"pk;auto;index"`
+	Username  string `orm:"unique;index"`
 	Password  string
-	Token     string      `orm:"unique;index"`
+	Token     string `orm:"unique;index"`
 	Avatar    string
 	Email     string      `orm:"null"`
 	Url       string      `orm:"null"`
@@ -50,7 +50,6 @@ func Init() {
 	Enforcer.InitWithFile("rbac_model.conf", "")
 
 	Enforcer.AddActionAttributeFunction(getAttrFunc)
-
 
 	o := orm.NewOrm()
 	var res []orm.Params

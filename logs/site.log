@@ -20679,3 +20679,496 @@
 2017/10/02 16:32:09 [D] [Filter.go:26] url:  /user/list 
 2017/10/02 16:32:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.257688ms|   match|[44m GET     [0m /user/list   r:/user/list
 2017/10/02 16:32:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    777.177µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:38:46 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:38:58 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:38:59 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:39:00 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:39:25 [D] [Filter.go:26] url:  /user/list 
+2017/10/02 16:39:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.499236ms|   match|[44m GET     [0m /user/list   r:/user/list
+2017/10/02 16:39:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    755.602µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:39:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  62.557254ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:39:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  91.354759ms|   match|[44m GET     [0m /topic/1   r:/topic/:id([0-9]+)
+2017/10/02 16:39:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     428.62µs|   match|[44m GET     [0m /static/bootstrap/fonts/glyphicons-halflings-regular.woff2
+2017/10/02 16:39:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.523822ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:39:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  93.618911ms|   match|[44m GET     [0m /topic/1   r:/topic/:id([0-9]+)
+2017/10/02 16:39:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  46.779856ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 16:39:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  51.606902ms|   match|[44m GET     [0m /user/setting   r:/user/setting
+2017/10/02 16:39:56 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  40.016106ms|   match|[46m POST    [0m /user/updateavatar   r:/user/updateavatar
+2017/10/02 16:39:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  39.404675ms|   match|[44m GET     [0m /user/setting   r:/user/setting
+2017/10/02 16:39:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  72.309235ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:39:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   53.36971ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:39:58 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    942.437µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:39:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  45.066929ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 16:39:59 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     41.122µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:40:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  49.799336ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:40:38 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     38.775µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:40:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  41.218495ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:40:47 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     42.822µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:40:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   41.57166ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:40:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  55.843938ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:40:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  51.292813ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:40:52 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     83.695µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:41:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  52.570034ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:41:07 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     40.073µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:41:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 188.748771ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:41:37 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:41:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  16.695233ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:41:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    421.106µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:46:36 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:46:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.224052ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:46:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    482.771µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:47:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.030478ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:47:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|        129µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:47:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.751594ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:47:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    143.547µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:51:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  56.658954ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:51:48 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   8.715856ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 16:53:50 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:53:53 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    323.558µs| nomatch|[44m GET     [0m /2 
+2017/10/02 16:53:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  43.945838ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:54:26 [D] [controller.go:263] template Execute err: template: words/test.tpl:15:59: executing "words/test.tpl" at <timeago>: wrong number of args for timeago: want 1 got 0
+2017/10/02 16:54:26 [E] [server.go:2568] template: words/test.tpl:15:59: executing "words/test.tpl" at <timeago>: wrong number of args for timeago: want 1 got 0
+2017/10/02 16:54:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.314406ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 16:54:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    452.253µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:56:35 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:58:00 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:59:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  71.390933ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:01:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.972933ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:01:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    447.079µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:01:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  63.825801ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:01:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     128.75µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:02:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  51.294413ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 17:02:11 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   5.012045ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:02:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  43.615021ms|   match|[44m GET     [0m /about   r:/about
+2017/10/02 17:02:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  41.756703ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  49.623099ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  48.836114ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  50.939319ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  47.384349ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.659718ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  40.624985ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:02:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    175.311µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:03:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  39.480301ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:03:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    178.212µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:03:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   39.31188ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:03:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    146.584µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:03:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  43.140082ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:03:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    159.317µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:04:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  41.474175ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:04:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    166.025µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:04:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  62.354912ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:04:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.865393ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:04:53 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     38.263µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:04:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  73.298324ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:05:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  85.323899ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:05:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    156.618µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:07:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  65.339688ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:07:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|      150.3µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:07:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  67.889703ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:07:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    106.997µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:07:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  54.493412ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:07:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    131.953µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:07:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  58.228336ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:07:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     98.128µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:08:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.316718ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:08:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|        926µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:08:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    63.4566ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:08:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    117.791µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:08:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.903523ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:08:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    144.777µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:08:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  56.867949ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:08:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    136.465µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:09:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  40.239022ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 17:09:40 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     51.798µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:09:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  40.793326ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:09:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  46.242922ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:09:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  40.308449ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:09:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  45.726897ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:09:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  67.900207ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:10:12 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:10:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  75.568137ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:10:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    365.204µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:12:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   71.22602ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:12:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    475.884µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:12:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  65.879641ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:12:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  68.514336ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:13:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.399109ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:13:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    123.109µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:13:13 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:13:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  65.310615ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:13:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  47.999712ms|   match|[44m GET     [0m /permission/edit/25   r:/permission/edit/:id([0-9]+)
+2017/10/02 17:13:37 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   8.208179ms|   match|[46m POST    [0m /permission/edit/25   r:/permission/edit/:id([0-9]+)
+2017/10/02 17:13:37 [D] [Filter.go:26] url:  /permission/list?pid=12 
+2017/10/02 17:13:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.902779ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:13:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  51.945835ms|   match|[44m GET     [0m /permission/edit/13   r:/permission/edit/:id([0-9]+)
+2017/10/02 17:13:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  71.513039ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:13:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  45.980466ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 17:13:46 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   4.329222ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:13:50 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:13:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  48.336552ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:13:54 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:13:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   65.84533ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:13:57 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:13:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  59.763366ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:14:00 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:14:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.328557ms|   match|[44m GET     [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:14:35 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:14:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  45.847319ms|   match|[44m GET     [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:14:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    157.179µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:14:42 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:14:42 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  44.027374ms|   match|[46m POST    [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:14:42 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:14:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  41.741579ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:14:53 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    606.865µs| nomatch|[44m GET     [0m /2 
+2017/10/02 17:14:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.014745ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:15:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.251849ms|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css.map
+2017/10/02 17:15:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  68.157635ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:19:51 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:19:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  66.116047ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:23:16 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:23:16 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:23:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.293932ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:23:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    324.436µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:23:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.885918ms|   match|[44m GET     [0m /user/setting   r:/user/setting
+2017/10/02 17:23:34 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   8.635408ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:23:40 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:23:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  56.330607ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:23:42 [D] [Filter.go:26] url:  /role/edit/3 
+2017/10/02 17:23:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.430809ms|   match|[44m GET     [0m /role/edit/3   r:/role/edit/:id([0-9]+)
+2017/10/02 17:23:45 [D] [Filter.go:26] url:  /role/edit/3 
+2017/10/02 17:23:45 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m| 218.272596ms|   match|[46m POST    [0m /role/edit/3   r:/role/edit/:id([0-9]+)
+2017/10/02 17:23:45 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:23:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  63.119162ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:23:46 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:23:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  59.769886ms|   match|[44m GET     [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:23:49 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:23:49 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  57.396543ms|   match|[46m POST    [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:23:49 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:23:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  55.732311ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:23:50 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:23:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  69.311363ms|   match|[44m GET     [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:23:51 [D] [Filter.go:26] url:  /role/edit/5 
+2017/10/02 17:23:51 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   50.76789ms|   match|[46m POST    [0m /role/edit/5   r:/role/edit/:id([0-9]+)
+2017/10/02 17:23:51 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:23:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  57.298112ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:23:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  50.542734ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:23:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   43.33196ms|   match|[44m GET     [0m /about   r:/about
+2017/10/02 17:23:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  51.406546ms|   match|[44m GET     [0m /user/setting   r:/user/setting
+2017/10/02 17:23:59 [D] [Filter.go:26] url:  /user/list 
+2017/10/02 17:23:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  63.264317ms|   match|[44m GET     [0m /user/list   r:/user/list
+2017/10/02 17:24:01 [D] [Filter.go:26] url:  /role/list 
+2017/10/02 17:24:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.961498ms|   match|[44m GET     [0m /role/list   r:/role/list
+2017/10/02 17:24:03 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:24:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.178463ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:24:06 [D] [Filter.go:26] url:  /permission/add?pid= 
+2017/10/02 17:24:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  58.991656ms|   match|[44m GET     [0m /permission/add   r:/permission/add
+2017/10/02 17:24:21 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 17:24:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   55.81325ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 17:25:45 [D] [Filter.go:26] url:  /user/list 
+2017/10/02 17:25:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.604466ms|   match|[44m GET     [0m /user/list   r:/user/list
+2017/10/02 17:26:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  43.264616ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:26:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  94.525381ms|   match|[44m GET     [0m /topic/1   r:/topic/:id([0-9]+)
+2017/10/02 17:27:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  46.689572ms|   match|[44m GET     [0m /about   r:/about
+2017/10/02 17:27:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  55.986917ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 17:27:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  42.819712ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:27:04 [D] [Filter.go:26] url:  /topic/create 
+2017/10/02 17:27:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  62.367994ms|   match|[44m GET     [0m /topic/create   r:/topic/create
+2017/10/02 17:27:09 [D] [Filter.go:26] url:  /topic/create 
+2017/10/02 17:27:09 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  22.451495ms|   match|[46m POST    [0m /topic/create   r:/topic/create
+2017/10/02 17:27:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     29.872µs|   match|[44m GET     [0m /topic/0   r:/topic/:id([0-9]+)
+2017/10/02 17:27:21 [D] [Filter.go:26] url:  /topic/create 
+2017/10/02 17:27:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.305133ms|   match|[44m GET     [0m /topic/create   r:/topic/create
+2017/10/02 17:27:25 [D] [Filter.go:26] url:  /topic/create 
+2017/10/02 17:27:25 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  21.914579ms|   match|[46m POST    [0m /topic/create   r:/topic/create
+2017/10/02 17:27:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 101.769778ms|   match|[44m GET     [0m /topic/2   r:/topic/:id([0-9]+)
+2017/10/02 17:28:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  51.772714ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:28:18 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|      60.14µs|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:28:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  68.810242ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:28:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   51.78755ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:28:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  78.166535ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:28:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  74.636311ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:28:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    126.504µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:29:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  69.545945ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    114.104µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:29:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.150437ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    134.046µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:29:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  69.024228ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    147.307µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:29:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.727967ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  72.299759ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  71.063824ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  74.773648ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:29:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  77.388576ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:31:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  66.760095ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:31:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    135.378µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:32:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.716392ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:32:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    160.508µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:32:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    68.6443ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:34:31 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:34:36 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|    127.446µs|   match|[44m GET     [0m /logout   r:/logout
+2017/10/02 17:34:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.178253ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:34:36 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   5.691085ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 17:35:10 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:35:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   6.653935ms|   match|[44m GET     [0m /     r:/
+2017/10/02 17:46:59 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:48:18 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:48:51 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] the request url is  /w
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] Handler crashed with error wrong object type `*[]models.WordsList` for rows scan, need *[]*GRE3000/models.UserWordsStudy or *[]GRE3000/models.UserWordsStudy
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/orm/db.go:905
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/orm/orm_queryset.go:194
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/UserWordsStudy.go:42
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/WordsController.go:20
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 17:48:57 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 17:50:00 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] the request url is  /w
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] Handler crashed with error wrong object type `*[]models.WordsList` for rows scan, need *[]*GRE3000/models.UserWordsStudy or *[]GRE3000/models.UserWordsStudy
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/orm/db.go:905
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/orm/orm_queryset.go:194
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/UserWordsStudy.go:42
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/WordsController.go:19
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 17:50:04 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 17:50:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    274.196µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:50:50 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:50:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.135892ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:50:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    529.425µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:51:03 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:51:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  52.531288ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:51:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    476.991µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:51:12 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:51:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  52.092723ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:51:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|        385µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:51:31 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:51:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  64.720849ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:51:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    497.265µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:52:32 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:52:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.464668ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:52:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    339.052µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:53:38 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:55:39 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:58:47 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 17:58:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 143.087605ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:58:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    299.812µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 17:59:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 137.511261ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 17:59:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    137.657µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:00:30 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:00:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 141.342836ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:00:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    450.844µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:00:50 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:01:28 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:01:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 140.857236ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:01:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     305.98µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:01:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 133.999325ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:01:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    146.049µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:01:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 138.577353ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:01:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    184.268µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:02:22 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:02:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  45.136246ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:02:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    267.531µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:03:00 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:03:04 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:03:06 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:03:30 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:03:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  31.956173ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:03:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    763.044µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:04:00 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:04:06 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:04:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  33.166778ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:04:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    238.022µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:05:30 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:05:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  33.219541ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:05:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    357.844µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:05:50 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:05:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  33.082816ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:05:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    290.754µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:06:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:06:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   30.44623ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:06:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    313.712µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:06:22 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:06:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  33.467141ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:06:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    332.045µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:13:54 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:16:48 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:17:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  29.959762ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:17:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|        918µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:17:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    845.677µs|   match|[44m GET     [0m /login   r:/login
+2017/10/02 18:18:03 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.505698ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 18:18:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.074506ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:18:03 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   4.912402ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 18:18:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  18.571092ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:18:54 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:18:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  46.979282ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:18:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    281.283µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:19:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.582458ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:19:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  49.523442ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:19:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   51.91291ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:19:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  47.053855ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:19:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.129328ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:19:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   43.47324ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:20:04 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|    1.78735ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 18:20:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  55.444517ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:20:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  44.495855ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:21:40 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:22:01 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:22:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  57.973239ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:22:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  61.151366ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:22:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  91.304052ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:22:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   45.58089ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:22:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  86.180591ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:23:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  90.560654ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:23:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    311.319µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:24:10 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:24:11 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:24:12 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:24:13 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:24:14 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:24:15 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:24:15 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:25:24 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:25:37 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:06 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:35 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:49 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:50 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:50 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:51 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:52 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:53 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:54 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:55 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:26:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   56.29906ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:26:56 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:29:25 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:29:31 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:31:45 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:31:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   47.37194ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:31:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    379.044µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:33:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:33:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  50.728824ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:33:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    435.906µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:33:32 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:33:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  43.771383ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:33:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    372.733µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:34:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  40.096423ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:34:50 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    6.76209ms|   match|[44m GET     [0m /static/upload/avatar/IMG_3866.jpg
+2017/10/02 18:34:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  39.327239ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:35:23 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:35:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  46.624648ms|   match|[44m GET     [0m /     r:/
+2017/10/02 18:35:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  45.076357ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 231.642011ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  95.815625ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   99.40995ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  97.066419ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 102.821756ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   92.00086ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:36:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 100.666847ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:37:30 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:37:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  96.212608ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:38:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:38:34 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:40:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 101.589474ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:40:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    289.723µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:40:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  88.319406ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:40:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    152.053µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:40:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 107.656304ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:40:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    132.944µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:41:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 105.252466ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:41:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    124.297µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:43:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  77.645445ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:44:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    105.908µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:44:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  74.455146ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 18:44:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    111.334µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 18:49:14 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:50:27 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:51:22 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:51:23 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:52:10 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:52:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:53:02 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:53:33 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:54:09 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 18:56:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:00:03 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:00:22 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:00:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 111.261564ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:00:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    340.166µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] the request url is  /words/mark/15
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:controller_views/wordscontroller/incrmark.tpl
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/template.go:73
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:263
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:214
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:194
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:827
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 19:00:30 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 19:01:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:01:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:01:08 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:01:09 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:01:10 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:01:11 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:02:07 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:02:23 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:02:27 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    277.476µs| nomatch|[44m GET     [0m /words/
+2017/10/02 19:02:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 104.550762ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:02:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.025085ms|   match|[44m GET     [0m /words/mark/15   r:/words/mark/:id([0-9]+)
+2017/10/02 19:02:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 100.404558ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:02:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    288.031µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:03:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.899381ms|   match|[44m GET     [0m /words/mark/15   r:/words/mark/:id([0-9]+)
+2017/10/02 19:03:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   7.880284ms|   match|[44m GET     [0m /words/mark/15   r:/words/mark/:id([0-9]+)
+2017/10/02 19:03:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    146.763µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:03:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  98.672106ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:04:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    131.674µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:05:08 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:05:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 125.612347ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:05:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 127.813714ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:05:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 132.418354ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:05:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 137.335702ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:05:38 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:05:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 340.993141ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:05:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.136688ms|   match|[44m GET     [0m /words/mark/1   r:/words/mark/:id([0-9]+)
+2017/10/02 19:06:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   96.10444ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:06:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    250.763µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:06:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.526555ms|   match|[44m GET     [0m /words/mark/1   r:/words/mark/:id([0-9]+)
+2017/10/02 19:06:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 104.046061ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:06:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.095494ms|   match|[44m GET     [0m /words/mark/1   r:/words/mark/:id([0-9]+)
+2017/10/02 19:06:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  89.405441ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:06:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     105.88µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:08:20 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:10:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 100.744132ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:10:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    776.833µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:10:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.630422ms|   match|[44m GET     [0m /words/mark/1   r:/words/mark/:id([0-9]+)
+2017/10/02 19:10:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.370236ms|   match|[44m GET     [0m /words/mark/1   r:/words/mark/:id([0-9]+)
+2017/10/02 19:10:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    154.148µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:10:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  91.113677ms|   match|[44m GET     [0m /w    r:/w
+2017/10/02 19:10:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     135.29µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 19:10:44 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:18 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:19 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:20 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:21 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:21 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:22 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:23 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:24 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 19:11:25 [I] [asm_amd64.s:2197] http server Running on http://:8080

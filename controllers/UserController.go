@@ -172,6 +172,7 @@ func (c *UserController) Delete() {
 		if ok {
 			models.DeleteTopicByUser(&user)
 			models.DeleteReplyByUser(&user)
+			models.DeleteWordsListForUser(&user)
 			models.DeleteUser(&user)
 		}
 		c.Redirect("/user/list", 302)

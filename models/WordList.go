@@ -3,19 +3,21 @@ package models
 import "github.com/astaxie/beego/orm"
 
 type WordsList struct {
-	Id    int    `orm:"pk;auto;index"`
-	Words string `orm:"size(64);index"`
-	Means string `orm:"size(512);"`
+	Id            int               `orm:"pk;auto;index"`
+	Word          string            `orm:"size(64);index"`
+	Means         string            `orm:"size(512);"`
+	LinkUserStudy []*UserWordsStudy `orm:"reverse(many)"`
 }
 
 func (u *Common) WordsList() string {
 	return "words_list"
 }
 
-func LoadWords() []*WordsList {
+func LoadRawWords() []*WordsList {
 	o := orm.NewOrm()
 	var tableOfWords WordsList
 	var allWords []*WordsList
 	o.QueryTable(tableOfWords).Limit(-1).All(&allWords)
 	return allWords
 }
+

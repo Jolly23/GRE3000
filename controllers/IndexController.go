@@ -93,7 +93,6 @@ func (c *IndexController) Register() {
 		models.SaveUserRole(int(new_user_id), 5)
 		//models.BuildWordsListForUser(int(new_user_id))
 
-
 		// others are ordered as cookie's max age time, path,domain, secure and http only.
 		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, token, 30*24*60*60, "/", const_conf.DomainName, false, true)
 		c.Redirect("/", 302)
