@@ -53,8 +53,6 @@ fabric.properties
 .glide/
 
 ### Project
-logs/
+logs/site.log
 const_conf/private.go
 GRE3000
-
-logs/site.log
