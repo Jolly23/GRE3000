@@ -23,8 +23,11 @@ func (c *WordsController) Index() {
 	} else {
 		rawWordsList = models.LoadRawWords()
 	}
-
-	c.Data["PageTitle"] = UserInfo.Username + "同学的单词表"
+	if isLogin {
+		c.Data["PageTitle"] = UserInfo.Username + "同学的单词表"
+	} else {
+		c.Data["PageTitle"] = "GRE单词表"
+	}
 	c.Data["RawWords"] = &rawWordsList
 	c.Data["UserWords"] = &userWordsList
 
