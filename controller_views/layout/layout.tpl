@@ -24,8 +24,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span><a class="navbar-brand" style="color:#fff;" href="/">Jolly需要背单词？</a></span>
-                <span><a class="navbar-brand" style="color:#22ffff;" href="/words">背单词吧</a></span>
+                <span><a class="navbar-brand" style="color:#fff;" href="/">纪念在微臣325的时光</a></span>
+                <span><a class="navbar-brand" style="color:#22ffff;" href="/words"> 来背单词吧</a></span>
             </div>
             <div id="navbar" class="navbar-collapse collapse header-navbar">
                 <ul class="nav navbar-nav navbar-right">
