@@ -2,14 +2,8 @@ version: '2'
 
 services:
 
-  # REDIS
   link-docker-redis:
     image: "redis:alpine"
-
-
-  # wx_service_cluster
-  # wx_service_cluster
-  # wx_service_cluster
 
   gre_service_31011:
     build:
@@ -19,3 +13,30 @@ services:
       - /root/logs/gre-service:/go/src/GRE3000/logs
     ports:
       - "31011:8080"
+
+  gre_service_31012:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      volumes:
+        - /root/logs/gre-service:/go/src/GRE3000/logs
+      ports:
+        - "31012:8080"
+
+  gre_service_31013:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      volumes:
+        - /root/logs/gre-service:/go/src/GRE3000/logs
+      ports:
+        - "31013:8080"
+
+  gre_service_31014:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      volumes:
+        - /root/logs/gre-service:/go/src/GRE3000/logs
+      ports:
+        - "31014:8080"
