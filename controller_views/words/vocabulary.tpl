@@ -42,18 +42,24 @@
             <div class="panel-heading">游客的单词表</div>
             <div class="panel-body">
                 {{range .RawWords}}
+
                 <div class="media">
-                    <div class="media-body">
-                        <div class="title">
-                            <a>{{.Word}}</a>
+                    <div class="col-lg-7">
+                        <div class="media-body">
+                            <div class="title">
+                                <a style="font-size: 22px;">{{.Word}}</a>
+                            </div>
+                            <p id="btn-means-{{.Word}}-obj" style="display: none;font-size: 16px;">
+                                <span>• {{.Means}}</span>
+                            </p>
                         </div>
-                        <p>
-                            <span>• {{.Means}}</span>
-                        </p>
-                        <p>
-                            <span>• 没记住5次</span>
-                        </p>
                     </div>
+
+                    <div class="col-lg-offset-7">
+                        <button id="btn-means-{{.Word}}" type="button" class="btn btn-info btn-lg">显示意思
+                        </button>
+                    </div>
+
                 </div>
                 <div class="divide mar-top-5"></div>
                 {{end}}
