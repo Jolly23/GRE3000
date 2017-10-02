@@ -2,11 +2,11 @@ package models
 
 import (
 	"GRE3000/utils"
+	"fmt"
 	"github.com/astaxie/beego/orm"
 	"github.com/casbin/casbin"
 	"strconv"
 	"time"
-	"fmt"
 )
 
 type User struct {
