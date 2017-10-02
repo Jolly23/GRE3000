@@ -52,7 +52,7 @@ func (c *IndexController) Login() {
 	flash := beego.NewFlash()
 	username, password := c.Input().Get("username"), c.Input().Get("password")
 	if flag, user := models.Login(username, password); flag {
-		c.SetSecureCookie(beego.AppConfig.String("cookie.secure"), beego.AppConfig.String("cookie.token"), user.Token, 30*24*60*60, "/", beego.AppConfig.String("cookie.domain"), false, true)
+		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, user.Token, 30*24*60*60, "/", const_conf.DomainName, false, true)
 		c.Redirect("/", 302)
 	} else {
 		flash.Error("用户名或密码错误")
@@ -95,14 +95,14 @@ func (c *IndexController) Register() {
 
 
 		// others are ordered as cookie's max age time, path,domain, secure and http only.
-		c.SetSecureCookie(beego.AppConfig.String("cookie.secure"), beego.AppConfig.String("cookie.token"), token, 30*24*60*60, "/", beego.AppConfig.String("cookie.domain"), false, true)
+		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, token, 30*24*60*60, "/", const_conf.DomainName, false, true)
 		c.Redirect("/", 302)
 	}
 }
 
 //登出
 func (c *IndexController) Logout() {
-	c.SetSecureCookie(beego.AppConfig.String("cookie.secure"), beego.AppConfig.String("cookie.token"), "", -1, "/", beego.AppConfig.String("cookie.domain"), false, true)
+	c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, "", -1, "/", const_conf.DomainName, false, true)
 	c.Redirect("/", 302)
 }
 

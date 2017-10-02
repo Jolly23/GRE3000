@@ -1,8 +1,13 @@
 package const_conf
 
+import (
+	"fmt"
+)
+
 const (
 	ServiceScheme = "https://"
-	DomainName    = "gre3000.jolly23.com"
+	//DomainName    = "gre3000.jolly23.com"
+	DomainName = "localhost"
 
 	HttpPort  = 8080
 	HttpsPort = 8090
@@ -19,7 +24,7 @@ const (
 	BeeGoOrmMaxConn    = 30
 	BeeGoOrmMaxIdle    = 15
 
-	IsEnableXSRF    = true
+	IsEnableXSRF    = false
 	BeeGoXSRFKey    = "ASb&ADGaEmGQnp2XdTEc5NFw0Al0bKx$P1o61eJJF7$2b$1EoETzKXQuYh"
 	BeeGoXSRFExpire = 3600
 
@@ -35,4 +40,13 @@ const (
 	LogsConfig = `{"filename":"logs/site.log"}`
 
 	PageSize = 20
+)
+
+var DbSource string = fmt.Sprintf("sslmode=%s host=%s port=%s dbname=%s user=%s password=%s",
+	PgSslMode,
+	PgHostAddress,
+	PgHostPort,
+	DatabaseName,
+	PgUserName,
+	PgPassword,
 )

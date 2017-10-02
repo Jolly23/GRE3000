@@ -20482,3 +20482,200 @@
 2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
 2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
 2017/09/30 10:49:07 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 15:58:35 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 15:58:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.266749ms|   match|[44m GET     [0m /     r:/
+2017/10/02 15:58:44 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.122155ms|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/10/02 15:58:44 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    767.564µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/10/02 15:59:17 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    350.278µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/10/02 15:59:17 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    316.989µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/10/02 15:59:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    944.401µs|   match|[44m GET     [0m /about   r:/about
+2017/10/02 15:59:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    688.022µs|   match|[44m GET     [0m /about   r:/about
+2017/10/02 15:59:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.355977ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:00:38 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.858493ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:00:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.711691ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] the request url is  /topic/1
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:140
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/enforcer.go:155
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:121
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/templates/Template.go:21
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:668
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:536
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:433
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:406
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:261
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:237
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:240
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:195
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/text/template/exec.go:178
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/html/template/template.go:134
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/template.go:64
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:263
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:214
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/controller.go:194
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:827
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 16:01:23 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 16:02:19 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:02:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.789499ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:02:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.901645ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:02:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.982461ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:02:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    374.635µs|   match|[44m GET     [0m /static/bootstrap/css/bootstrap.min.css
+2017/10/02 16:02:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    572.517µs|   match|[44m GET     [0m /static/css/pybbs.css
+2017/10/02 16:02:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    173.917µs|   match|[44m GET     [0m /static/imgs/avatar.png
+2017/10/02 16:02:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    177.825µs|   match|[44m GET     [0m /static/js/bootstrap-paginator.min.js
+2017/10/02 16:03:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.746365ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:04:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.070929ms|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:04:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.426389ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:04:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.11011ms|   match|[44m GET     [0m /about   r:/about
+2017/10/02 16:04:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    957.679µs|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:04:21 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.097006ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:04:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.495962ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:04:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    763.113µs|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:04:31 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   1.480106ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:04:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.691693ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:06:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.478071ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:06:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.949582ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:07:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.764744ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:07:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    105.836µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:07:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    3.97497ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:07:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    150.781µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:08:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.704944ms|   match|[44m GET     [0m /user/Jolly23   r:/user/:username
+2017/10/02 16:08:07 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|     149.12µs| nomatch|[44m GET     [0m /user/Jolly23/replies
+2017/10/02 16:08:10 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    173.645µs| nomatch|[44m GET     [0m /user/Jolly23/topics
+2017/10/02 16:08:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.288902ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:08:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.459487ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:08:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    882.574µs|   match|[44m GET     [0m /register   r:/register
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] the request url is  /register
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/management_api.go:69
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/rbac_api.go:24
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:143
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:93
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 16:08:20 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 16:12:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:12:48 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:12:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    989.978µs|   match|[44m GET     [0m /register   r:/register
+2017/10/02 16:12:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    358.087µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:12:55 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.631857ms|   match|[46m POST    [0m /register   r:/register
+2017/10/02 16:12:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     940.05µs|   match|[44m GET     [0m /register   r:/register
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] the request url is  /register
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/management_api.go:69
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/rbac_api.go:24
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:143
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:93
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 16:13:00 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 16:13:46 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:17:55 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:18:04 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.950063ms|   match|[46m POST    [0m /register   r:/register
+2017/10/02 16:18:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     882.77µs|   match|[44m GET     [0m /register   r:/register
+2017/10/02 16:18:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    376.459µs|   match|[44m GET     [0m /favicon.ico
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] the request url is  /register
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:489
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/panic.go:63
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/signal_unix.go:290
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/management_api.go:69
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/casbin/casbin/rbac_api.go:24
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/models/User.go:146
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/controllers/IndexController.go:93
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:514
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:434
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/reflect/value.go:302
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /Users/Jolly/go/src/GRE3000/vendor/github.com/astaxie/beego/router.go:815
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:2568
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/net/http/server.go:1825
+2017/10/02 16:18:18 [C] [asm_amd64.s:514] /usr/local/go/src/runtime/asm_amd64.s:2197
+2017/10/02 16:20:21 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:20:45 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:20:51 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:21:01 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:22:40 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:22:53 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:22:56 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  14.516468ms|   match|[46m POST    [0m /register   r:/register
+2017/10/02 16:22:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.900463ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:22:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    858.033µs|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:23:05 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   1.624264ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:23:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.478255ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:23:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    889.476µs|   match|[44m GET     [0m /about   r:/about
+2017/10/02 16:23:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    853.062µs|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:23:16 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   1.739917ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:23:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   7.458558ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:24:11 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:24:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.930014ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:24:21 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.689049ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:24:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.130718ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:28:54 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:28:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.232927ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:29:04 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.127376ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:29:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.992409ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:29:26 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:29:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.979473ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:29:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.303066ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:29:44 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.397962ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:29:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.468777ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:17 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:30:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.681996ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.437385ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.032025ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.527824ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.989904ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.343207ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    4.04318ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.509537ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.843552ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.672911ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.795564ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.690615ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.249385ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.839394ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.804868ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.689288ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    4.83434ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.296601ms|   match|[44m GET     [0m /login   r:/login
+2017/10/02 16:30:30 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|   2.271453ms|   match|[46m POST    [0m /login   r:/login
+2017/10/02 16:30:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  47.658229ms|   match|[44m GET     [0m /     r:/
+2017/10/02 16:30:34 [D] [Filter.go:26] url:  /permission/list 
+2017/10/02 16:30:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  59.042189ms|   match|[44m GET     [0m /permission/list   r:/permission/list
+2017/10/02 16:30:37 [D] [Filter.go:26] url:  /user/list 
+2017/10/02 16:30:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  56.142416ms|   match|[44m GET     [0m /user/list   r:/user/list
+2017/10/02 16:30:40 [D] [Filter.go:26] url:  /user/delete/7 
+2017/10/02 16:30:40 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|  35.726874ms|   match|[44m GET     [0m /user/delete/7   r:/user/delete/:id([0-9]+)
+2017/10/02 16:30:40 [D] [Filter.go:26] url:  /user/list 
+2017/10/02 16:30:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   63.63556ms|   match|[44m GET     [0m /user/list   r:/user/list
+2017/10/02 16:32:05 [I] [asm_amd64.s:2197] http server Running on http://:8080
+2017/10/02 16:32:09 [D] [Filter.go:26] url:  /user/list 
+2017/10/02 16:32:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  60.257688ms|   match|[44m GET     [0m /user/list   r:/user/list
+2017/10/02 16:32:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    777.177µs|   match|[44m GET     [0m /favicon.ico

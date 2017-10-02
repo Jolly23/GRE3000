@@ -18,17 +18,8 @@ import (
 func init() {
 	beego.LoadAppConfig("ini", const_conf.BeeGoConfiguration)
 	beego.SetLogger(const_conf.LogsMethod, const_conf.LogsConfig)
-
-	dbSource := fmt.Sprintf("sslmode=%s host=%s port=%s dbname=%s user=%s password=%s",
-		const_conf.PgSslMode,
-		const_conf.PgHostAddress,
-		const_conf.PgHostPort,
-		const_conf.DatabaseName,
-		const_conf.PgUserName,
-		const_conf.PgPassword,
-	)
 	orm.RegisterDataBase(
-		const_conf.BeeGoOrmAlias, const_conf.DatabaseType, dbSource,
+		const_conf.BeeGoOrmAlias, const_conf.DatabaseType, const_conf.dbSource,
 		const_conf.BeeGoOrmMaxIdle, const_conf.BeeGoOrmMaxConn,
 	)
 	orm.RegisterModel(
@@ -66,6 +57,8 @@ func init() {
 	}
 
 	beego.BConfig.WebConfig.ViewsPath = const_conf.BeeGoViewsPath
+
+	models.Init()
 }
 
 func main() {

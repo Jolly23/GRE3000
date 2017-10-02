@@ -5,10 +5,11 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"strconv"
+	"GRE3000/const_conf"
 )
 
 func IsLogin(ctx *context.Context) (bool, models.User) {
-	token, flag := ctx.GetSecureCookie(beego.AppConfig.String("cookie.secure"), beego.AppConfig.String("cookie.token"))
+	token, flag := ctx.GetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName)
 	var user models.User
 	if flag {
 		flag, user = models.FindUserByToken(token)
