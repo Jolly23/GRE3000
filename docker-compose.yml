@@ -11,11 +11,11 @@ services:
   # wx_service_cluster
   # wx_service_cluster
 
-  wx_service_51011:
+  gre_service_31011:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /root/logs/service:/go/src/GRE3000/logs
+      - /root/logs/gre-service:/go/src/GRE3000/logs
     ports:
-      - "51011:8080"
+      - "31011:8080"
