@@ -59,17 +59,17 @@ VALUES
 
 INSERT INTO section (id, name)
 VALUES
-	(1,'分享'),
-	(2,'交易'),
-	(3,'博客');
+	(1,'学习'),
+	(2,'分享'),
+	(3,'杂谈');
 
 INSERT INTO topic (id, title, content, in_time, user_id, section_id, view, reply_count, last_reply_user_id, last_reply_time)
 VALUES
-	(1,'Hello world','你好，世界','2016-08-26 09:22:42',1,1,15,1,NULL,'2016-08-26 09:22:42');
+	(1,'Hello world','你好，世界','2016-08-26 09:22:42',1,1,15,1,NULL,'2017-10-01 09:22:42');
 
 INSERT INTO "user" (id, username, password, token, avatar, email, url, signature, in_time)
 VALUES
-	(1,'Jolly23','123123','fcd1cb8e-b71f-46c3-9974-7225997b40c7','/static/imgs/avatar.png','','https://jolly23.com','这家伙很懒，什么都没留下~','2016-08-26 09:22:16');
+	(1,'Jolly23','123123','fcd1cb8e-b71f-46c3-9974-7225997b40c7','/static/imgs/avatar.png','','https://jolly23.com','这家伙很懒，什么都没留下~','2017-10-01 09:22:16');
 
 INSERT INTO user_roles (id, user_id, role_id)
 VALUES

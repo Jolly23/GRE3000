@@ -56,3 +56,5 @@ fabric.properties
 logs/
 const_conf/private.go
 GRE3000
+
+logs/site.log
