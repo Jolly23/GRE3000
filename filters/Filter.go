@@ -37,3 +37,13 @@ var FilterUser = func(ctx *context.Context) {
 		ctx.Redirect(302, "/login")
 	}
 }
+
+var GoToLastWord = func(ctx *context.Context) {
+	ok, user := IsLogin(ctx)
+	if ok {
+		word, ok := models.FindUserLastMarkWord(&user)
+		if ok {
+			ctx.Redirect(302, ctx.Input.Site()+ctx.Input.URL()+"#"+word)
+		}
+	}
+}

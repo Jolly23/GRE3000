@@ -22,7 +22,7 @@ func HasPermission(userId int, name string) bool {
 }
 
 func init() {
-	beego.AddFuncMap("timeago", FormatTime)
-	beego.AddFuncMap("markdown", Markdown)
-	beego.AddFuncMap("haspermission", HasPermission)
+	beego.AddFuncMap("FuncFormatTimeAgo", FormatTime)
+	beego.AddFuncMap("FuncMarkDown", Markdown)
+	beego.AddFuncMap("FuncHasPermission", HasPermission)
 }

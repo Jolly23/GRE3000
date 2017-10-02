@@ -1,6 +1,8 @@
 package models
 
 import (
+	"GRE3000/const_conf"
+	"fmt"
 	"github.com/astaxie/beego/orm"
 	"time"
 )
@@ -56,8 +58,9 @@ func FindUserWordByWordId(user *User, wordId int) *UserWordsStudy {
 	return &userWord
 }
 
-func IncrWordMark(UserWord *UserWordsStudy) {
+func IncrWordMark(UserWord *UserWordsStudy, user *User) {
 	o := orm.NewOrm()
 	UserWord.CountMarks = UserWord.CountMarks + 1
 	o.Update(UserWord, "CountMarks", "LastMark")
+	o.Insert(&UserLogs{User: user, Content: fmt.Sprintf(const_conf.LogMarkWordFmt, UserWord.Word.Id)})
 }

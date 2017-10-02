@@ -7,15 +7,9 @@ import (
 )
 
 func init() {
-	//beego.Router("/", &controllers.Index2Controller{}, "get:Index")
-	beego.Router("/w", &controllers.WordsController{}, "get:Index")
+	beego.InsertFilter("/words", beego.BeforeRouter, filters.GoToLastWord)
+	beego.Router("/words", &controllers.WordsController{}, "get:Index")
 	beego.Router("/words/mark/:id([0-9]+)", &controllers.WordsController{}, "GET:IncrMark")
-
-
-	beego.Router("/test", &controllers.TestController{}, "get:Index")
-
-	beego.Router("/cookie", &controllers.CookieController{}, "get:Test")
-	beego.Router("/cookie2", &controllers.CookieController{}, "get:Test2")
 
 	beego.Router("/", &controllers.IndexController{}, "GET:Index")
 	beego.Router("/login", &controllers.IndexController{}, "GET:LoginPage")

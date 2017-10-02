@@ -10,16 +10,16 @@
               <span>•</span>
               <span><a href="/user/{{.Topic.User.Username}}">{{.Topic.User.Username}}</a></span>
               <span>•</span>
-              <span>{{.Topic.InTime | timeago}}</span>
+              <span>{{.Topic.InTime | FuncFormatTimeAgo}}</span>
               <span>•</span>
               <span>{{.Topic.View}}次点击</span>
               <span>•</span>
               <span>来自 <a href="/?s={{.Topic.Section.Id}}">{{.Topic.Section.Name}}</a></span>
-              {{if haspermission .UserInfo.Id "topic:edit"}}
+              {{if FuncHasPermission .UserInfo.Id "topic:edit"}}
                 <span>•</span>
                 <span><a href="/topic/edit/{{.Topic.Id}}">编辑</a></span>
               {{end}}
-              {{if haspermission .UserInfo.Id "topic:delete"}}
+              {{if FuncHasPermission .UserInfo.Id "topic:delete"}}
                 <span>•</span>
                 <span><a href="javascript:if(confirm('确定删除吗?')) location.href='/topic/delete/{{.Topic.Id}}'">删除</a></span>
               {{end}}
@@ -32,7 +32,7 @@
       </div>
       <div class="divide"></div>
       <div class="panel-body topic-detail-content">
-        {{str2html (.Topic.Content | markdown)}}
+        {{str2html (.Topic.Content | FuncMarkDown)}}
       </div>
     </div>
     {{if eq .Topic.ReplyCount 0}}
@@ -51,14 +51,14 @@
           <div class="media-body reply-content">
             <div class="media-heading gray">
               <a href="/user/{{.User.Username}}">{{.User.Username}} </a>
-              <span>{{.InTime | timeago}}</span>
+              <span>{{.InTime | FuncFormatTimeAgo}}</span>
               <span class="pull-right">
-                {{if haspermission $.UserInfo.Id "reply:delete"}}<a href="javascript:if(confirm('确定删除吗?')) location.href='/reply/delete/{{.Id}}'">删除</a>{{end}}
+                {{if FuncHasPermission $.UserInfo.Id "reply:delete"}}<a href="javascript:if(confirm('确定删除吗?')) location.href='/reply/delete/{{.Id}}'">删除</a>{{end}}
                 {{if $.IsLogin}}<a href="javascript:up('{{.Id}}');"><span class="glyphicon glyphicon-thumbs-up"></span></a>{{end}}
                 <span id="up_{{.Id}}">{{.Up}}赞</span>
               </span>
             </div>
-            {{str2html (.Content | markdown)}}
+            {{str2html (.Content | FuncMarkDown)}}
           </div>
         </div>
         <div class="divide mar-top-5"></div>

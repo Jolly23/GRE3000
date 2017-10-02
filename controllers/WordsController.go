@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
 	"GRE3000/filters"
 	"GRE3000/models"
+	"github.com/astaxie/beego"
 	"strconv"
 )
 
@@ -24,12 +24,12 @@ func (c *WordsController) Index() {
 		rawWordsList = models.LoadRawWords()
 	}
 
-	c.Data["PageTitle"] = "单词表"
+	c.Data["PageTitle"] = UserInfo.Username + "同学的单词表"
 	c.Data["RawWords"] = &rawWordsList
 	c.Data["UserWords"] = &userWordsList
 
 	c.Layout = "layout/layout.tpl"
-	c.TplName = "words/test.tpl"
+	c.TplName = "words/vocabulary.tpl"
 }
 
 func (c *WordsController) IncrMark() {
@@ -39,10 +39,11 @@ func (c *WordsController) IncrMark() {
 		isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 		if isLogin {
 			userWord := models.FindUserWordByWordId(&UserInfo, userWordId)
-			models.IncrWordMark(userWord)
+			models.IncrWordMark(userWord, &UserInfo)
 			c.Data["json"] = map[string]int{"ErrCode": 0}
+			c.ServeJSON()
+			return
 		}
-		c.Data["json"] = map[string]int{"ErrCode": 1}
 	}
 	c.Data["json"] = map[string]int{"ErrCode": -1}
 	c.ServeJSON()

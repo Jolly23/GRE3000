@@ -13,7 +13,7 @@
             {{if .CurrentUserInfo.Url}}
             <div>主页: <a href="{{.CurrentUserInfo.Url}}" target="_blank">{{.CurrentUserInfo.Url}}</a></div>
             {{end}}
-            <div>入驻时间: {{.CurrentUserInfo.InTime | timeago}}</div>
+            <div>入驻时间: {{.CurrentUserInfo.InTime | FuncFormatTimeAgo}}</div>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
               <span class="hidden-sm hidden-xs">•</span>
               <span class="hidden-sm hidden-xs">{{.View}}次浏览</span>
               <span>•</span>
-              <span>{{.InTime | timeago}}</span>
+              <span>{{.InTime | FuncFormatTimeAgo}}</span>
               {{if .LastReplyUser}}
                 <span>•</span>
                 <span>最后回复来自 <a href="/user/{{.LastReplyUser.Username}}">{{.LastReplyUser.Username}}</a></span>
@@ -58,14 +58,14 @@
         {{range .Replies}}
         <tr>
           <td>
-            {{.InTime | timeago}}
+            {{.InTime | FuncFormatTimeAgo}}
             回复了
             <a href="/user/{{.User.Username}}">{{.User.Username}}</a>
             创建的话题 › <a href="/topic/{{.Topic.Id}}">{{.Topic.Title}}</a>
           </td>
         </tr>
         <tr>
-          <td><p>{{str2html (.Content | markdown)}}</p></td>
+          <td><p>{{str2html (.Content | FuncMarkDown)}}</p></td>
         </tr>
         {{end}}
         </tbody>

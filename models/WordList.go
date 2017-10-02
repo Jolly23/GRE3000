@@ -21,3 +21,9 @@ func LoadRawWords() []*WordsList {
 	return allWords
 }
 
+func FindWordById(id int) *WordsList {
+	o := orm.NewOrm()
+	var word WordsList
+	o.QueryTable(word).Filter("Id", id).One(&word)
+	return &word
+}
