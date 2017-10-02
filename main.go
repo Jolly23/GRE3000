@@ -37,7 +37,7 @@ func init() {
 
 	orm.DefaultTimeLoc = time.UTC
 	orm.RunSyncdb(const_conf.BeeGoOrmAlias, false, true)
-	orm.Debug = true
+	orm.Debug = false
 
 	beego.BConfig.Listen.EnableHTTP = const_conf.IsEnableHTTP
 	beego.BConfig.Listen.HTTPPort = const_conf.HttpPort

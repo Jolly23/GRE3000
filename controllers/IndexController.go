@@ -52,7 +52,7 @@ func (c *IndexController) Login() {
 	flash := beego.NewFlash()
 	username, password := c.Input().Get("username"), c.Input().Get("password")
 	if flag, user := models.Login(username, password); flag {
-		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, user.Token, 30*24*60*60, "/", const_conf.DomainName, false, true)
+		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, user.Token, const_conf.CookieExpire, "/", const_conf.DomainName, false, true)
 		c.Redirect("/", 302)
 	} else {
 		flash.Error("用户名或密码错误")
@@ -94,7 +94,7 @@ func (c *IndexController) Register() {
 		//models.BuildWordsListForUser(int(new_user_id))
 
 		// others are ordered as cookie's max age time, path,domain, secure and http only.
-		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, token, 30*24*60*60, "/", const_conf.DomainName, false, true)
+		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, token, const_conf.CookieExpire, "/", const_conf.DomainName, false, true)
 		c.Redirect("/", 302)
 	}
 }

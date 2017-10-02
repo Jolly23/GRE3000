@@ -2,7 +2,6 @@ package models
 
 import (
 	"GRE3000/utils"
-	"fmt"
 	"github.com/astaxie/beego/orm"
 	"github.com/casbin/casbin"
 	"strconv"
@@ -56,7 +55,6 @@ func Init() {
 	var res []orm.Params
 	o.Raw("select user_id, role_id from user_roles").Values(&res, "user_id", "role_id")
 	for _, param := range res {
-		fmt.Println(1)
 		Enforcer.AddRoleForUser(param["user_id"].(string), param["role_id"].(string))
 	}
 
@@ -120,7 +118,6 @@ func PageUser(p int, size int) utils.Page {
 func FindPermissionByUserIdAndPermissionName(userId int, name string) bool {
 	permissions := FindPermissions()
 	for _, permission := range permissions {
-		fmt.Println(2)
 		if name == permission.Name {
 			return Enforcer.Enforce(strconv.Itoa(userId), permission.Url)
 		}
