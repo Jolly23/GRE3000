@@ -40,6 +40,8 @@ const (
 	LogsConfig = `{"filename":"logs/site.log"}`
 
 	PageSize = 20
+
+	MarkWordTimeLimit = 10
 )
 
 var DbSource string = fmt.Sprintf("sslmode=%s host=%s port=%s dbname=%s user=%s password=%s",

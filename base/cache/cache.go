@@ -12,11 +12,12 @@ var (
 )
 
 func init() {
-	redis_conf := fmt.Sprintf(`{"key":"%s","conn":"%s","dbNum":"%d","password":"%s"}`,
+	fmt.Println(111)
+	redisConf := fmt.Sprintf(`{"key":"%s","conn":"%s","dbNum":"%d","password":"%s"}`,
 		const_conf.DomainName,
 		const_conf.RedisAddress,
 		const_conf.RedisNumber,
 		const_conf.RedisPassword,
 	)
-	Redis, _ = cache.NewCache("redis", redis_conf)
+	Redis, _ = cache.NewCache("redis", redisConf)
 }

@@ -2,8 +2,8 @@ version: '2'
 
 services:
 
-#  link-docker-redis:
-#    image: "redis:alpine"
+  link-docker-redis:
+    image: "redis:alpine"
 
   gre_service_31011:
     build:
