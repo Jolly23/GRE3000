@@ -9,9 +9,9 @@
                     <div class="col-lg-7">
                         <div class="media-body">
                             <div class="title">
-                                <a style="font-size: 22px;">{{.Word.Word}}</a>
+                                <a style="font-size: 30px;">{{.Word.Word}}</a>
                             </div>
-                            <p id="btn-means-{{.Word.Word}}-obj" style="display: none;font-size: 16px;">
+                            <p id="btn-means-{{.Word.Word}}-obj" style="display: none;font-size: 20px;">
                                 <span>• {{.Word.Means}}</span>
                             </p>
                             <p>
@@ -50,9 +50,9 @@
                     <div class="col-lg-7">
                         <div class="media-body">
                             <div class="title">
-                                <a style="font-size: 22px;">{{.Word}}</a>
+                                <a style="font-size: 30px;">{{.Word}}</a>
                             </div>
-                            <p id="btn-means-{{.Word}}-obj" style="display: none;font-size: 16px;">
+                            <p id="btn-means-{{.Word}}-obj" style="display: none;font-size: 20px;">
                                 <span>• {{.Means}}</span>
                             </p>
                         </div>

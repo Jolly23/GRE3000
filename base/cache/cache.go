@@ -12,7 +12,6 @@ var (
 )
 
 func init() {
-	fmt.Println(111)
 	redisConf := fmt.Sprintf(`{"key":"%s","conn":"%s","dbNum":"%d","password":"%s"}`,
 		const_conf.DomainName,
 		const_conf.RedisAddress,
