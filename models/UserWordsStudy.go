@@ -64,3 +64,9 @@ func IncrWordMark(UserWord *UserWordsStudy, user *User) {
 	o.Update(UserWord, "CountMarks", "LastMark")
 	o.Insert(&UserLogs{User: user, Content: fmt.Sprintf(const_conf.LogMarkWordFmt, UserWord.Word.Id)})
 }
+
+func DeleteWord(user *User, wordId int) {
+	o := orm.NewOrm()
+	var userWord UserWordsStudy
+	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("word_id", wordId).Delete()
+}

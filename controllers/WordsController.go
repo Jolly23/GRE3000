@@ -66,3 +66,18 @@ func (c *WordsController) IncrMark() {
 	c.Data["json"] = map[string]int{"ErrCode": -1}
 	c.ServeJSON()
 }
+
+func (c *WordsController) DeleteWord() {
+	id := c.Ctx.Input.Param(":id")
+	userWordId, _ := strconv.Atoi(id)
+	if userWordId > 0 {
+		isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
+		if isLogin {
+			models.DeleteWord(&UserInfo, userWordId)
+			c.Data["json"] = map[string]int{"ErrCode": 0}
+			c.ServeJSON()
+		}
+	}
+	c.Data["json"] = map[string]int{"ErrCode": -1}
+	c.ServeJSON()
+}

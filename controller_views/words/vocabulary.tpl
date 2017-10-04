@@ -30,6 +30,9 @@
                         <button id="btn-mark-{{.Id}}" type="button" class="btn btn-warning btn-lg">没记住+1
                         </button>
 
+                        <button id="btn-del-{{.Id}}" type="button" class="btn btn-danger btn-lg">删除
+                        </button>
+
                     </div>
 
                 </div>
@@ -86,6 +89,12 @@
             var which_word = $(this).attr('id');
             $(this).attr('disabled', 'disabled');
             $.get("/words/mark/" + which_word.match(/\d+/g)[0]);
+        });
+
+        $('button[id^=btn-del-]').click(function () {
+            var which_word = $(this).attr('id');
+            $(this).attr('disabled', 'disabled');
+            $.get("/words/del/" + which_word.match(/\d+/g)[0]);
         });
     });
 </script>
