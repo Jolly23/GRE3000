@@ -30,7 +30,7 @@
                         <button id="btn-mark-{{.Id}}" type="button" class="btn btn-warning btn-lg">没记住+1
                         </button>
 
-                        <button id="btn-del-{{.Id}}" type="button" class="btn btn-danger btn-lg">删除
+                        <button id="btn-del-{{.Id}}" type="button" class="btn btn-danger btn-sm">删除
                         </button>
 
                     </div>
