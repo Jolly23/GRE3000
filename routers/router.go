@@ -7,10 +7,11 @@ import (
 )
 
 func init() {
-	//beego.InsertFilter("/words", beego.BeforeRouter, filters.GoToLastWord)
+	beego.InsertFilter("/words", beego.BeforeRouter, filters.HasPermission)
 	beego.Router("/words", &controllers.WordsController{}, "get:Index")
-	beego.Router("/words#:word:string", &controllers.WordsController{}, "get:Index")
+	beego.InsertFilter("/words/mark/:id([0-9]+)", beego.BeforeRouter, filters.HasPermission)
 	beego.Router("/words/mark/:id([0-9]+)", &controllers.WordsController{}, "GET:IncrMark")
+	beego.InsertFilter("/words/del/:id([0-9]+)", beego.BeforeRouter, filters.HasPermission)
 	beego.Router("/words/del/:id([0-9]+)", &controllers.WordsController{}, "GET:DeleteWord")
 
 	beego.Router("/", &controllers.IndexController{}, "GET:Index")
