@@ -8,7 +8,7 @@ import (
 )
 
 type UserWordsStudy struct {
-	Id         int        `orm:"pk;auto"`
+	Id         int        `orm:"pk;auto;index"`
 	UserId     int        `orm:"index"`
 	Word       *WordsList `orm:"rel(fk)"`
 	CountMarks int        `orm:"default(0);index"`
@@ -54,7 +54,7 @@ func LoadWordsListForUser(user *User) []*UserWordsStudy {
 func FindUserWordByWordId(user *User, wordId int) *UserWordsStudy {
 	o := orm.NewOrm()
 	var userWord UserWordsStudy
-	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("word_id", wordId).One(&userWord)
+	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).One(&userWord)
 	return &userWord
 }
 
@@ -68,5 +68,5 @@ func IncrWordMark(UserWord *UserWordsStudy, user *User) {
 func DeleteWord(user *User, wordId int) {
 	o := orm.NewOrm()
 	var userWord UserWordsStudy
-	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("word_id", wordId).Delete()
+	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).Delete()
 }

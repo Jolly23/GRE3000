@@ -21,10 +21,6 @@ VALUES
 	(23,12,'permission:edit','编辑权限','/permission/edit/[0-9]+'),
 	(24,12,'permission:delete','删除权限','/permission/delete/[0-9]+');
 
-INSERT INTO reply (id, topic_id, content, user_id, up, in_time)
-VALUES
-	(1,1,'分享世界',1,0,'2016-08-26 09:22:52');
-
 INSERT INTO role (id, name)
 VALUES
 	(3,'超级管理员'),
@@ -65,7 +61,7 @@ VALUES
 
 INSERT INTO topic (id, title, content, in_time, user_id, section_id, view, reply_count, last_reply_user_id, last_reply_time)
 VALUES
-	(1,'Hello world','你好，世界','2016-08-26 09:22:42',1,1,15,1,NULL,'2017-10-01 09:22:42');
+	(1,'Hello world','你好，世界','2017-10-01 09:22:42',1,1,15,0,NULL,'2017-10-01 09:22:42');
 
 INSERT INTO "user" (id, username, password, token, avatar, email, url, signature, in_time)
 VALUES
