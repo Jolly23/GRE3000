@@ -90,7 +90,7 @@
 <div class="container">
     <br>
     <div class="text-center">
-        ©2016 Powered by <a href="https://jolly23.com" target="_blank">Jolly23</a>
+        ©2017 Powered by <a href="https://jolly23.com" target="_blank">Jolly23</a>
     </div>
     <br>
 </div>

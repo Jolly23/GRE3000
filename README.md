@@ -2,6 +2,7 @@
 
 `没什么意义的README`
 
+
 ## 用docker 或者 docker-compose运行，我都写好了，直接能用
 
 > 采用了4容器负载均衡，为的是实验多机部署。
@@ -27,6 +28,7 @@ const (
 
 > 可以更换为其他数据库，需更改main.go文件，具体请参考[Beego框架ORM](https://beego.me/docs/mvc/model/overview.md)
 
+
 ## 运行
 
 ```bash
@@ -39,6 +41,7 @@ docker-compose up -d
 
 `可根据写好的Nginx配置文件来引导访问`
 `数据库自动建表完毕后，要记得导入词表，在deploy_conf文件夹中，然后执行一下pg-gre300.sql中的所有语句即可`
+
 
 ## TODO
 
