@@ -32,7 +32,7 @@ const (
 ```bash
 git clone https://github.com/Jolly23/GRE3000.git
 cd GRE3000
-vim const_conf/private.go
+vim const_conf/private.go   # 写入上述go文件，配置数据库连接信息
 docker-compose build
 docker-compose up -d
 ```
@@ -43,7 +43,7 @@ docker-compose up -d
 ### TODO
 
 #### 1. 单词表页面一次性发送整个GRE词表，大小大约在3M，用户体验不太好，下一步用js异步加载词表，但完成3000个div加载性能同样较差，正在寻求解决方案。（如果服务器带宽大一点的话这个可能就不是问题了）
-> 已解决：通过html页面头部替代尾部提前加载js函数，用户可以在网页加载中使用可见单词的全部按钮功能
+> 已解决：通过html页面头部替代尾部提前加载js函数，使用户可以在网页加载时使用可见单词的全部按钮功能
 
 #### 2. 为用户加入全部显示中文意思的词表按钮
 
