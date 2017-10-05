@@ -10,9 +10,9 @@ import (
 	"github.com/astaxie/beego/orm"
 	_ "github.com/lib/pq"
 
-	_ "GRE3000/base/cache"
 	_ "GRE3000/templates"
 	_ "GRE3000/utils"
+	_ "GRE3000/base/cache"
 )
 
 func init() {
