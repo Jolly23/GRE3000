@@ -61,21 +61,3 @@
 
     </div>
 </div>
-
-
-<script type="text/javascript">
-    function ShowMeans(whichObj) {
-        $(whichObj).parent().parent().find("p").css('display', 'block');
-        $(whichObj).attr('disabled', true);
-    }
-
-    function MarkWord(whichObj) {
-        $(whichObj).attr('disabled', true);
-        $.get("/words/mark/" + $(whichObj).attr("id").match(/\d+/g)[0]);
-    }
-
-    function DeleteWord(whichObj) {
-        $(whichObj).attr('disabled', true);
-        $.get("/words/del/" + $(whichObj).attr("id").match(/\d+/g)[0]);
-    }
-</script>

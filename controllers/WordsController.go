@@ -31,6 +31,7 @@ func (c *WordsController) Index() {
 	} else {
 		c.Data["PageTitle"] = "GRE单词表"
 	}
+	c.Data["IsWordsPage"] = true
 	c.Data["RawWords"] = &rawWordsList
 	c.Data["UserWords"] = &userWordsList
 

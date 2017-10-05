@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="/static/css/pybbs.css">
     <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {{if .IsWordsPage}}
+    <script type="text/javascript">
+        function ShowMeans(whichObj) {
+            $(whichObj).parent().parent().find("p").css('display', 'block');
+            $(whichObj).attr('disabled', true);
+        }
+        function MarkWord(whichObj) {
+            $(whichObj).attr('disabled', true);
+            $.get("/words/mark/" + $(whichObj).attr("id").match(/\d+/g)[0]);
+        }
+        function DeleteWord(whichObj) {
+            $(whichObj).attr('disabled', true);
+            $.get("/words/del/" + $(whichObj).attr("id").match(/\d+/g)[0]);
+        }
+    </script>
+    {{end}}
 </head>
 <body>
 
