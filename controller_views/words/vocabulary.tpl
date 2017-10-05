@@ -21,20 +21,11 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="col-lg-offset-7">
-
-                        <button id="btn-means-{{.Word.Word}}" type="button" class="btn btn-info btn-lg">显示意思
-                        </button>
-
-                        <button id="btn-mark-{{.Id}}" type="button" class="btn btn-warning btn-lg">没记住+1
-                        </button>
-
-                        <button id="btn-del-{{.Id}}" type="button" class="btn btn-danger btn-sm">删除
-                        </button>
-
+                        <button id="btn-means-{{.Word.Word}}" onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
+                        <button id="btn-mark-{{.Id}}" onclick="MarkWord(this)" type="button" class="btn btn-warning btn-lg">没记住+1</button>
+                        <button id="btn-del-{{.Id}}" onclick="DeleteWord(this)" type="button" class="btn btn-danger btn-sm">删除</button>
                     </div>
-
                 </div>
                 <div class="divide mar-top-5"></div>
                 {{end}}
@@ -45,7 +36,6 @@
             <div class="panel-heading">游客的单词表</div>
             <div class="panel-body">
                 {{range .RawWords}}
-
                 <div class="media">
                     <div class="col-lg-7">
                         <div class="media-body">
@@ -57,12 +47,9 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="col-lg-offset-7">
-                        <button id="btn-means-{{.Word}}" type="button" class="btn btn-info btn-lg">显示意思
-                        </button>
+                        <button id="btn-means-{{.Word}}" onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
                     </div>
-
                 </div>
                 <div class="divide mar-top-5"></div>
                 {{end}}
@@ -77,24 +64,18 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('button[id^=btn-means-]').click(function () {
-            var which_word = $(this).attr('id');
-            $(this).attr('disabled', 'disabled');
-            var word_obj = "#" + which_word + "-obj";
-            $(word_obj).show()
-        });
+    function ShowMeans(whichObj) {
+        $(whichObj).parent().parent().find("p").css('display', 'block');
+        $(whichObj).attr('disabled', true);
+    }
 
-        $('button[id^=btn-mark-]').click(function () {
-            var which_word = $(this).attr('id');
-            $(this).attr('disabled', 'disabled');
-            $.get("/words/mark/" + which_word.match(/\d+/g)[0]);
-        });
+    function MarkWord(whichObj) {
+        $(whichObj).attr('disabled', true);
+        $.get("/words/mark/" + $(whichObj).attr("id").match(/\d+/g)[0]);
+    }
 
-        $('button[id^=btn-del-]').click(function () {
-            var which_word = $(this).attr('id');
-            $(this).attr('disabled', 'disabled');
-            $.get("/words/del/" + which_word.match(/\d+/g)[0]);
-        });
-    });
+    function DeleteWord(whichObj) {
+        $(whichObj).attr('disabled', true);
+        $.get("/words/del/" + $(whichObj).attr("id").match(/\d+/g)[0]);
+    }
 </script>
