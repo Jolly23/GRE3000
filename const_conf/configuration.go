@@ -21,8 +21,8 @@ const (
 	BeeGoViewsPath     = "controller_views"
 	BeeGoConfiguration = "deploy_conf/beego_main.conf"
 	BeeGoOrmAlias      = "default"
-	BeeGoOrmMaxConn    = 30
-	BeeGoOrmMaxIdle    = 15
+	BeeGoOrmMaxConn    = 20
+	BeeGoOrmMaxIdle    = 10
 
 	IsEnableXSRF    = false
 	BeeGoXSRFKey    = "ASb&ADGaEmGQnp2XdTEc5NFw0Al0bKx$P1o61eJJF7$2b$1EoETzKXQuYh"
