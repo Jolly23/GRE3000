@@ -12,10 +12,6 @@ type ReplyController struct {
 	beego.Controller
 }
 
-func (c *ReplyController) Prepare() {
-	c.EnableXSRF = false
-}
-
 func (c *ReplyController) Save() {
 	content := c.Input().Get("content")
 	if len(content) == 0 {

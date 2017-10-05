@@ -11,10 +11,6 @@ type PermissionController struct {
 	beego.Controller
 }
 
-func (c *PermissionController) Prepare() {
-	c.EnableXSRF = false
-}
-
 func (c *PermissionController) List() {
 	c.Data["PageTitle"] = "权限列表"
 	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)

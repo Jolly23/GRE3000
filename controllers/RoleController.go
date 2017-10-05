@@ -11,10 +11,6 @@ type RoleController struct {
 	beego.Controller
 }
 
-func (c *RoleController) Prepare() {
-	c.EnableXSRF = false
-}
-
 func (c *RoleController) List() {
 	c.Data["PageTitle"] = "角色列表"
 	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Ctx)

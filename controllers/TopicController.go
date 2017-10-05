@@ -11,10 +11,6 @@ type TopicController struct {
 	beego.Controller
 }
 
-func (c *TopicController) Prepare() {
-	c.EnableXSRF = false
-}
-
 func (c *TopicController) Create() {
 	beego.ReadFromRequest(&c.Controller)
 	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Controller.Ctx)

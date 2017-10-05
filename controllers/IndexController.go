@@ -13,13 +13,8 @@ type IndexController struct {
 	beego.Controller
 }
 
-func (c *IndexController) Prepare() {
-	c.EnableXSRF = false
-}
-
-//首页
 func (c *IndexController) Index() {
-	c.Data["PageTitle"] = "首页"
+	c.Data["PageTitle"] = "BBS OF GRE3000"
 	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Controller.Ctx)
 	p, _ := strconv.Atoi(c.Ctx.Input.Query("p"))
 	if p == 0 {

@@ -14,10 +14,6 @@ type UserController struct {
 	beego.Controller
 }
 
-func (c *UserController) Prepare() {
-	c.EnableXSRF = false
-}
-
 func (c *UserController) Detail() {
 	username := c.Ctx.Input.Param(":username")
 	ok, user := models.FindUserByUserName(username)
