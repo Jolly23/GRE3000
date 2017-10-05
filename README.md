@@ -37,6 +37,7 @@ docker-compose build
 docker-compose up -d
 ```
 
+`可根据写好的nginx配置文件来引导访问`
 `数据库自动建表完毕后，要记得导入词表，在deploy_conf文件夹中，然后执行一下pg-gre300.sql中的所有语句即可`
 
 ### TODO
@@ -45,3 +46,5 @@ docker-compose up -d
 > 2. 为用户加入全部显示中文意思的词表按钮
 
 > 3. 增强管理员视图
+
+> 4. 使用kubernetes替换docker-compose
