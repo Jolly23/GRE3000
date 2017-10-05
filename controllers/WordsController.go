@@ -40,45 +40,36 @@ func (c *WordsController) Index() {
 }
 
 func (c *WordsController) IncrMark() {
+	ErrCode := -1
 	id := c.Ctx.Input.Param(":id")
 	token, flag := c.GetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName)
-	cacheKeyName := token + id
-	if flag {
-		val := cache.Redis.Get(cacheKeyName)
-		if val != nil {
-			c.Data["json"] = map[string]int{"ErrCode": -1}
-			c.ServeJSON()
-			return
-		}
-	}
-
-	userWordId, _ := strconv.Atoi(id)
-	if userWordId > 0 {
+	userWordId, err := strconv.Atoi(id)
+	if flag && !cache.Redis.IsExist(token+id) && err == nil && userWordId > 0 {
 		isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 		if isLogin {
-			userWord := models.FindUserWordByWordId(&UserInfo, userWordId)
-			models.IncrWordMark(userWord, &UserInfo)
-			cache.Redis.Put(cacheKeyName, UserInfo.Username, time.Duration(const_conf.MarkWordTimeLimit)*time.Minute)
-			c.Data["json"] = map[string]int{"ErrCode": 0}
-			c.ServeJSON()
-			return
+			userWord, ok := models.FindUserWordByWordId(&UserInfo, userWordId)
+			if ok {
+				models.IncrWordMark(userWord, &UserInfo)
+				cache.Redis.Put(token+id, UserInfo.Username, time.Duration(const_conf.MarkWordTimeLimit)*time.Minute)
+				ErrCode = 0
+			}
 		}
 	}
-	c.Data["json"] = map[string]int{"ErrCode": -1}
+	c.Data["json"] = map[string]int{"ErrCode": ErrCode}
 	c.ServeJSON()
 }
 
 func (c *WordsController) DeleteWord() {
+	ErrCode := -1
 	id := c.Ctx.Input.Param(":id")
-	userWordId, _ := strconv.Atoi(id)
-	if userWordId > 0 {
+	userWordId, err := strconv.Atoi(id)
+	if err == nil && userWordId > 0 {
 		isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 		if isLogin {
 			models.DeleteWord(&UserInfo, userWordId)
-			c.Data["json"] = map[string]int{"ErrCode": 0}
-			c.ServeJSON()
+			ErrCode = 0
 		}
 	}
-	c.Data["json"] = map[string]int{"ErrCode": -1}
+	c.Data["json"] = map[string]int{"ErrCode": ErrCode}
 	c.ServeJSON()
 }

@@ -51,11 +51,11 @@ func LoadWordsListForUser(user *User) []*UserWordsStudy {
 	return list
 }
 
-func FindUserWordByWordId(user *User, wordId int) *UserWordsStudy {
+func FindUserWordByWordId(user *User, wordId int) (*UserWordsStudy, bool) {
 	o := orm.NewOrm()
 	var userWord UserWordsStudy
-	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).One(&userWord)
-	return &userWord
+	err := o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).One(&userWord)
+	return &userWord, err != orm.ErrNoRows
 }
 
 func IncrWordMark(UserWord *UserWordsStudy, user *User) {
