@@ -8,7 +8,7 @@ import (
 )
 
 type UserWordsStudy struct {
-	Id         int        `orm:"pk;auto"`
+	Id         int        `orm:"pk;auto;index"`
 	UserId     int        `orm:"index"`
 	Word       *WordsList `orm:"rel(fk)"`
 	CountMarks int        `orm:"default(0);index"`
@@ -54,7 +54,7 @@ func LoadWordsListForUser(user *User) []*UserWordsStudy {
 func FindUserWordByWordId(user *User, wordId int) *UserWordsStudy {
 	o := orm.NewOrm()
 	var userWord UserWordsStudy
-	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("word_id", wordId).One(&userWord)
+	o.QueryTable(userWord).RelatedSel().Filter("UserId", user.Id).Filter("word_id", wordId).One(&userWord)
 	return &userWord
 }
 
@@ -62,7 +62,11 @@ func IncrWordMark(UserWord *UserWordsStudy, user *User) {
 	o := orm.NewOrm()
 	UserWord.CountMarks = UserWord.CountMarks + 1
 	o.Update(UserWord, "CountMarks", "LastMark")
-	o.Insert(&UserLogs{User: user, Content: fmt.Sprintf(const_conf.LogMarkWordFmt, UserWord.Word.Id)})
+	fmt.Println(&UserLogs{User: user, Content: fmt.Sprintf(const_conf.LogMarkWordFmt, UserWord.Word.Id)})
+	_, err := o.Insert(UserLogs{User: user, Content: fmt.Sprintf(const_conf.LogMarkWordFmt, UserWord.Word.Id)})
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func DeleteWord(user *User, wordId int) {
