@@ -18,11 +18,11 @@
         }
         function MarkWord(whichObj) {
             $(whichObj).attr('disabled', true);
-            $.get("/words/mark/" + $(whichObj).attr("id").match(/\d+/g)[0]);
+            $.get("/words/mark/" + $(whichObj).attr("value"));
         }
         function DeleteWord(whichObj) {
             $(whichObj).attr('disabled', true);
-            $.get("/words/del/" + $(whichObj).attr("id").match(/\d+/g)[0]);
+            $.get("/words/del/" + $(whichObj).attr("value"));
         }
     </script>
     {{end}}
