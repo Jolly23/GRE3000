@@ -26,6 +26,15 @@
         }
     </script>
     {{end}}
+    {{ if .ShowMeans }}
+    <style type="text/css">
+        #means {font-size: 20px;}
+    </style>
+    {{ else }}
+    <style type="text/css">
+        #means {display: none; font-size: 20px;}
+    </style>
+    {{end}}
 </head>
 <body>
 

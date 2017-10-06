@@ -34,7 +34,7 @@ func (c *WordsController) Index() {
 	c.Data["IsWordsPage"] = true
 	c.Data["RawWords"] = &rawWordsList
 	c.Data["UserWords"] = &userWordsList
-
+	c.Data["ShowMeans"], _ = c.GetBool("ShowMeans")
 	c.Layout = "layout/layout.tpl"
 	c.TplName = "words/vocabulary.tpl"
 }
