@@ -4,8 +4,8 @@ import (
 	"GRE3000/const_conf"
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	"time"
 	"github.com/xeonx/timeago"
+	"time"
 )
 
 type UserWordsStudy struct {

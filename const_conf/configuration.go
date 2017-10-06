@@ -42,7 +42,7 @@ const (
 	PageSize = 20
 
 	MarkWordTimeLimit = 10
-	SyncLoadOffset = 30
+	SyncLoadOffset    = 30
 )
 
 var DbSource string = fmt.Sprintf("sslmode=%s host=%s port=%s dbname=%s user=%s password=%s",

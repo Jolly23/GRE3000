@@ -1,8 +1,8 @@
 package models
 
 import (
-	"github.com/astaxie/beego/orm"
 	"GRE3000/const_conf"
+	"github.com/astaxie/beego/orm"
 )
 
 type WordsList struct {
