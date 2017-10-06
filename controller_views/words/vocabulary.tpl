@@ -5,7 +5,7 @@
             <div class="panel-heading">{{.UserInfo.Username}}的单词表</div>
             <div class="panel-body">
                 {{range .UserWords}}
-                <div id="{{.Word.Word}}" class="media">
+                <div class="media">
                     <div class="col-lg-7">
                         <div class="media-body">
                             <div class="title">
