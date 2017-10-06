@@ -39,6 +39,16 @@ func (c *WordsController) Index() {
 	c.TplName = "words/vocabulary.tpl"
 }
 
+func (c *WordsController) LoadWordsJson() {
+	isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
+	if isLogin {
+		c.Data["json"] = models.LoadUserWordsJson(&UserInfo)
+	} else {
+		c.Data["json"] = models.LoadRawWordsJson()
+	}
+	c.ServeJSON()
+}
+
 func (c *WordsController) IncrMark() {
 	ErrCode := -1
 	id := c.Ctx.Input.Param(":id")

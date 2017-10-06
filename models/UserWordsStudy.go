@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
 	"time"
+	"github.com/xeonx/timeago"
 )
 
 type UserWordsStudy struct {
@@ -12,7 +13,7 @@ type UserWordsStudy struct {
 	UserId     int        `orm:"index"`
 	Word       *WordsList `orm:"rel(fk)"`
 	CountMarks int        `orm:"default(0);index"`
-	LastMark   time.Time  `orm:"auto_now;type(datetime)"`
+	LastMark   time.Time  `orm:"auto_now;type(datetime);null"`
 }
 
 func (u *Common) UserWordsStudy() string {
@@ -27,7 +28,6 @@ func BuildWordsListForUser(id int) bool {
 		wordsList = append(wordsList, &UserWordsStudy{UserId: id, Word: eachWord})
 	}
 	o.InsertMulti(len(wordsList), wordsList)
-
 	return true
 }
 
@@ -47,8 +47,45 @@ func LoadWordsListForUser(user *User) []*UserWordsStudy {
 	var list []*UserWordsStudy
 	qs := o.QueryTable(study)
 	qs = qs.Filter("UserId", user.Id).RelatedSel()
-	qs.OrderBy("-CountMarks").Limit(-1).All(&list)
+	qs.OrderBy("-CountMarks").Limit(const_conf.SyncLoadOffset).All(&list)
 	return list
+}
+
+func LoadUserWordsJson(user *User) []*const_conf.UserWordsJson {
+	o := orm.NewOrm()
+
+	var returnUserWords []*const_conf.UserWordsJson
+	var tempWord *const_conf.UserWordsJson
+	type words struct {
+		Id         int
+		Word       string
+		Means      string
+		CountMarks int
+		LastMark   time.Time
+	}
+	var userWords []*words
+	o.Raw("SELECT T0.id, T1.word, T1.means, T0.count_marks, T0.last_mark FROM user_words_study T0 INNER JOIN words_list T1 ON T1.id = T0.word_id WHERE T0.user_id = ? ORDER BY T0.count_marks DESC OFFSET ?", user.Id, const_conf.SyncLoadOffset).QueryRows(&userWords)
+	for _, v := range userWords {
+		if v.CountMarks > 0 {
+			tempWord = &const_conf.UserWordsJson{
+				Id:         v.Id,
+				Word:       v.Word,
+				Means:      v.Means,
+				CountMarks: v.CountMarks,
+				LastMark:   timeago.Chinese.Format(v.LastMark),
+			}
+		} else {
+			tempWord = &const_conf.UserWordsJson{
+				Id:         v.Id,
+				Word:       v.Word,
+				Means:      v.Means,
+				CountMarks: v.CountMarks,
+				LastMark:   "",
+			}
+		}
+		returnUserWords = append(returnUserWords, tempWord)
+	}
+	return returnUserWords
 }
 
 func FindUserWordByWordId(user *User, wordId int) (*UserWordsStudy, bool) {

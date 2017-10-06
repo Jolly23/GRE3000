@@ -1,6 +1,9 @@
 package models
 
-import "github.com/astaxie/beego/orm"
+import (
+	"github.com/astaxie/beego/orm"
+	"GRE3000/const_conf"
+)
 
 type WordsList struct {
 	Id            int               `orm:"pk;auto;index"`
@@ -17,8 +20,15 @@ func LoadRawWords() []*WordsList {
 	o := orm.NewOrm()
 	var tableOfWords WordsList
 	var allWords []*WordsList
-	o.QueryTable(tableOfWords).Limit(-1).All(&allWords)
+	o.QueryTable(tableOfWords).OrderBy("id").Limit(const_conf.SyncLoadOffset).All(&allWords)
 	return allWords
+}
+
+func LoadRawWordsJson() *[]orm.Params {
+	o := orm.NewOrm()
+	var maps []orm.Params
+	o.Raw("SELECT word, means FROM words_list ORDER BY id OFFSET ?", const_conf.SyncLoadOffset).Values(&maps)
+	return &maps
 }
 
 func FindWordById(id int) *WordsList {

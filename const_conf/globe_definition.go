@@ -10,3 +10,11 @@ const (
 const (
 	Ok int = 0
 )
+
+type UserWordsJson struct {
+	Id         int
+	Word       string
+	Means      string
+	CountMarks int
+	LastMark   string
+}

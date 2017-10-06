@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{.PageTitle}}</title>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/static/css/pybbs.css">
+    <link rel="stylesheet" href="/static/css/ger3000.css">
     <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{if .IsWordsPage}}
