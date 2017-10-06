@@ -14,14 +14,14 @@
     <script type="text/javascript">
         function ShowMeans(whichObj) {
             $(whichObj).parent().parent().find("p").css('display', 'block');
-            $(whichObj).attr('disabled', true);
+            whichObj.disabled = true;
         }
         function MarkWord(whichObj) {
-            $(whichObj).attr('disabled', true);
+            whichObj.disabled = true;
             $.get("/words/mark/" + $(whichObj).attr("value"));
         }
         function DeleteWord(whichObj) {
-            $(whichObj).attr('disabled', true);
+            whichObj.disabled = true;
             $.get("/words/del/" + $(whichObj).attr("value"));
         }
     </script>

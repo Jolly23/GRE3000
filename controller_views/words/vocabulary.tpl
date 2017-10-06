@@ -11,7 +11,7 @@
                             <div class="title">
                                 <a style="font-size: 30px;">{{.Word.Word}}</a>
                             </div>
-                            <p id="btn-means-{{.Word.Word}}-obj" style="display: none;font-size: 20px;">
+                            <p style="display: none;font-size: 20px;">
                                 <span>• {{.Word.Means}}</span>
                             </p>
                             <p>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-lg-offset-7">
-                        <button onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
+                        <button value="{{.Word.Word}}" onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
                         <button value="{{.Id}}" onclick="MarkWord(this)" type="button" class="btn btn-warning btn-lg">没记住+1</button>
                         <button value="{{.Id}}" onclick="DeleteWord(this)" type="button" class="btn btn-danger btn-sm">删除</button>
                     </div>
@@ -42,13 +42,13 @@
                             <div class="title">
                                 <a style="font-size: 30px;">{{.Word}}</a>
                             </div>
-                            <p id="btn-means-{{.Word}}-obj" style="display: none;font-size: 20px;">
+                            <p style="display: none;font-size: 20px;">
                                 <span>• {{.Means}}</span>
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-offset-7">
-                        <button id="btn-means-{{.Word}}" onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
+                        <button onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
                     </div>
                 </div>
                 <div class="divide mar-top-5"></div>
@@ -74,7 +74,7 @@
                     }
                 } else {
                     for (i = 0; i < data.length; i++) {
-                        str += "<div class=\"media\"><div class=\"col-lg-7\"><div class=\"media-body\"><div class=\"title\"><a style=\"font-size: 30px;\">" + data[i]['word'] + "</a></div><p id=\"btn-means-{{.Word}}-obj\" style=\"display: none;font-size: 20px;\"><span>• " + data[i]['means'] + "</span></p></div></div><div class=\"col-lg-offset-7\"><button id=\"btn-means-{{.Word}}\" onclick=\"ShowMeans(this)\" type=\"button\" class=\"btn btn-info btn-lg\">显示意思</button></div></div><div class=\"divide mar-top-5\"></div>"
+                        str += "<div class=\"media\"><div class=\"col-lg-7\"><div class=\"media-body\"><div class=\"title\"><a style=\"font-size: 30px;\">" + data[i]['word'] + "</a></div><p style=\"display: none;font-size: 20px;\"><span>• " + data[i]['means'] + "</span></p></div></div><div class=\"col-lg-offset-7\"><button onclick=\"ShowMeans(this)\" type=\"button\" class=\"btn btn-info btn-lg\">显示意思</button></div></div><div class=\"divide mar-top-5\"></div>"
                     }
                 }
                 document.getElementById("words_head").insertAdjacentHTML('beforeend', str);
