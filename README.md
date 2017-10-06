@@ -1,7 +1,8 @@
-# GRE3000
+# [GRE3000](http://gre.jolly23.com/)
 
-`没什么意义的README`
+`承诺：[此网站](http://gre.jolly23.com/)将永久运行并提供维护和更新，祝大家都能取得好成绩`
 
+`很神圣的README`
 
 ## 用docker 或者 docker-compose运行，我都写好了，直接能用
 
