@@ -10,8 +10,10 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /root/logs/gre-service:/go/src/GRE3000/logs
-      - /root/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+      - /home/dlnu/logs/gre-service:/go/src/GRE3000/logs
+      - /home/dlnu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+#      - /root/logs/gre-service:/go/src/GRE3000/logs
+#      - /root/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
     ports:
       - "31011:8080"
 
@@ -20,8 +22,8 @@ services:
         context: .
         dockerfile: Dockerfile
       volumes:
-        - /root/logs/gre-service:/go/src/GRE3000/logs
-        - /root/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+        - /home/dlnu/logs/gre-service:/go/src/GRE3000/logs
+        - /home/dlnu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
       ports:
         - "31012:8080"
 
@@ -30,8 +32,8 @@ services:
         context: .
         dockerfile: Dockerfile
       volumes:
-        - /root/logs/gre-service:/go/src/GRE3000/logs
-        - /root/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+        - /home/dlnu/logs/gre-service:/go/src/GRE3000/logs
+        - /home/dlnu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
       ports:
         - "31013:8080"
 
@@ -40,7 +42,7 @@ services:
         context: .
         dockerfile: Dockerfile
       volumes:
-        - /root/logs/gre-service:/go/src/GRE3000/logs
-        - /root/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+        - /home/dlnu/logs/gre-service:/go/src/GRE3000/logs
+        - /home/dlnu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
       ports:
         - "31014:8080"
