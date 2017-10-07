@@ -3,7 +3,7 @@ FROM golang
 MAINTAINER Jolly <zhaolei@protonmail.com>
 
 
-RUN echo "Asia/Shanghai" > /etc/timezone
+RUN echo "Asia/Harbin" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 RUN mkdir -p /go/src/GRE3000/logs
