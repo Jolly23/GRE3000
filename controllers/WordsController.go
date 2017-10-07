@@ -17,13 +17,14 @@ type WordsController struct {
 func (c *WordsController) Index() {
 	isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 	c.Data["IsLogin"], c.Data["UserInfo"] = isLogin, UserInfo
+	needRandom, _ := c.GetBool("RandomSort")
 
 	var rawWordsList []*models.WordsList
 	var userWordsList []*models.UserWordsStudy
 
-	if isLogin {
+	if isLogin && !needRandom {
 		userWordsList = models.LoadWordsListForUser(&UserInfo)
-	} else {
+	} else if !needRandom {
 		rawWordsList = models.LoadRawWords()
 	}
 	if isLogin {
@@ -35,16 +36,18 @@ func (c *WordsController) Index() {
 	c.Data["RawWords"] = &rawWordsList
 	c.Data["UserWords"] = &userWordsList
 	c.Data["ShowMeans"], _ = c.GetBool("ShowMeans")
+	c.Data["RandomSort"] = needRandom
 	c.Layout = "layout/layout.tpl"
 	c.TplName = "words/vocabulary.tpl"
 }
 
 func (c *WordsController) LoadWordsJson() {
+	needRandom, _ := c.GetBool("RandomSort")
 	isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 	if isLogin {
-		c.Data["json"] = models.LoadUserWordsJson(&UserInfo)
+		c.Data["json"] = models.LoadUserWordsJson(&UserInfo, needRandom)
 	} else {
-		c.Data["json"] = models.LoadRawWordsJson()
+		c.Data["json"] = models.LoadRawWordsJson(needRandom)
 	}
 	c.ServeJSON()
 }

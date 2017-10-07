@@ -24,10 +24,14 @@ func LoadRawWords() []*WordsList {
 	return allWords
 }
 
-func LoadRawWordsJson() *[]orm.Params {
+func LoadRawWordsJson(random bool) *[]orm.Params {
 	o := orm.NewOrm()
 	var maps []orm.Params
-	o.Raw("SELECT word, means FROM words_list ORDER BY id OFFSET ?", const_conf.SyncLoadOffset).Values(&maps)
+	if random {
+		o.Raw("SELECT word, means FROM words_list ORDER BY RANDOM()").Values(&maps)
+	} else {
+		o.Raw("SELECT word, means FROM words_list ORDER BY id OFFSET ?", const_conf.SyncLoadOffset).Values(&maps)
+	}
 	return &maps
 }
 

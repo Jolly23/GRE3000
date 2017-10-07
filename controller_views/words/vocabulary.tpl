@@ -3,9 +3,17 @@
         {{if .IsLogin}}
         <div class="panel panel-default">
             {{ if .ShowMeans }}
-            <div class="panel-heading">{{.UserInfo.Username}}的单词表 <a href="/words" class="btn btn-sm btn-success">关闭全部显示翻译</a></div>
+                {{ if .RandomSort }}
+                <div class="panel-heading">{{.UserInfo.Username}}的单词表 <a href="/words?RandomSort=true" class="btn btn-sm btn-success">关闭翻译</a> <a href="/words?ShowMeans=true" class="btn btn-sm btn-success">标记排序</a></div>
+                {{ else }}
+                <div class="panel-heading">{{.UserInfo.Username}}的单词表 <a href="/words" class="btn btn-sm btn-success">关闭翻译</a> <a href="/words?RandomSort=true&ShowMeans=true" class="btn btn-sm btn-success">随机排序</a></div>
+                {{ end }}
             {{ else }}
-            <div class="panel-heading">{{.UserInfo.Username}}的单词表 <a href="/words?ShowMeans=true" class="btn btn-sm btn-success">显示全部中文意思</a></div>
+                {{ if .RandomSort }}
+                <div class="panel-heading">{{.UserInfo.Username}}的单词表 <a href="/words?ShowMeans=true&RandomSort=true" class="btn btn-sm btn-success">显示翻译</a> <a href="/words" class="btn btn-sm btn-success">标记排序</a></div>
+                {{ else }}
+                <div class="panel-heading">{{.UserInfo.Username}}的单词表 <a href="/words?ShowMeans=true" class="btn btn-sm btn-success">显示翻译</a> <a href="/words?RandomSort=true" class="btn btn-sm btn-success">随机排序</a></div>
+                {{ end }}
             {{ end }}
             <div class="panel-body" id="words_head">
                 {{range .UserWords}}
@@ -38,9 +46,17 @@
         {{else}}
         <div class="panel panel-default">
             {{ if .ShowMeans }}
-            <div class="panel-heading">游客的单词表 <a href="/words" class="btn btn-sm btn-success">关闭全部显示翻译</a></div>
+                {{ if .RandomSort }}
+                <div class="panel-heading">游客的单词表 <a href="/words?RandomSort=true" class="btn btn-sm btn-success">关闭翻译</a> <a href="/words?ShowMeans=true" class="btn btn-sm btn-success">默认排序</a></div>
+                {{ else }}
+                <div class="panel-heading">游客的单词表 <a href="/words" class="btn btn-sm btn-success">关闭翻译</a> <a href="/words?ShowMeans=true&RandomSort=true" class="btn btn-sm btn-success">随机排序</a></div>
+                {{ end }}
             {{ else }}
-            <div class="panel-heading">游客的单词表 <a href="/words?ShowMeans=true" class="btn btn-sm btn-success">显示全部中文意思</a></div>
+                {{ if .RandomSort }}
+                <div class="panel-heading">游客的单词表 <a href="/words?ShowMeans=true&RandomSort=true" class="btn btn-sm btn-success">显示翻译</a> <a href="/words" class="btn btn-sm btn-success">默认排序</a></div>
+                {{ else }}
+                <div class="panel-heading">游客的单词表 <a href="/words?ShowMeans=true" class="btn btn-sm btn-success">显示翻译</a> <a href="/words?RandomSort=true" class="btn btn-sm btn-success">随机排序</a></div>
+                {{ end }}
             {{ end }}
             <div class="panel-body" id="words_head">
                 {{range .RawWords}}
@@ -70,17 +86,25 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        var str = "";
-        var i = 0;
         {{ if .ShowMeans }}
         var disable_tag = " disabled";
         $("button.btn-info:not(:disabled)").attr('disabled', true);
         {{ else }}
         var disable_tag = "";
         {{end}}
+
+        {{ if .RandomSort }}
+        var sync_load_url = "/words/load_words?RandomSort=true";
+        {{ else }}
+        var sync_load_url = "/words/load_words";
+        {{end}}
+
+        var str = "";
+        var i = 0;
+
         $.ajaxSetup({ cache: false });
         $.get(
-            "/words/load_words",
+            sync_load_url,
             function(data) {
                 if (data.length > 0 && data[0]['CountMarks'] !== undefined) {
                     for (i = 0; i < data.length; i++) {

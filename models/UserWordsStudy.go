@@ -51,7 +51,7 @@ func LoadWordsListForUser(user *User) []*UserWordsStudy {
 	return list
 }
 
-func LoadUserWordsJson(user *User) []*const_conf.UserWordsJson {
+func LoadUserWordsJson(user *User, random bool) []*const_conf.UserWordsJson {
 	o := orm.NewOrm()
 
 	var returnUserWords []*const_conf.UserWordsJson
@@ -64,7 +64,11 @@ func LoadUserWordsJson(user *User) []*const_conf.UserWordsJson {
 		LastMark   time.Time
 	}
 	var userWords []*words
-	o.Raw("SELECT T0.id, T1.word, T1.means, T0.count_marks, T0.last_mark FROM user_words_study T0 INNER JOIN words_list T1 ON T1.id = T0.word_id WHERE T0.user_id = ? ORDER BY T0.count_marks DESC OFFSET ?", user.Id, const_conf.SyncLoadOffset).QueryRows(&userWords)
+	if random {
+		o.Raw("SELECT T0.id, T1.word, T1.means, T0.count_marks, T0.last_mark FROM user_words_study T0 INNER JOIN words_list T1 ON T1.id = T0.word_id WHERE T0.user_id = ? ORDER BY RANDOM()", user.Id).QueryRows(&userWords)
+	} else {
+		o.Raw("SELECT T0.id, T1.word, T1.means, T0.count_marks, T0.last_mark FROM user_words_study T0 INNER JOIN words_list T1 ON T1.id = T0.word_id WHERE T0.user_id = ? ORDER BY T0.count_marks DESC OFFSET ?", user.Id, const_conf.SyncLoadOffset).QueryRows(&userWords)
+	}
 	for _, v := range userWords {
 		if v.CountMarks > 0 {
 			tempWord = &const_conf.UserWordsJson{
