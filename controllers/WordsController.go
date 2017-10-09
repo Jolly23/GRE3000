@@ -20,7 +20,7 @@ func (c *WordsController) Index() {
 	needRandom, _ := c.GetBool("RandomSort")
 
 	var rawWordsList []*models.WordsList
-	var userWordsList []*models.UserWordsStudy
+	var userWordsList []*const_conf.RawWord
 
 	if isLogin && !needRandom {
 		userWordsList = models.LoadWordsListForUser(&UserInfo)

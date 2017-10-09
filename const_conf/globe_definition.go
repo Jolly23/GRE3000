@@ -1,5 +1,7 @@
 package const_conf
 
+import "time"
+
 const (
 	PlatformCookieName = "WX_OPENID_%s"
 	LogMarkWord        = "IncrWordIdMark"
@@ -17,4 +19,12 @@ type UserWordsJson struct {
 	Means      string
 	CountMarks int
 	LastMark   string
+}
+
+type RawWord struct {
+	Id         int
+	Word       string
+	Means      string
+	CountMarks int
+	LastMark   time.Time
 }

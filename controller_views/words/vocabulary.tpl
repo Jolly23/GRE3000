@@ -21,10 +21,10 @@
                     <div class="col-lg-7">
                         <div class="media-body">
                             <div class="title">
-                                <a style="font-size: 30px;">{{.Word.Word}}</a>
+                                <a style="font-size: 30px;">{{.Word}}</a>
                             </div>
                             <p id="means">
-                                <span>• {{.Word.Means}}</span>
+                                <span>• {{.Means}}</span>
                             </p>
                             <p>
                                 {{if ne .CountMarks 0}}
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="col-lg-offset-7">
-                        <button value="{{.Word.Word}}" onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
+                        <button value="{{.Word}}" onclick="ShowMeans(this)" type="button" class="btn btn-info btn-lg">显示意思</button>
                         <button value="{{.Id}}" onclick="MarkWord(this)" type="button" class="btn btn-warning btn-lg">没记住+1</button>
                         <button value="{{.Id}}" onclick="DeleteWord(this)" type="button" class="btn btn-danger btn-sm">删除</button>
                     </div>
