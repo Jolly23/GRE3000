@@ -1,5 +1,7 @@
 # [GRE3000](http://gre.jolly23.com/)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1af1a37b9a10441b80b1b7a6754948ed)](https://www.codacy.com/app/zhaolei/GRE3000?utm_source=github.com&utm_medium=referral&utm_content=Jolly23/GRE3000&utm_campaign=badger)
+
 `承诺：[此网站](http://gre.jolly23.com/)将永久运行并提供维护和更新，祝大家都能取得好成绩`
 
 `很神圣的README`
