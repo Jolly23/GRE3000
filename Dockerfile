@@ -13,5 +13,4 @@ RUN go get -v github.com/beego/bee \
         && apk del git \
         && rm -rf /var/cache/apk/*
 
-RUN date
 CMD ["bee", "run"]
