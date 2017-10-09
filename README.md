@@ -14,8 +14,6 @@
 package const_conf
 
 const (
-	ServerIP = "localhost"
-
 	DatabaseType  = "postgres"
 	PgSslMode     = "disable"
 	PgHostAddress = "111.111.111.111"
