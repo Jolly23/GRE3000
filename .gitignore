@@ -57,6 +57,6 @@ logs/site.log
 logs/site.201*
 const_conf/private.go
 GRE3000
-/deploy_conf/certs/
-/deploy_conf/gre_redirect_to_https.conf
+#/deploy_conf/certs/
+#/deploy_conf/gre_redirect_to_https.conf
 /static/upload/avatar/*
