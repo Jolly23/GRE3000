@@ -16,6 +16,9 @@
                 {{ end }}
             {{ end }}
             <div class="panel-body" id="words_head">
+                {{ if .RandomSort }}
+                <p style="text-align: center">词表加载中，请稍等</p>
+                {{ end }}
                 {{range .UserWords}}
                 <div class="media">
                     <div class="col-lg-7">
@@ -59,6 +62,9 @@
                 {{ end }}
             {{ end }}
             <div class="panel-body" id="words_head">
+                {{ if .RandomSort }}
+                <p style="text-align: center">词表加载中，请稍等</p>
+                {{ end }}
                 {{range .RawWords}}
                 <div class="media">
                     <div class="col-lg-7">
@@ -116,6 +122,9 @@
                         str += "<div class=\"media\"><div class=\"col-lg-7\"><div class=\"media-body\"><div class=\"title\"><a style=\"font-size: 30px;\">" + data[i]['word'] + "</a></div><p id=\"means\"><span>• " + data[i]['means'] + "</span></p></div></div><div class=\"col-lg-offset-7\"><button onclick=\"ShowMeans(this)\" type=\"button\" class=\"btn btn-info btn-lg" + disable_tag + "\">显示意思</button></div></div><div class=\"divide mar-top-5\"></div>"
                     }
                 }
+                {{ if .RandomSort }}
+                document.getElementById('words_head').innerHTML="";
+                {{ end }}
                 document.getElementById("words_head").insertAdjacentHTML('beforeend', str);
             }
         );

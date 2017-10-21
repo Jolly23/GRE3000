@@ -54,6 +54,7 @@ fabric.properties
 
 ### Project
 logs/site.log
+logs/site.201*
 const_conf/private.go
 GRE3000
 /deploy_conf/certs/
