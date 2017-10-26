@@ -24,7 +24,7 @@
                     <div class="col-lg-7">
                         <div class="media-body">
                             <div class="title">
-                                <a style="font-size: 30px;">{{.Word}}</a>
+                                <a href="https://www.merriam-webster.com/dictionary/{{.Word}}" target="_blank" style="font-size: 30px;">{{.Word}}</a><br>
                             </div>
                             <p id="means">
                                 <span>• {{.Means}}</span>
@@ -70,7 +70,7 @@
                     <div class="col-lg-7">
                         <div class="media-body">
                             <div class="title">
-                                <a style="font-size: 30px;">{{.Word}}</a>
+                                <a href="https://www.merriam-webster.com/dictionary/{{.Word}}" target="_blank" style="font-size: 30px;">{{.Word}}</a><br>
                             </div>
                             <p id="means">
                                 <span>• {{.Means}}</span>
