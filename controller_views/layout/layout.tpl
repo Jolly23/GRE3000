@@ -31,6 +31,7 @@
         #each_word {
             font-size: 30px;
             color:darkblue;
+            text-decoration: none;
         }
         #means {
             {{ if not .ShowMeans }}
