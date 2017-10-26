@@ -27,17 +27,15 @@
             $.get("/words/del/" + $(whichObj).attr("value"));
         }
     </script>
-    {{end}}
-    {{ if .ShowMeans }}
     <style type="text/css">
-        #means {
-            font-size: 20px;
+        #each_word {
+            font-size: 30px;
+            color:darkblue;
         }
-    </style>
-    {{ else }}
-    <style type="text/css">
         #means {
+            {{ if not .ShowMeans }}
             display: none;
+            {{end}}
             font-size: 20px;
         }
     </style>
