@@ -119,7 +119,7 @@
                     }
                 } else {
                     for (i = 0; i < data.length; i++) {
-                        str += "<div class=\"media\"><div class=\"col-lg-7\"><div class=\"media-body\"><div class=\"title\"><a href=\"https://www.merriam-webster.com/dictionary/" + data[i]['word'] + "\" target=\"_blank\" id=\"each_word\">" + data[i]['word'] + "</a></div><p id=\"means\"><span>• " + data[i]['means'] + "</span></p></div></div><div class=\"col-lg-offset-7\"><button onclick=\"ShowMeans(this)\" type=\"button\" class=\"btn btn-info btn-lg" + disable_tag + "\">显示意思</button></div></div><div class=\"divide mar-top-5\"></div>"
+                        str += "<div class=\"media\"><div class=\"col-lg-7\"><div class=\"media-body\"><div class=\"title\"><a href=\"https://www.merriam-webster.com/dictionary/" + data[i]['Word'] + "\" target=\"_blank\" id=\"each_word\">" + data[i]['Word'] + "</a></div><p id=\"means\"><span>• " + data[i]['means'] + "</span></p></div></div><div class=\"col-lg-offset-7\"><button onclick=\"ShowMeans(this)\" type=\"button\" class=\"btn btn-info btn-lg" + disable_tag + "\">显示意思</button></div></div><div class=\"divide mar-top-5\"></div>"
                     }
                 }
                 {{ if .RandomSort }}
