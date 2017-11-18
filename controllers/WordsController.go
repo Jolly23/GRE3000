@@ -86,3 +86,14 @@ func (c *WordsController) DeleteWord() {
 	c.Data["json"] = map[string]int{"ErrCode": ErrCode}
 	c.ServeJSON()
 }
+
+func (c *WordsController) Statistics() {
+	isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
+	var countMarked, countAll int64
+	if isLogin {
+		countMarked = models.CountOfMarkedWords(&UserInfo)
+		countAll = models.CountOfUserWords(&UserInfo)
+	}
+	c.Data["json"] = map[string]int64{"Marked": countMarked, "All": countAll}
+	c.ServeJSON()
+}

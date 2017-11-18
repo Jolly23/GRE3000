@@ -9,6 +9,7 @@ import (
 func init() {
 	beego.Router("/words", &controllers.WordsController{}, "get:Index")
 	beego.Router("/words/load_words", &controllers.WordsController{}, "get:LoadWordsJson")
+	beego.Router("/words/statistics", &controllers.WordsController{}, "get:Statistics")
 	beego.Router("/words/mark/:id([0-9]+)", &controllers.WordsController{}, "GET:IncrMark")
 	beego.Router("/words/del/:id([0-9]+)", &controllers.WordsController{}, "GET:DeleteWord")
 

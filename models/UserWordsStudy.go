@@ -101,3 +101,17 @@ func DeleteWord(user *User, wordId int) {
 	var userWord UserWordsStudy
 	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).Delete()
 }
+
+func CountOfMarkedWords(user *User) int64 {
+	o := orm.NewOrm()
+	var userWord UserWordsStudy
+	count, _ := o.QueryTable(userWord).Filter("UserId", user.Id).Filter("CountMarks__gt", 0).Count()
+	return count
+}
+
+func CountOfUserWords(user *User) int64 {
+	o := orm.NewOrm()
+	var userWord UserWordsStudy
+	count, _ := o.QueryTable(userWord).Filter("UserId", user.Id).Count()
+	return count
+}
