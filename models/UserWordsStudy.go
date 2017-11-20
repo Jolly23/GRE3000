@@ -21,10 +21,14 @@ func (u *Common) UserWordsStudy() string {
 }
 
 func BuildWordsListForUser(id int) bool {
+	var wordsList []*UserWordsStudy
+	var tableOfWords WordsList
+	var allWords []*WordsList
+
 	o := orm.NewOrm()
 	o.Raw("DELETE FROM user_words_study WHERE user_id = ?", id).Exec()
-	var wordsList []*UserWordsStudy
-	for _, eachWord := range LoadRawWords() {
+	o.QueryTable(tableOfWords).OrderBy("id").Limit(-1).All(&allWords)
+	for _, eachWord := range allWords {
 		wordsList = append(wordsList, &UserWordsStudy{UserId: id, Word: eachWord})
 	}
 	o.InsertMulti(len(wordsList), wordsList)
@@ -37,23 +41,29 @@ func DeleteWordsListForUser(user *User) {
 }
 
 func LoadWordsListForUser(user *User) []*const_conf.RawWord {
+	var userWord UserWordsStudy
+	var userWords []*const_conf.RawWord
+
 	o := orm.NewOrm()
-	var res []orm.Params
-	o.Raw("SELECT user_id FROM user_words_study WHERE user_id = ? LIMIT 1", user.Id).Values(&res, "user_id")
-	if len(res) == 0 {
+	count, _ := o.QueryTable(userWord).Filter("UserId", user.Id).Count()
+	if count == 0 {
 		BuildWordsListForUser(user.Id)
 	}
-	var userWords []*const_conf.RawWord
 	o.Raw("SELECT T0.id, T1.word, T1.means, T0.count_marks, T0.last_mark FROM user_words_study T0 INNER JOIN words_list T1 ON T1.id = T0.word_id WHERE T0.user_id = ? ORDER BY T0.count_marks DESC, T1.id LIMIT ?", user.Id, const_conf.SyncLoadOffset).QueryRows(&userWords)
 	return userWords
 }
 
 func LoadUserWordsJson(user *User, random bool) []*const_conf.UserWordsJson {
-	o := orm.NewOrm()
-
+	var userWord UserWordsStudy
 	var returnUserWords []*const_conf.UserWordsJson
 	var tempWord *const_conf.UserWordsJson
 	var userWords []*const_conf.RawWord
+
+	o := orm.NewOrm()
+	count, _ := o.QueryTable(userWord).Filter("UserId", user.Id).Count()
+	if count == 0 {
+		BuildWordsListForUser(user.Id)
+	}
 	if random {
 		o.Raw("SELECT T0.id, T1.word, T1.means, T0.count_marks, T0.last_mark FROM user_words_study T0 INNER JOIN words_list T1 ON T1.id = T0.word_id WHERE T0.user_id = ? ORDER BY RANDOM()", user.Id).QueryRows(&userWords)
 	} else {
@@ -83,8 +93,9 @@ func LoadUserWordsJson(user *User, random bool) []*const_conf.UserWordsJson {
 }
 
 func FindUserWordByWordId(user *User, wordId int) (*UserWordsStudy, bool) {
-	o := orm.NewOrm()
 	var userWord UserWordsStudy
+
+	o := orm.NewOrm()
 	err := o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).One(&userWord)
 	return &userWord, err != orm.ErrNoRows
 }
@@ -97,21 +108,24 @@ func IncrWordMark(UserWord *UserWordsStudy, user *User) {
 }
 
 func DeleteWord(user *User, wordId int) {
-	o := orm.NewOrm()
 	var userWord UserWordsStudy
+
+	o := orm.NewOrm()
 	o.QueryTable(userWord).Filter("UserId", user.Id).Filter("id", wordId).Delete()
 }
 
 func CountOfMarkedWords(user *User) int64 {
-	o := orm.NewOrm()
 	var userWord UserWordsStudy
+
+	o := orm.NewOrm()
 	count, _ := o.QueryTable(userWord).Filter("UserId", user.Id).Filter("CountMarks__gt", 0).Count()
 	return count
 }
 
 func CountOfUserWords(user *User) int64 {
-	o := orm.NewOrm()
 	var userWord UserWordsStudy
+
+	o := orm.NewOrm()
 	count, _ := o.QueryTable(userWord).Filter("UserId", user.Id).Count()
 	return count
 }
