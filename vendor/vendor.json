@@ -129,6 +129,12 @@
 			"revisionTime": "2017-11-02T21:02:05Z"
 		},
 		{
+			"checksumSHA1": "rAnxK4LbUVYQh6VwXkq/89JaroY=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "cd4cb909ce1a31435164be29bf3682031f61539a",
+			"revisionTime": "2017-11-17T11:51:24Z"
+		},
+		{
 			"checksumSHA1": "IfZcD4U1dtllJKlPNeD2aU4Jn98=",
 			"path": "github.com/lib/pq",
 			"revision": "8c6ee72f3e6bcb1542298dd5f76cb74af9742cec",
@@ -157,6 +163,10 @@
 			"path": "github.com/xeonx/timeago",
 			"revision": "714e6695c468c22fb6431a914d8c5f9d19fa2367",
 			"revisionTime": "2017-07-07T12:34:13Z"
+		},
+		{
+			"path": "google.golang.org/appengine/cloudsql",
+			"revision": ""
 		}
 	],
 	"rootPath": "GRE3000"
