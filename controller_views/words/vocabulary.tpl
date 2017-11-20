@@ -110,8 +110,7 @@
 
         $.ajaxSetup({ cache: false });
         $.get(
-            sync_load_url,
-            function(data) {
+            sync_load_url, function(data) {
                 if (data.length > 0 && data[0]['CountMarks'] !== undefined) {
                     for (i = 0; i < data.length; i++) {
                         var notice_text = data[i]['CountMarks'] === 0 ? "" : "<span>• 没记住" + data[i]['CountMarks'] + "次, 上次标记是在" + data[i]['LastMark'] + "</span>" ;
