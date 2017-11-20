@@ -1,6 +1,6 @@
-# [GRE3000](http://gre.jolly23.com/)
+# [GRE3000](https://gre.jolly23.com/)
 
-`承诺：[此网站](http://gre.jolly23.com/)将永久运行并提供维护和更新，祝大家都能取得好成绩`
+`承诺：[此网站](https://gre.jolly23.com/)将永久运行并提供维护和更新，祝大家都能取得好成绩`
 
 `很神圣的README`
 
@@ -57,7 +57,7 @@ docker-compose up -d
 
 
 ## License
-The MIT License(http://opensource.org/licenses/MIT)
+The MIT License(https://opensource.org/licenses/MIT)
 
 请自由地享受和参与开源
 
