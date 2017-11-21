@@ -1,7 +1,7 @@
 package cache
 
 import (
-	"GRE3000/const_conf"
+	"github.com/Jolly23/GRE3000/const_conf"
 	"fmt"
 	"github.com/astaxie/beego/cache"
 	_ "github.com/astaxie/beego/cache/redis"

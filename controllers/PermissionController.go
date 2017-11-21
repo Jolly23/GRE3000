@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"GRE3000/filters"
-	"GRE3000/models"
+	"github.com/Jolly23/GRE3000/filters"
+	"github.com/Jolly23/GRE3000/models"
 	"github.com/astaxie/beego"
 	"strconv"
 )

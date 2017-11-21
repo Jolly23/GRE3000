@@ -1,8 +1,8 @@
 package filters
 
 import (
-	"GRE3000/const_conf"
-	"GRE3000/models"
+	"github.com/Jolly23/GRE3000/const_conf"
+	"github.com/Jolly23/GRE3000/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"strconv"

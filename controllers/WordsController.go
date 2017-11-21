@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"GRE3000/base/cache"
-	"GRE3000/const_conf"
-	"GRE3000/filters"
-	"GRE3000/models"
+	"github.com/Jolly23/GRE3000/base/cache"
+	"github.com/Jolly23/GRE3000/const_conf"
+	"github.com/Jolly23/GRE3000/filters"
+	"github.com/Jolly23/GRE3000/models"
 	"github.com/astaxie/beego"
 	"strconv"
 	"time"
