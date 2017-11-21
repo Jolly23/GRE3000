@@ -15,12 +15,12 @@ type WordsController struct {
 }
 
 func (c *WordsController) Index() {
+	var rawWordsList []*models.WordsList
+	var userWordsList []*const_conf.RawWord
+
 	isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 	c.Data["IsLogin"], c.Data["UserInfo"] = isLogin, UserInfo
 	needRandom, _ := c.GetBool("RandomSort")
-
-	var rawWordsList []*models.WordsList
-	var userWordsList []*const_conf.RawWord
 
 	if isLogin && !needRandom {
 		userWordsList = models.LoadWordsListForUser(&UserInfo)
@@ -62,8 +62,8 @@ func (c *WordsController) IncrMark() {
 		if isLogin {
 			userWord, ok := models.FindUserWordByWordId(&UserInfo, userWordId)
 			if ok {
-				models.IncrWordMark(userWord, &UserInfo)
-				cache.Redis.Put(token+id, UserInfo.Username, time.Duration(const_conf.MarkWordTimeLimit)*time.Minute)
+				go models.IncrWordMark(userWord, &UserInfo)
+				go cache.Redis.Put(token+id, UserInfo.Username, time.Duration(const_conf.MarkWordTimeLimit)*time.Minute)
 				ErrCode = 0
 			}
 		}
@@ -79,7 +79,7 @@ func (c *WordsController) DeleteWord() {
 	if err == nil && userWordId > 0 {
 		isLogin, UserInfo := filters.IsLogin(c.Controller.Ctx)
 		if isLogin {
-			models.DeleteWord(&UserInfo, userWordId)
+			go models.DeleteWord(&UserInfo, userWordId)
 			ErrCode = 0
 		}
 	}

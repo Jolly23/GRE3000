@@ -8,7 +8,7 @@
 
 > 采用了4容器负载均衡，为的是实验多机部署。
 
-代码clone后编译前请创建 const_conf/private.go 并加入PostgreSql数据库地址
+代码clone后编译前请创建 const_conf/private.go 并加入PostgreSQL数据库地址
 
 ```Go
 package const_conf
@@ -45,7 +45,9 @@ docker-compose up -d
 ## TODO LIST
 
 ### 1. 单词表页面一次性发送整个GRE词表，大小大约在3M，用户体验不太好，下一步用js异步加载词表，但完成3000个div加载性能同样较差，正在寻求解决方案。（如果服务器带宽大一点的话这个可能就不是问题了）
-> 已解决：通过html页面头部替代尾部提前加载js函数，使用户可以在网页加载时使用可见单词的全部按钮功能
+> 已解决
+> 默认加载30个单词的HTML，然后通过js请求json加载剩余单词，数据瘦身80%
+> 通过html页面头部替代尾部提前加载js函数，使用户可以在网页加载时使用可见单词的全部按钮功能
 
 ### 2. 为用户加入全部显示中文意思的词表按钮
 > 已完成
@@ -53,7 +55,6 @@ docker-compose up -d
 ### 3. 增强管理员视图
 
 ### 4. 使用Kubernetes替换docker-compose
-
 
 
 ## License

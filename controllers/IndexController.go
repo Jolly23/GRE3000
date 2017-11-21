@@ -84,23 +84,19 @@ func (c *IndexController) Register() {
 	} else {
 		var token = uuid.Rand().Hex()
 		user := models.User{Username: username, Password: password, Avatar: "/static/imgs/avatar.png", Token: token}
-		new_user_id := models.SaveUser(&user)
-		models.SaveUserRole(int(new_user_id), 5)
-		//models.BuildWordsListForUser(int(new_user_id))
-
-		// others are ordered as cookie's max age time, path,domain, secure and http only.
+		newUserId := models.SaveUser(&user)
+		go models.SaveUserRole(int(newUserId), 5)
+		go models.BuildWordsListForUser(int(newUserId))
 		c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, token, const_conf.CookieExpire, "/", const_conf.DomainName, false, true)
 		c.Redirect("/", 302)
 	}
 }
 
-//登出
 func (c *IndexController) Logout() {
 	c.SetSecureCookie(const_conf.CookieSecure, const_conf.WebCookieName, "", -1, "/", const_conf.DomainName, false, true)
 	c.Redirect("/", 302)
 }
 
-//关于
 func (c *IndexController) About() {
 	c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Controller.Ctx)
 	c.Data["PageTitle"] = "关于"

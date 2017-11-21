@@ -42,10 +42,10 @@ func (c *RoleController) Save() {
 	} else {
 		role := models.Role{Name: name}
 		id := models.SaveRole(&role)
-		role_id, _ := strconv.Atoi(strconv.FormatInt(id, 10))
+		roleID, _ := strconv.Atoi(strconv.FormatInt(id, 10))
 		for _, pid := range permissionIds {
 			_pid, _ := strconv.Atoi(pid)
-			models.SaveRolePermission(role_id, _pid)
+			go models.SaveRolePermission(roleID, _pid)
 		}
 		c.Redirect("/role/list", 302)
 	}
@@ -81,11 +81,11 @@ func (c *RoleController) Update() {
 		c.Redirect("/role/add", 302)
 	} else {
 		role := models.Role{Id: id, Name: name}
-		models.UpdateRole(&role)
-		models.DeleteRolePermissionByRoleId(id)
+		go models.UpdateRole(&role)
+		go models.DeleteRolePermissionByRoleId(id)
 		for _, pid := range permissionIds {
 			_pid, _ := strconv.Atoi(pid)
-			models.SaveRolePermission(id, _pid)
+			go models.SaveRolePermission(id, _pid)
 		}
 		c.Redirect("/role/list", 302)
 	}
@@ -95,7 +95,7 @@ func (c *RoleController) Delete() {
 	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
 	if id > 0 {
 		role := models.Role{Id: id}
-		models.DeleteRole(&role)
+		go models.DeleteRole(&role)
 		c.Redirect("/role/list", 302)
 	} else {
 		c.Ctx.WriteString("角色不存在")

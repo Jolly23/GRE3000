@@ -24,8 +24,8 @@ func (c *ReplyController) Save() {
 			_, user := filters.IsLogin(c.Ctx)
 			topic := models.FindTopicById(tid)
 			reply := models.Reply{Content: content, Topic: &topic, User: &user, Up: 0}
-			models.SaveReply(&reply)
-			models.IncrReplyCount(&topic)
+			go models.SaveReply(&reply)
+			go models.IncrReplyCount(&topic)
 			c.Redirect("/topic/"+strconv.Itoa(tid), 302)
 		}
 	}
@@ -44,8 +44,8 @@ func (c *ReplyController) Up() {
 		} else {
 			replyUpLog.User = &user
 			replyUpLog.Reply = &reply
-			models.SaveReplyUpLog(&replyUpLog)
-			models.UpReply(&reply)
+			go models.SaveReplyUpLog(&replyUpLog)
+			go models.UpReply(&reply)
 		}
 	} else {
 		result.Code = 201
@@ -60,8 +60,8 @@ func (c *ReplyController) Delete() {
 	if id > 0 {
 		reply := models.FindReplyById(id)
 		tid := reply.Topic.Id
-		models.ReduceReplyCount(reply.Topic)
-		models.DeleteReply(&reply)
+		go models.ReduceReplyCount(reply.Topic)
+		go models.DeleteReply(&reply)
 		c.Redirect("/topic/"+strconv.Itoa(tid), 302)
 	} else {
 		c.Ctx.WriteString("回复不存在")

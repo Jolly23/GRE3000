@@ -54,7 +54,7 @@ func (c *PermissionController) Save() {
 		c.Redirect("/permission/add?pid="+strconv.Itoa(pid), 302)
 	} else {
 		permission := models.Permission{Pid: pid, Name: name, Url: url, Description: description}
-		models.SavePermission(&permission)
+		go models.SavePermission(&permission)
 		c.Redirect("/permission/list?pid="+strconv.Itoa(pid), 302)
 	}
 }
@@ -89,7 +89,7 @@ func (c *PermissionController) Update() {
 		c.Redirect("/permission/edit/"+strconv.Itoa(id), 302)
 	} else {
 		permission := models.Permission{Id: id, Pid: pid, Name: name, Url: url, Description: description}
-		models.UpdatePermission(&permission)
+		go models.UpdatePermission(&permission)
 		c.Redirect("/permission/list?pid="+strconv.Itoa(pid), 302)
 	}
 }
@@ -98,8 +98,8 @@ func (c *PermissionController) Delete() {
 	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
 	if id > 0 {
 		permission := models.Permission{Id: id}
-		models.DeleteRolePermissionByPermissionId(id)
-		models.DeletePermission(&permission)
+		go models.DeleteRolePermissionByPermissionId(id)
+		go models.DeletePermission(&permission)
 		c.Redirect("/permission/list", 302)
 	} else {
 		c.Ctx.WriteString("权限不存在")

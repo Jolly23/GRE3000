@@ -58,7 +58,7 @@ func (c *UserController) Setting() {
 	user.Email = email
 	user.Url = url
 	user.Signature = signature
-	models.UpdateUser(&user)
+	go models.UpdateUser(&user)
 	flash.Success("更新资料成功")
 	flash.Store(&c.Controller)
 	c.Redirect("/user/setting", 302)
@@ -66,22 +66,22 @@ func (c *UserController) Setting() {
 
 func (c *UserController) UpdatePwd() {
 	flash := beego.NewFlash()
-	oldpwd, newpwd := c.Input().Get("oldpwd"), c.Input().Get("newpwd")
+	oldPwd, newPwd := c.Input().Get("oldpwd"), c.Input().Get("newpwd")
 	_, user := filters.IsLogin(c.Ctx)
-	if user.Password != oldpwd {
+	if user.Password != oldPwd {
 		flash.Error("旧密码不正确")
 		flash.Store(&c.Controller)
 		c.Redirect("/user/setting", 302)
 		return
 	}
-	if len(newpwd) == 0 {
+	if len(newPwd) == 0 {
 		flash.Error("新密码都不能为空")
 		flash.Store(&c.Controller)
 		c.Redirect("/user/setting", 302)
 		return
 	}
-	user.Password = newpwd
-	models.UpdateUser(&user)
+	user.Password = newPwd
+	go models.UpdateUser(&user)
 	flash.Success("密码修改成功")
 	flash.Store(&c.Controller)
 	c.Redirect("/user/setting", 302)
@@ -105,7 +105,7 @@ func (c *UserController) UpdateAvatar() {
 		c.SaveToFile("avatar", "static/upload/avatar/"+h.Filename)
 		_, user := filters.IsLogin(c.Ctx)
 		user.Avatar = "/static/upload/avatar/" + h.Filename
-		models.UpdateUser(&user)
+		go models.UpdateUser(&user)
 		flash.Success("上传成功")
 		flash.Store(&c.Controller)
 		c.Redirect("/user/setting", 302)
@@ -150,7 +150,7 @@ func (c *UserController) Update() {
 	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
 	roleIds := c.GetStrings("roleIds")
 	if id > 0 {
-		models.DeleteUserRolesByUserId(id)
+		go models.DeleteUserRolesByUserId(id)
 		for _, v := range roleIds {
 			roleId, _ := strconv.Atoi(v)
 			models.SaveUserRole(id, roleId)
@@ -166,10 +166,10 @@ func (c *UserController) Delete() {
 	if id > 0 {
 		ok, user := models.FindUserById(id)
 		if ok {
-			models.DeleteTopicByUser(&user)
-			models.DeleteReplyByUser(&user)
-			models.DeleteWordsListForUser(&user)
-			models.DeleteUser(&user)
+			go models.DeleteTopicByUser(&user)
+			go models.DeleteReplyByUser(&user)
+			go models.DeleteWordsListForUser(&user)
+			go models.DeleteUser(&user)
 		}
 		c.Redirect("/user/list", 302)
 	} else {

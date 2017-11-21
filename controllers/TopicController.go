@@ -47,7 +47,7 @@ func (c *TopicController) Detail() {
 	if tid > 0 {
 		c.Data["IsLogin"], c.Data["UserInfo"] = filters.IsLogin(c.Controller.Ctx)
 		topic := models.FindTopicById(tid)
-		models.IncrView(&topic) //查看+1
+		go models.IncrView(&topic)
 		c.Data["PageTitle"] = topic.Title
 		c.Data["Topic"] = topic
 		c.Data["Replies"] = models.FindReplyByTopic(&topic)
@@ -93,7 +93,7 @@ func (c *TopicController) Update() {
 		topic.Title = title
 		topic.Content = content
 		topic.Section = &section
-		models.UpdateTopic(&topic)
+		go models.UpdateTopic(&topic)
 		c.Redirect("/topic/"+strconv.Itoa(id), 302)
 	}
 }
@@ -102,8 +102,8 @@ func (c *TopicController) Delete() {
 	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
 	if id > 0 {
 		topic := models.FindTopicById(id)
-		models.DeleteTopic(&topic)
-		models.DeleteReplyByTopic(&topic)
+		go models.DeleteTopic(&topic)
+		go models.DeleteReplyByTopic(&topic)
 		c.Redirect("/", 302)
 	} else {
 		c.Ctx.WriteString("话题不存在")

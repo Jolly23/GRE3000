@@ -133,23 +133,21 @@ func DeleteUser(user *User) {
 	o.Delete(user)
 }
 
-func DeleteUserRolesByUserId(user_id int) {
-	Enforcer.DeleteRolesForUser(strconv.Itoa(user_id))
-
+func DeleteUserRolesByUserId(UserID int) {
+	Enforcer.DeleteRolesForUser(strconv.Itoa(UserID))
 	o := orm.NewOrm()
-	o.Raw("delete from user_roles where user_id = ?", user_id).Exec()
+	o.Raw("delete from user_roles where user_id = ?", UserID).Exec()
 }
 
-func SaveUserRole(user_id int, role_id int) {
-	Enforcer.AddRoleForUser(strconv.Itoa(user_id), strconv.Itoa(role_id))
-
+func SaveUserRole(UserID int, RoleID int) {
+	Enforcer.AddRoleForUser(strconv.Itoa(UserID), strconv.Itoa(RoleID))
 	o := orm.NewOrm()
-	o.Raw("insert into user_roles (user_id, role_id) values (?, ?)", user_id, role_id).Exec()
+	o.Raw("insert into user_roles (user_id, role_id) values (?, ?)", UserID, RoleID).Exec()
 }
 
-func FindUserRolesByUserId(user_id int) []orm.Params {
+func FindUserRolesByUserId(UserID int) []orm.Params {
 	o := orm.NewOrm()
 	var res []orm.Params
-	o.Raw("select id, user_id, role_id from user_roles where user_id = ?", user_id).Values(&res, "id", "user_id", "role_id")
+	o.Raw("select id, user_id, role_id from user_roles where user_id = ?", UserID).Values(&res, "id", "user_id", "role_id")
 	return res
 }
