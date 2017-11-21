@@ -1,8 +1,8 @@
 package routers
 
 import (
-	"github.com/Jolly23/GRE3000/controllers"
-	"github.com/Jolly23/GRE3000/filters"
+	"GRE3000/controllers"
+	"GRE3000/filters"
 	"github.com/astaxie/beego"
 )
 

@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/Jolly23/GRE3000/const_conf"
+	"GRE3000/const_conf"
 	"github.com/astaxie/beego/orm"
 )
 

@@ -1,18 +1,18 @@
 package main
 
 import (
-	"github.com/Jolly23/GRE3000/const_conf"
-	"github.com/Jolly23/GRE3000/models"
-	_ "github.com/Jolly23/GRE3000/routers"
+	"GRE3000/const_conf"
+	"GRE3000/models"
+	_ "GRE3000/routers"
 	"time"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/lib/pq"
 
-	_ "github.com/Jolly23/GRE3000/base/cache"
-	_ "github.com/Jolly23/GRE3000/templates"
-	_ "github.com/Jolly23/GRE3000/utils"
+	_ "GRE3000/base/cache"
+	_ "GRE3000/templates"
+	_ "GRE3000/utils"
 )
 
 func init() {

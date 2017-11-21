@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/Jolly23/GRE3000/utils"
+	"GRE3000/utils"
 	"github.com/astaxie/beego/orm"
 	"github.com/casbin/casbin"
 	"strconv"

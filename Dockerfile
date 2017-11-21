@@ -5,12 +5,11 @@ MAINTAINER Jolly <zhaolei@protonmail.com>
 RUN apk add -U tzdata git
 ENV TZ=Asia/Harbin
 
-#RUN mkdir -p /go/src/GRE3000/logs
-#COPY . /go/src/GRE3000
-#WORKDIR /go/src/GRE3000
+RUN mkdir -p /go/src/GRE3000/logs
+COPY . /go/src/GRE3000
+WORKDIR /go/src/GRE3000
 
-RUN go get -v -u github.com/Jolly23/GRE3000 \
-        && go get -v github.com/beego/bee \
+RUN go get -v github.com/beego/bee \
         && apk del git \
         && rm -rf /var/cache/apk/*
 

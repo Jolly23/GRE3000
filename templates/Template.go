@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"github.com/Jolly23/GRE3000/models"
-	"github.com/Jolly23/GRE3000/utils"
+	"GRE3000/models"
+	"GRE3000/utils"
 	"github.com/astaxie/beego"
 	"github.com/russross/blackfriday"
 	"github.com/xeonx/timeago"
