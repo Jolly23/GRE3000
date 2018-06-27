@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-MAINTAINER Jolly <zhaolei@protonmail.com>
+MAINTAINER Jolly <zhaolei@pm.me>
 
 RUN apk add -U tzdata git
 ENV TZ=Asia/Harbin

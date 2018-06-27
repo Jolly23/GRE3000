@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-MAINTAINER Jolly <zhaolei@protonmail.com>
+MAINTAINER Jolly <zhaolei@pm.me>
 
 RUN echo "Asia/Harbin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
