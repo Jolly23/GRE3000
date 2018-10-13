@@ -1,7 +1,5 @@
 # [GRE3000](https://gre.jolly23.com/)
 
-承诺：[`GRE3000网站`](https://gre.jolly23.com/)将永久运行并提供维护和更新，祝大家都能取得好成绩
-
 `很神圣的README`
 
 ## 用docker 或者 docker-compose运行，我都写好了，直接能用
