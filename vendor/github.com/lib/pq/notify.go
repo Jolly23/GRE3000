@@ -174,12 +174,8 @@ func (l *ListenerConn) listenerConnLoop() (err error) {
 			}
 			l.replyChan <- message{t, nil}
 
-		case 'S':
+		case 'N', 'S':
 			// ignore
-		case 'N':
-			if n := l.cn.noticeHandler; n != nil {
-				n(parseError(r))
-			}
 		default:
 			return fmt.Errorf("unexpected message %q from server in listenerConnLoop", t)
 		}
@@ -641,7 +637,7 @@ func (l *Listener) disconnectCleanup() error {
 // after the connection has been established.
 func (l *Listener) resync(cn *ListenerConn, notificationChan <-chan *Notification) error {
 	doneChan := make(chan error)
-	go func(notificationChan <-chan *Notification) {
+	go func() {
 		for channel := range l.channels {
 			// If we got a response, return that error to our caller as it's
 			// going to be more descriptive than cn.Err().
@@ -662,7 +658,7 @@ func (l *Listener) resync(cn *ListenerConn, notificationChan <-chan *Notificatio
 			}
 		}
 		doneChan <- nil
-	}(notificationChan)
+	}()
 
 	// Ignore notifications while synchronization is going on to avoid
 	// deadlocks.  We have to send a nil notification over Notify anyway as
@@ -729,9 +725,6 @@ func (l *Listener) Close() error {
 	}
 	l.isClosed = true
 
-	// Unblock calls to Listen()
-	l.reconnectCond.Broadcast()
-
 	return nil
 }
 
@@ -791,7 +784,7 @@ func (l *Listener) listenerConnLoop() {
 		}
 		l.emitEvent(ListenerEventDisconnected, err)
 
-		time.Sleep(time.Until(nextReconnect))
+		time.Sleep(nextReconnect.Sub(time.Now()))
 	}
 }
 

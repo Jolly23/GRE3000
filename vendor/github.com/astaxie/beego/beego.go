@@ -23,7 +23,7 @@ import (
 
 const (
 	// VERSION represent beego web framework version.
-	VERSION = "1.12.1"
+	VERSION = "1.9.0"
 
 	// DEV is for develop
 	DEV = "dev"
@@ -31,10 +31,7 @@ const (
 	PROD = "prod"
 )
 
-// M is Map shortcut
-type M map[string]interface{}
-
-// Hook function to run
+//hook function to run
 type hookfunc func() error
 
 var (
@@ -65,27 +62,9 @@ func Run(params ...string) {
 		if len(strs) > 1 && strs[1] != "" {
 			BConfig.Listen.HTTPPort, _ = strconv.Atoi(strs[1])
 		}
-
-		BConfig.Listen.Domains = params
 	}
 
 	BeeApp.Run()
-}
-
-// RunWithMiddleWares Run beego application with middlewares.
-func RunWithMiddleWares(addr string, mws ...MiddleWare) {
-	initBeforeHTTPRun()
-
-	strs := strings.Split(addr, ":")
-	if len(strs) > 0 && strs[0] != "" {
-		BConfig.Listen.HTTPAddr = strs[0]
-		BConfig.Listen.Domains = []string{strs[0]}
-	}
-	if len(strs) > 1 && strs[1] != "" {
-		BConfig.Listen.HTTPPort, _ = strconv.Atoi(strs[1])
-	}
-
-	BeeApp.Run(mws...)
 }
 
 func initBeforeHTTPRun() {

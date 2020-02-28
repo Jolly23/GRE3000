@@ -1,11 +1,8 @@
 package grace
 
 import (
-	"context"
 	"crypto/tls"
-	"crypto/x509"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net"
 	"net/http"
@@ -13,6 +10,7 @@ import (
 	"os/exec"
 	"os/signal"
 	"strings"
+	"sync"
 	"syscall"
 	"time"
 )
@@ -20,13 +18,14 @@ import (
 // Server embedded http.Server
 type Server struct {
 	*http.Server
-	ln           net.Listener
-	SignalHooks  map[int]map[os.Signal][]func()
-	sigChan      chan os.Signal
-	isChild      bool
-	state        uint8
-	Network      string
-	terminalChan chan error
+	GraceListener    net.Listener
+	SignalHooks      map[int]map[os.Signal][]func()
+	tlsInnerListener *graceListener
+	wg               sync.WaitGroup
+	sigChan          chan os.Signal
+	isChild          bool
+	state            uint8
+	Network          string
 }
 
 // Serve accepts incoming connections on the Listener l,
@@ -34,19 +33,11 @@ type Server struct {
 // The service goroutines read requests and then call srv.Handler to reply to them.
 func (srv *Server) Serve() (err error) {
 	srv.state = StateRunning
-	defer func() { srv.state = StateTerminate }()
-
-	// When Shutdown is called, Serve, ListenAndServe, and ListenAndServeTLS
-	// immediately return ErrServerClosed. Make sure the program doesn't exit
-	// and waits instead for Shutdown to return.
-	if err = srv.Server.Serve(srv.ln); err != nil && err != http.ErrServerClosed {
-		log.Println(syscall.Getpid(), "Server.Serve() error:", err)
-		return err
-	}
-
-	log.Println(syscall.Getpid(), srv.ln.Addr(), "Listener closed.")
-	// wait for Shutdown to return
-	return <-srv.terminalChan
+	err = srv.Server.Serve(srv.GraceListener)
+	log.Println(syscall.Getpid(), "Waiting for connections to finish...")
+	srv.wg.Wait()
+	srv.state = StateTerminate
+	return
 }
 
 // ListenAndServe listens on the TCP network address srv.Addr and then calls Serve
@@ -60,11 +51,13 @@ func (srv *Server) ListenAndServe() (err error) {
 
 	go srv.handleSignals()
 
-	srv.ln, err = srv.getListener(addr)
+	l, err := srv.getListener(addr)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
+
+	srv.GraceListener = newGraceListener(l, srv)
 
 	if srv.isChild {
 		process, err := os.FindProcess(os.Getppid())
@@ -72,7 +65,7 @@ func (srv *Server) ListenAndServe() (err error) {
 			log.Println(err)
 			return err
 		}
-		err = process.Signal(syscall.SIGTERM)
+		err = process.Kill()
 		if err != nil {
 			return err
 		}
@@ -112,67 +105,14 @@ func (srv *Server) ListenAndServeTLS(certFile, keyFile string) (err error) {
 
 	go srv.handleSignals()
 
-	ln, err := srv.getListener(addr)
+	l, err := srv.getListener(addr)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
-	srv.ln = tls.NewListener(tcpKeepAliveListener{ln.(*net.TCPListener)}, srv.TLSConfig)
 
-	if srv.isChild {
-		process, err := os.FindProcess(os.Getppid())
-		if err != nil {
-			log.Println(err)
-			return err
-		}
-		err = process.Signal(syscall.SIGTERM)
-		if err != nil {
-			return err
-		}
-	}
-
-	log.Println(os.Getpid(), srv.Addr)
-	return srv.Serve()
-}
-
-// ListenAndServeMutualTLS listens on the TCP network address srv.Addr and then calls
-// Serve to handle requests on incoming mutual TLS connections.
-func (srv *Server) ListenAndServeMutualTLS(certFile, keyFile, trustFile string) (err error) {
-	addr := srv.Addr
-	if addr == "" {
-		addr = ":https"
-	}
-
-	if srv.TLSConfig == nil {
-		srv.TLSConfig = &tls.Config{}
-	}
-	if srv.TLSConfig.NextProtos == nil {
-		srv.TLSConfig.NextProtos = []string{"http/1.1"}
-	}
-
-	srv.TLSConfig.Certificates = make([]tls.Certificate, 1)
-	srv.TLSConfig.Certificates[0], err = tls.LoadX509KeyPair(certFile, keyFile)
-	if err != nil {
-		return
-	}
-	srv.TLSConfig.ClientAuth = tls.RequireAndVerifyClientCert
-	pool := x509.NewCertPool()
-	data, err := ioutil.ReadFile(trustFile)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-	pool.AppendCertsFromPEM(data)
-	srv.TLSConfig.ClientCAs = pool
-	log.Println("Mutual HTTPS")
-	go srv.handleSignals()
-
-	ln, err := srv.getListener(addr)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-	srv.ln = tls.NewListener(tcpKeepAliveListener{ln.(*net.TCPListener)}, srv.TLSConfig)
+	srv.tlsInnerListener = newGraceListener(l, srv)
+	srv.GraceListener = tls.NewListener(srv.tlsInnerListener, srv.TLSConfig)
 
 	if srv.isChild {
 		process, err := os.FindProcess(os.Getppid())
@@ -185,7 +125,6 @@ func (srv *Server) ListenAndServeMutualTLS(certFile, keyFile, trustFile string) 
 			return err
 		}
 	}
-
 	log.Println(os.Getpid(), srv.Addr)
 	return srv.Serve()
 }
@@ -214,20 +153,6 @@ func (srv *Server) getListener(laddr string) (l net.Listener, err error) {
 		}
 	}
 	return
-}
-
-type tcpKeepAliveListener struct {
-	*net.TCPListener
-}
-
-func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error) {
-	tc, err := ln.AcceptTCP()
-	if err != nil {
-		return
-	}
-	tc.SetKeepAlive(true)
-	tc.SetKeepAlivePeriod(3 * time.Minute)
-	return tc, nil
 }
 
 // handleSignals listens for os Signals and calls any hooked in function that the
@@ -282,14 +207,37 @@ func (srv *Server) shutdown() {
 	}
 
 	srv.state = StateShuttingDown
-	log.Println(syscall.Getpid(), "Waiting for connections to finish...")
-	ctx := context.Background()
 	if DefaultTimeout >= 0 {
-		var cancel context.CancelFunc
-		ctx, cancel = context.WithTimeout(context.Background(), DefaultTimeout)
-		defer cancel()
+		go srv.serverTimeout(DefaultTimeout)
 	}
-	srv.terminalChan <- srv.Server.Shutdown(ctx)
+	err := srv.GraceListener.Close()
+	if err != nil {
+		log.Println(syscall.Getpid(), "Listener.Close() error:", err)
+	} else {
+		log.Println(syscall.Getpid(), srv.GraceListener.Addr(), "Listener closed.")
+	}
+}
+
+// serverTimeout forces the server to shutdown in a given timeout - whether it
+// finished outstanding requests or not. if Read/WriteTimeout are not set or the
+// max header size is very big a connection could hang
+func (srv *Server) serverTimeout(d time.Duration) {
+	defer func() {
+		if r := recover(); r != nil {
+			log.Println("WaitGroup at 0", r)
+		}
+	}()
+	if srv.state != StateShuttingDown {
+		return
+	}
+	time.Sleep(d)
+	log.Println("[STOP - Hammer Time] Forcefully shutting down parent")
+	for {
+		if srv.state == StateTerminate {
+			break
+		}
+		srv.wg.Done()
+	}
 }
 
 func (srv *Server) fork() (err error) {
@@ -303,8 +251,12 @@ func (srv *Server) fork() (err error) {
 	var files = make([]*os.File, len(runningServers))
 	var orderArgs = make([]string, len(runningServers))
 	for _, srvPtr := range runningServers {
-		f, _ := srvPtr.ln.(*net.TCPListener).File()
-		files[socketPtrOffsetMap[srvPtr.Server.Addr]] = f
+		switch srvPtr.GraceListener.(type) {
+		case *graceListener:
+			files[socketPtrOffsetMap[srvPtr.Server.Addr]] = srvPtr.GraceListener.(*graceListener).File()
+		default:
+			files[socketPtrOffsetMap[srvPtr.Server.Addr]] = srvPtr.tlsInnerListener.File()
+		}
 		orderArgs[socketPtrOffsetMap[srvPtr.Server.Addr]] = srvPtr.Server.Addr
 	}
 

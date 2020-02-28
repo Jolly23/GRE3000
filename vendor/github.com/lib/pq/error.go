@@ -153,7 +153,6 @@ var errorCodeNames = map[ErrorCode]string{
 	"22004": "null_value_not_allowed",
 	"22002": "null_value_no_indicator_parameter",
 	"22003": "numeric_value_out_of_range",
-	"2200H": "sequence_generator_limit_exceeded",
 	"22026": "string_data_length_mismatch",
 	"22001": "string_data_right_truncation",
 	"22011": "substring_error",
@@ -460,11 +459,6 @@ func errorf(s string, args ...interface{}) {
 	panic(fmt.Errorf("pq: %s", fmt.Sprintf(s, args...)))
 }
 
-// TODO(ainar-g) Rename to errorf after removing panics.
-func fmterrorf(s string, args ...interface{}) error {
-	return fmt.Errorf("pq: %s", fmt.Sprintf(s, args...))
-}
-
 func errRecoverNoErrBadConn(err *error) {
 	e := recover()
 	if e == nil {
@@ -478,13 +472,13 @@ func errRecoverNoErrBadConn(err *error) {
 	}
 }
 
-func (cn *conn) errRecover(err *error) {
+func (c *conn) errRecover(err *error) {
 	e := recover()
 	switch v := e.(type) {
 	case nil:
 		// Do nothing
 	case runtime.Error:
-		cn.bad = true
+		c.bad = true
 		panic(v)
 	case *Error:
 		if v.Fatal() {
@@ -493,8 +487,7 @@ func (cn *conn) errRecover(err *error) {
 			*err = v
 		}
 	case *net.OpError:
-		cn.bad = true
-		*err = v
+		*err = driver.ErrBadConn
 	case error:
 		if v == io.EOF || v.(error).Error() == "remote error: handshake failure" {
 			*err = driver.ErrBadConn
@@ -503,13 +496,13 @@ func (cn *conn) errRecover(err *error) {
 		}
 
 	default:
-		cn.bad = true
+		c.bad = true
 		panic(fmt.Sprintf("unknown error: %#v", e))
 	}
 
 	// Any time we return ErrBadConn, we need to remember it since *Tx doesn't
 	// mark the connection bad in database/sql.
 	if *err == driver.ErrBadConn {
-		cn.bad = true
+		c.bad = true
 	}
 }

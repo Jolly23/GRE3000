@@ -44,7 +44,6 @@ var supportTag = map[string]int{
 	"decimals":     2,
 	"on_delete":    2,
 	"type":         2,
-	"description":  2,
 }
 
 // get reflect.Type name with package path.
@@ -66,7 +65,7 @@ func getTableName(val reflect.Value) string {
 	return snakeString(reflect.Indirect(val).Type().Name())
 }
 
-// get table engine, myisam or innodb.
+// get table engine, mysiam or innodb.
 func getTableEngine(val reflect.Value) string {
 	fun := val.MethodByName("TableEngine")
 	if fun.IsValid() {
@@ -110,7 +109,7 @@ func getTableUnique(val reflect.Value) [][]string {
 func getColumnName(ft int, addrField reflect.Value, sf reflect.StructField, col string) string {
 	column := col
 	if col == "" {
-		column = nameStrategyMap[nameStrategy](sf.Name)
+		column = snakeString(sf.Name)
 	}
 	switch ft {
 	case RelForeignKey, RelOneToOne:
@@ -150,7 +149,7 @@ func getFieldType(val reflect.Value) (ft int, err error) {
 	case reflect.TypeOf(new(bool)):
 		ft = TypeBooleanField
 	case reflect.TypeOf(new(string)):
-		ft = TypeVarCharField
+		ft = TypeCharField
 	case reflect.TypeOf(new(time.Time)):
 		ft = TypeDateTimeField
 	default:
@@ -177,7 +176,7 @@ func getFieldType(val reflect.Value) (ft int, err error) {
 		case reflect.Bool:
 			ft = TypeBooleanField
 		case reflect.String:
-			ft = TypeVarCharField
+			ft = TypeCharField
 		default:
 			if elm.Interface() == nil {
 				panic(fmt.Errorf("%s is nil pointer, may be miss setting tag", val))
@@ -190,7 +189,7 @@ func getFieldType(val reflect.Value) (ft int, err error) {
 			case sql.NullBool:
 				ft = TypeBooleanField
 			case sql.NullString:
-				ft = TypeVarCharField
+				ft = TypeCharField
 			case time.Time:
 				ft = TypeDateTimeField
 			}

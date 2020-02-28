@@ -29,10 +29,6 @@ import (
 	"time"
 )
 
-var (
-	_ ConnWithTimeout = (*conn)(nil)
-)
-
 // conn is the low-level implementation of Conn
 type conn struct {
 	// Shared
@@ -76,7 +72,6 @@ type DialOption struct {
 type dialOptions struct {
 	readTimeout  time.Duration
 	writeTimeout time.Duration
-	dialer       *net.Dialer
 	dial         func(network, addr string) (net.Conn, error)
 	db           int
 	password     string
@@ -99,27 +94,17 @@ func DialWriteTimeout(d time.Duration) DialOption {
 	}}
 }
 
-// DialConnectTimeout specifies the timeout for connecting to the Redis server when
-// no DialNetDial option is specified.
+// DialConnectTimeout specifies the timeout for connecting to the Redis server.
 func DialConnectTimeout(d time.Duration) DialOption {
 	return DialOption{func(do *dialOptions) {
-		do.dialer.Timeout = d
-	}}
-}
-
-// DialKeepAlive specifies the keep-alive period for TCP connections to the Redis server
-// when no DialNetDial option is specified.
-// If zero, keep-alives are not enabled. If no DialKeepAlive option is specified then
-// the default of 5 minutes is used to ensure that half-closed TCP sessions are detected.
-func DialKeepAlive(d time.Duration) DialOption {
-	return DialOption{func(do *dialOptions) {
-		do.dialer.KeepAlive = d
+		dialer := net.Dialer{Timeout: d}
+		do.dial = dialer.Dial
 	}}
 }
 
 // DialNetDial specifies a custom dial function for creating TCP
-// connections, otherwise a net.Dialer customized via the other options is used.
-// DialNetDial overrides DialConnectTimeout and DialKeepAlive.
+// connections. If this option is left out, then net.Dial is
+// used. DialNetDial overrides DialConnectTimeout.
 func DialNetDial(dial func(network, addr string) (net.Conn, error)) DialOption {
 	return DialOption{func(do *dialOptions) {
 		do.dial = dial
@@ -169,15 +154,10 @@ func DialUseTLS(useTLS bool) DialOption {
 // address using the specified options.
 func Dial(network, address string, options ...DialOption) (Conn, error) {
 	do := dialOptions{
-		dialer: &net.Dialer{
-			KeepAlive: time.Minute * 5,
-		},
+		dial: net.Dial,
 	}
 	for _, option := range options {
 		option.f(&do)
-	}
-	if do.dial == nil {
-		do.dial = do.dialer.Dial
 	}
 
 	netConn, err := do.dial(network, address)
@@ -186,12 +166,7 @@ func Dial(network, address string, options ...DialOption) (Conn, error) {
 	}
 
 	if do.useTLS {
-		var tlsConfig *tls.Config
-		if do.tlsConfig == nil {
-			tlsConfig = &tls.Config{InsecureSkipVerify: do.skipVerify}
-		} else {
-			tlsConfig = cloneTLSConfig(do.tlsConfig)
-		}
+		tlsConfig := cloneTLSClientConfig(do.tlsConfig, do.skipVerify)
 		if tlsConfig.ServerName == "" {
 			host, _, err := net.SplitHostPort(address)
 			if err != nil {
@@ -580,17 +555,10 @@ func (c *conn) Flush() error {
 	return nil
 }
 
-func (c *conn) Receive() (interface{}, error) {
-	return c.ReceiveWithTimeout(c.readTimeout)
-}
-
-func (c *conn) ReceiveWithTimeout(timeout time.Duration) (reply interface{}, err error) {
-	var deadline time.Time
-	if timeout != 0 {
-		deadline = time.Now().Add(timeout)
+func (c *conn) Receive() (reply interface{}, err error) {
+	if c.readTimeout != 0 {
+		c.conn.SetReadDeadline(time.Now().Add(c.readTimeout))
 	}
-	c.conn.SetReadDeadline(deadline)
-
 	if reply, err = c.readReply(); err != nil {
 		return nil, c.fatal(err)
 	}
@@ -613,10 +581,6 @@ func (c *conn) ReceiveWithTimeout(timeout time.Duration) (reply interface{}, err
 }
 
 func (c *conn) Do(cmd string, args ...interface{}) (interface{}, error) {
-	return c.DoWithTimeout(c.readTimeout, cmd, args...)
-}
-
-func (c *conn) DoWithTimeout(readTimeout time.Duration, cmd string, args ...interface{}) (interface{}, error) {
 	c.mu.Lock()
 	pending := c.pending
 	c.pending = 0
@@ -640,11 +604,9 @@ func (c *conn) DoWithTimeout(readTimeout time.Duration, cmd string, args ...inte
 		return nil, c.fatal(err)
 	}
 
-	var deadline time.Time
-	if readTimeout != 0 {
-		deadline = time.Now().Add(readTimeout)
+	if c.readTimeout != 0 {
+		c.conn.SetReadDeadline(time.Now().Add(c.readTimeout))
 	}
-	c.conn.SetReadDeadline(deadline)
 
 	if cmd == "" {
 		reply := make([]interface{}, pending)
