@@ -10,17 +10,17 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /home/pilot_lei/logs/gre-service:/go/src/GRE3000/logs
-      - /home/pilot_lei/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+      - /home/ubuntu/logs/gre-service:/go/src/GRE3000/logs
+      - /home/ubuntu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
     ports:
       - "31011:8080"
 
   gre_service_31012:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      volumes:
-        - /home/pilot_lei/logs/gre-service:/go/src/GRE3000/logs
-        - /home/pilot_lei/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
-      ports:
-        - "31012:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/ubuntu/logs/gre-service:/go/src/GRE3000/logs
+      - /home/ubuntu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+    ports:
+      - "31012:8080"
