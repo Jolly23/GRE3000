@@ -13,12 +13,7 @@
     {{if .IsWordsPage}}
     <script type="text/javascript">
         function ShowMeans(whichObj) {
-            // $(whichObj).parent().parent().find("p").css('display', 'block');
-            var thisWord = $(whichObj).parent().parent().find("p");
-            thisWord.style.removeProperty('position');
-            thisWord.style.removeProperty('top');
-            thisWord.style.removeProperty('left');
-
+            $(whichObj).parent().parent().find("p").css('display', 'block');
             whichObj.disabled = true;
         }
 
@@ -40,10 +35,7 @@
         }
         #means {
             {{ if not .ShowMeans }}
-            /*display: none;*/
-            position: absolute !important;
-            top: -9999px !important;
-            left: -9999px !important;
+            display: none;
             {{end}}
             font-size: 20px;
         }
