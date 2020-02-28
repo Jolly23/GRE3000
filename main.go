@@ -18,6 +18,8 @@ import (
 func init() {
 	beego.LoadAppConfig("ini", const_conf.BeeGoConfiguration)
 	beego.SetLogger(const_conf.LogsMethod, const_conf.LogsConfig)
+	beego.BConfig.EnableGzip = true
+	
 	orm.RegisterDataBase(
 		const_conf.BeeGoOrmAlias, const_conf.DatabaseType, const_conf.DbSource,
 		const_conf.BeeGoOrmMaxIdle, const_conf.BeeGoOrmMaxConn,
