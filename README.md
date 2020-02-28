@@ -1,10 +1,10 @@
-# [GRE3000](https://gre.jolly23.com/)
+# [GRE3000](http://gre.jolly23.com/)
 
 `很神圣的README`
 
 ## 用docker 或者 docker-compose运行，我都写好了，直接能用
 
-> 采用了4容器负载均衡，为的是实验多机部署。
+> 采用了2容器负载均衡，为的是实验多机部署。
 
 代码clone后编译前请创建 const_conf/private.go 并加入PostgreSQL数据库地址
 
