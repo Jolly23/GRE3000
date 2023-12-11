@@ -1,26 +1,38 @@
-version: '2'
+version: '3.1'
 
 services:
+    link-docker-redis:
+        image: "redis:alpine"
+        restart: always
 
-  link-docker-redis:
-    image: "redis:alpine"
+    link-docker-postgresql:
+        image: "postgres:11-alpine"
+        restart: always
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=XMS
+            - POSTGRES_PASSWORD=200900
+            - POSTGRES_DB=GRE3000
+        volumes:
+            - /root/pg_data:/var/lib/postgresql/data
 
-  gre_service_31011:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - /home/ubuntu/logs/gre-service:/go/src/GRE3000/logs
-      - /home/ubuntu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
-    ports:
-      - "31011:8080"
+    gre_service_31011:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "31011:8080"
+        volumes:
+            - /root/logs/gre-service:/go/src/GRE3000/logs
+            - /root/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
 
-  gre_service_31012:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - /home/ubuntu/logs/gre-service:/go/src/GRE3000/logs
-      - /home/ubuntu/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
-    ports:
-      - "31012:8080"
+    gre_service_31012:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "31012:8080"
+        volumes:
+            - /root/logs/gre-service:/go/src/GRE3000/logs
+            - /root/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
