@@ -49,7 +49,7 @@ func Init() {
 	Enforcer = &casbin.Enforcer{}
 	Enforcer.InitWithFile("rbac_model.conf", "")
 
-	Enforcer.AddActionAttributeFunction(getAttrFunc)
+	//Enforcer.AddActionAttributeFunction(getAttrFunc)
 
 	o := orm.NewOrm()
 	var res []orm.Params

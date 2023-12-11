@@ -14,10 +14,10 @@ package const_conf
 const (
 	DatabaseType  = "postgres"
 	PgSslMode     = "disable"
-	PgHostAddress = "111.111.111.111"
+	PgHostAddress = "postgres_db"
 	PgHostPort    = "5432"
-	DatabaseName  = "GRE3000"
-	PgUserName    = "JOLLY"
+	DatabaseName  = "postgres"
+	PgUserName    = "postgres"
 	PgPassword    = "HW(D*H(AWD"
 )
 
