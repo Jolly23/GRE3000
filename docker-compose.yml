@@ -18,7 +18,7 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - "31011:8080"
+            - "31011:3000"
         volumes:
             - /root/logs/gre-service:/go/src/GRE3000/logs
             - /root/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
@@ -28,7 +28,7 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - "31012:8080"
+            - "31012:3000"
         volumes:
             - /root/logs/gre-service:/go/src/GRE3000/logs
             - /root/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
