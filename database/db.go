@@ -9,7 +9,7 @@ import (
 
 const (
 	PgSslMode     = "disable"
-	PgHostAddress = "localhost"
+	PgHostAddress = "link-docker-postgresql"
 	PgHostPort    = "5432"
 	DatabaseName  = "GRE3000"
 	PgUserName    = "JOLLY"
