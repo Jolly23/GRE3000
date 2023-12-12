@@ -5,6 +5,10 @@ import (
 	"database/sql"
 )
 
+func (db *Database) InsertWord(word, mean string) {
+	_, _ = db.conn.Exec(`insert into vocabulary(word, mean) values ($1, $2)`, word, mean)
+}
+
 func (db *Database) LoadRawWords(random bool) []*types.RawWord {
 	var (
 		rows *sql.Rows
