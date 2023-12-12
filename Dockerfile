@@ -9,8 +9,6 @@ RUN mkdir -p /go/src/GRE3000/logs
 COPY . /go/src/GRE3000
 WORKDIR /go/src/GRE3000
 
-RUN go get -v github.com/beego/bee \
-        && apk del git \
-        && rm -rf /var/cache/apk/*
+RUN go build
 
-CMD ["bee", "run"]
+CMD ["./GRE3000"]

@@ -53,8 +53,5 @@ fabric.properties
 .glide/
 
 ### Project
-logs/site.log
-logs/site.201*
-const_conf/private.go
+logs/
 GRE3000
-/static/upload/avatar/*
