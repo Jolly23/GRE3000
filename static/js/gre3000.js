@@ -147,15 +147,6 @@ function asyncLoadWords() {
             }
             document.getElementById('words_head').innerHTML = "";
             document.getElementById("words_head").insertAdjacentHTML('beforeend', str);
-
-            // if (data.length > 0 && data[0]['CountMarks'] !== undefined) {
-            //     $.get(
-            //         '/words/statistics',  function (data) {
-            //             str = "<br><p style=\"text-align: center\">我的词表共有" + data['All'] + "个单词，标记单词" + data['Marked'] + "个</p>";
-            //             document.getElementById("words_head").insertAdjacentHTML('beforeend', str);
-            //         }
-            //     );
-            // }
         }
     );
 }
