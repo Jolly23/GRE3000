@@ -21,8 +21,9 @@ func main() {
 		return c.Next()
 	})
 
-	app.Get("/", handlers.VocabularyPage)
+	app.Get("/", func(ctx *fiber.Ctx) error { return ctx.Redirect("/words", 302) })
 	app.Get("/words", handlers.VocabularyPage)
+	app.Get("/words/load", handlers.LoadWordsHandler)
 	app.Get("/words/mark/:id", handlers.UserWordMarkIncHandler)
 	app.Get("/words/del/:id", handlers.UserWordDelete)
 	app.Get("/words/rebuild", handlers.UserVocabularyRebuild)

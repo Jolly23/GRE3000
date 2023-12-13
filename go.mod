@@ -5,9 +5,8 @@ go 1.20
 require (
 	github.com/gofiber/fiber/v2 v2.51.0
 	github.com/gofiber/template/html/v2 v2.0.5
-	github.com/google/uuid v1.4.0
+	github.com/google/uuid v1.5.0
 	github.com/lib/pq v1.10.9
-	github.com/russross/blackfriday v1.6.0
 	github.com/xeonx/timeago v1.0.0-rc5
 )
 

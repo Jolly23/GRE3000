@@ -2,20 +2,15 @@
     <div class="col-md-10 center-block">
         <div class="panel panel-default">
             {{if .UserInfo}}
-            {{ if .RandomSort }}
             <div class="panel-heading">
                 {{.UserInfo.Username}}的单词表
                 <button onclick="meansDisplayToggle(this)" class="btn btn-sm btn-success">展示翻译</button>
-                <a href="/words" class="btn btn-sm btn-success">标记排序</a>
+                <a href="" class="btn btn-sm btn-success" id="sort-btn-user"></a>
             </div>
-            {{ else }}
-            <div class="panel-heading">
-                {{.UserInfo.Username}}的单词表
-                <button onclick="meansDisplayToggle(this)" class="btn btn-sm btn-success">展示翻译</button>
-                <a href="/words?RandomSort=true" class="btn btn-sm btn-success">随机排序</a>
-            </div>
-            {{ end }}
+
             <div class="panel-body" id="words_head">
+                <p style="text-align: center">词表加载中，请稍等</p>
+
                 {{range .UserWords}}
                 <div class="media each_word_block">
                     <div class="col-md-7">
@@ -51,20 +46,13 @@
                 {{end}}
             </div>
             {{else}}
-            {{ if .RandomSort }}
             <div class="panel-heading">游客的单词表
                 <button onclick="meansDisplayToggle(this)" class="btn btn-sm btn-success">展示翻译</button>
-                <a href="/words" class="btn btn-sm btn-success">默认排序</a>
+                <a href="" class="btn btn-sm btn-success" id="sort-btn"></a>
             </div>
-            {{ else }}
-            <div class="panel-heading">
-                游客的单词表
-                <button onclick="meansDisplayToggle(this)" class="btn btn-sm btn-success">展示翻译</button>
-                <a href="/words?RandomSort=true" class="btn btn-sm btn-success">随机排序</a>
-            </div>
-            {{ end }}
 
             <div class="panel-body" id="words_head">
+                <p style="text-align: center">词表加载中，请稍等</p>
                 {{range .RawWords}}
                 <div class="media each_word_block">
                     <div class="col-md-7">

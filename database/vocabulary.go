@@ -3,6 +3,7 @@ package database
 import (
 	"GRE3000/types"
 	"database/sql"
+	"github.com/xeonx/timeago"
 )
 
 func (db *Database) InsertWord(word, mean string) {
@@ -69,6 +70,9 @@ func (db *Database) LoadUserWords(userID int, random bool) []*types.UserWord {
 		var word types.UserWord
 		if err := rows.Scan(&word.WordID, &word.Word, &word.Mean, &word.CountMarks, &word.LastMark); err != nil {
 			panic(err)
+		}
+		if word.LastMark != nil {
+			word.LastMarkAge = timeago.Chinese.Format(*word.LastMark)
 		}
 		ret = append(ret, &word)
 	}

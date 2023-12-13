@@ -2,11 +2,6 @@ package main
 
 import (
 	"github.com/gofiber/template/html/v2"
-	"github.com/russross/blackfriday"
-	"github.com/xeonx/timeago"
-	"html/template"
-	"strings"
-	"time"
 )
 
 func RenderOS() *html.Engine {
@@ -32,31 +27,7 @@ func RenderOS() *html.Engine {
 	engine.Delims("{{", "}}") // Optional. Default: engine delimiters
 
 	// AddFunc adds a function to the template's global function map.
-	engine.AddFunc("FuncFormatTimeAgo", formatTime)
-	engine.AddFunc("FuncMarkDown", markdown)
 	//engine.AddFunc("FuncHasPermission", hasPermission)
-	engine.AddFunc("str2html", str2html)
 
 	return engine
-}
-
-func formatTime(time time.Time) string {
-	return timeago.Chinese.Format(time)
-}
-
-func markdown(content string) string {
-	return string(blackfriday.MarkdownCommon([]byte(noHtml(content))))
-}
-
-//func hasPermission(userId int, name string) bool {
-//	return true
-//	//return models.FindPermissionByUserIdAndPermissionName(userId, name)
-//}
-
-func str2html(raw string) template.HTML {
-	return template.HTML(raw)
-}
-
-func noHtml(str string) string {
-	return strings.Replace(strings.Replace(str, "<script", "&lt;script", -1), "script>", "script&gt;", -1)
 }

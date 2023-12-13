@@ -8,20 +8,15 @@ import (
 
 func VocabularyPage(ctx *fiber.Ctx) error {
 	user := filters.LoadUser(ctx)
-	db := ctx.Locals("db").(*database.Database)
-	isRandomSort := ctx.QueryBool("RandomSort")
+	isRandomSort := ctx.QueryBool("rs")
 
 	res := fiber.Map{
 		"PageTitle": "GRE3000",
 		"UserInfo":  user,
 	}
 	if user != nil {
-		userWordsList := db.LoadUserWords(user.ID, isRandomSort)
-		res["UserWords"] = &userWordsList
 		res["PageTitle"] = user.Username + "的单词表"
 	} else {
-		rawWordsList := db.LoadRawWords(isRandomSort)
-		res["RawWords"] = &rawWordsList
 		res["PageTitle"] = "GRE单词表"
 	}
 
@@ -30,4 +25,18 @@ func VocabularyPage(ctx *fiber.Ctx) error {
 	res["RandomSort"] = isRandomSort
 
 	return ctx.Render("words/vocabulary", res)
+}
+
+func LoadWordsHandler(ctx *fiber.Ctx) error {
+	user := filters.LoadUser(ctx)
+	db := ctx.Locals("db").(*database.Database)
+	isRandomSort := ctx.QueryBool("rs")
+
+	if user != nil {
+		userWordsList := db.LoadUserWords(user.ID, isRandomSort)
+		return ctx.JSON(userWordsList)
+	}
+
+	rawWordsList := db.LoadRawWords(isRandomSort)
+	return ctx.JSON(rawWordsList)
 }
