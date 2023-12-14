@@ -16,9 +16,9 @@ func (db *Database) LoadRawWords(random bool) []*types.RawWord {
 		ret  = make([]*types.RawWord, 0, 3072)
 	)
 	if random {
-		rows, _ = db.conn.Query(`select word, mean from vocabulary order by random()`)
+		rows, _ = db.conn.Query(`select word, mean from vocabulary order by random() limit 500`)
 	} else {
-		rows, _ = db.conn.Query(`select word, mean from vocabulary order by word_id`)
+		rows, _ = db.conn.Query(`select word, mean from vocabulary order by word_id limit 500`)
 	}
 	defer rows.Close()
 
@@ -32,37 +32,15 @@ func (db *Database) LoadRawWords(random bool) []*types.RawWord {
 	return ret
 }
 
-func (db *Database) LoadRawWordsJson(random bool) map[string]string {
-	var (
-		rows *sql.Rows
-		book = make(map[string]string)
-	)
-	if random {
-		rows, _ = db.conn.Query(`select word, mean from vocabulary order by random()`)
-	} else {
-		rows, _ = db.conn.Query(`SELECT word, mean FROM vocabulary ORDER BY id OFFSET 30`)
-	}
-	defer rows.Close()
-
-	for rows.Next() {
-		var word, mean string
-		if err := rows.Scan(&word, &mean); err != nil {
-			panic(err)
-		}
-		book[word] = mean
-	}
-	return book
-}
-
 func (db *Database) LoadUserWords(userID int, random bool) []*types.UserWord {
 	var (
 		rows *sql.Rows
 		ret  = make([]*types.UserWord, 0, 3072)
 	)
 	if random {
-		rows, _ = db.conn.Query(`select word_id, word, mean, count_mark, last_mark from user_words left join vocabulary using (word_id) where user_id=$1 order by random()`, userID)
+		rows, _ = db.conn.Query(`select word_id, word, mean, count_mark, last_mark from user_words left join vocabulary using (word_id) where user_id=$1 order by random() limit 500`, userID)
 	} else {
-		rows, _ = db.conn.Query(`select word_id, word, mean, count_mark, last_mark from user_words left join vocabulary using (word_id) where user_id=$1 order by count_mark desc,last_mark desc,word_id`, userID)
+		rows, _ = db.conn.Query(`select word_id, word, mean, count_mark, last_mark from user_words left join vocabulary using (word_id) where user_id=$1 order by count_mark desc,last_mark desc,word_id limit 500`, userID)
 	}
 	defer rows.Close()
 
