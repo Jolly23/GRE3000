@@ -7,7 +7,7 @@ import (
 
 func AboutPage(ctx *fiber.Ctx) error {
 	res := fiber.Map{
-		"PageTitle": "关于",
+		"PageTitle": "About",
 	}
 
 	res["IsLogin"] = true

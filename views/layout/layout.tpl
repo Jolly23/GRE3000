@@ -31,18 +31,18 @@
             <div id="navbar" class="navbar-collapse collapse header-navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/about">关于</a>
+                        <a href="/about">About</a>
                     </li>
                     {{if .UserInfo}}
                     <li>
                         <a href="/words/rebuild">
-                            重置词表
+                            VocabularyReset
                         </a>
                     </li>
-                    <li><a href="/logout">退出</a></li>
+                    <li><a href="/logout">Logout</a></li>
                     {{else}}
-                    <li><a href="/login">登录</a></li>
-                    <li><a href="/register">注册</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
                     {{end}}
                 </ul>
             </div>
@@ -54,8 +54,7 @@
 </div>
 <div class="container">
     <br>
-    <div class="text-center">
-        ©2017 Powered by <a href="https://jolly23.com" target="_blank">Jolly23</a><br>
+    <div class="text-center">©2023 Powered by Mars<br>
     </div>
     <br>
 </div>
