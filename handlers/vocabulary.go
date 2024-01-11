@@ -24,7 +24,7 @@ func VocabularyPage(ctx *fiber.Ctx) error {
 
 	res["RandomSort"] = isRandomSort
 
-	return ctx.Render("words/vocabulary", res)
+	return ctx.Render("vocabulary", res)
 }
 
 func LoadWordsHandler(ctx *fiber.Ctx) error {

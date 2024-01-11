@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">注册</div>
       <div class="panel-body">
-       {{template "layout/flash_error" .}}
+       {{template "flash_error" .}}
         <form action="/register" method="post">
           <div class="form-group">
             <label for="username">用户名</label>

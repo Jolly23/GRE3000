@@ -12,7 +12,7 @@ func main() {
 	app := fiber.New(fiber.Config{
 		Views: RenderOS(),
 		// Views Layout is the global layout for all template render until override on Render function.
-		ViewsLayout: "layout/layout",
+		ViewsLayout: "layout",
 	})
 	app.Static("/static", "./static")
 
