@@ -12,7 +12,7 @@ func RegisterPage(ctx *fiber.Ctx) error {
 	}
 
 	res := fiber.Map{
-		"PageTitle": "注册",
+		"PageTitle": "Register",
 	}
 
 	return ctx.Render("register", res)
@@ -24,8 +24,8 @@ func RegisterHandler(ctx *fiber.Ctx) error {
 
 	if len(username) == 0 || len(password) == 0 {
 		return ctx.Render("login", fiber.Map{
-			"PageTitle":   "注册",
-			"flash_error": "用户名或密码不能为空",
+			"PageTitle":   "Register",
+			"flash_error": "Empty username or password",
 		})
 	}
 
@@ -39,7 +39,7 @@ func RegisterHandler(ctx *fiber.Ctx) error {
 		return ctx.Redirect("/", 302)
 	}
 	return ctx.Render("login", fiber.Map{
-		"PageTitle":   "注册",
-		"flash_error": "用户名已被注册",
+		"PageTitle":   "Register",
+		"flash_error": "Username already exists",
 	})
 }

@@ -8,8 +8,10 @@ $(document).ready(function () {
 });
 
 function meansDisplayToggle(whichObj) {
-    if (whichObj.textContent === "展示翻译") {
-        whichObj.textContent = "隐藏翻译";
+    console.log(whichObj.textContent);
+
+    if (whichObj.textContent === "ShowTranslate") {
+        whichObj.textContent = "HideTranslate";
         const displayBlock = document.getElementsByClassName('mean_block');
         for (let i = 0; i < displayBlock.length; i++) {
             displayBlock[i].style.display = 'block';
@@ -20,8 +22,8 @@ function meansDisplayToggle(whichObj) {
             displayBtn[i].disabled = true;
         }
 
-    } else if (whichObj.textContent === "隐藏翻译") {
-        whichObj.textContent = "展示翻译";
+    } else if (whichObj.textContent === "HideTranslate") {
+        whichObj.textContent = "ShowTranslate";
         const displayBlock = document.getElementsByClassName('mean_block');
         for (let i = 0; i < displayBlock.length; i++) {
             displayBlock[i].style.display = 'none';
@@ -41,10 +43,10 @@ function randomDisplayToggle() {
     if (btnUserSort !== null) {
         if (isRandomSort) {
             btnUserSort.href = '/words';
-            btnUserSort.textContent = '标记排序';
+            btnUserSort.textContent = 'MarkSort';
         } else {
             btnUserSort.href = '/words?rs=true';
-            btnUserSort.textContent = '随机排序';
+            btnUserSort.textContent = 'RandomSort';
         }
         return;
     }
@@ -53,10 +55,10 @@ function randomDisplayToggle() {
     if (btnVisitor !== null) {
         if (isRandomSort) {
             btnVisitor.href = '/words';
-            btnVisitor.textContent = '默认排序';
+            btnVisitor.textContent = 'Alphabetical';
         } else {
             btnVisitor.href = '/words?rs=true';
-            btnVisitor.textContent = '随机排序';
+            btnVisitor.textContent = 'RandomSort';
         }
     }
 }
@@ -93,7 +95,7 @@ function asyncLoadWords() {
         load_url, function (data) {
             if (data.length > 0 && data[0]['c'] !== undefined) {
                 for (i = 0; i < data.length; i++) {
-                    const notice_text = data[i]['c'] === 0 ? "" : "<span>• 没记住" + data[i]['c'] + "次, 上次标记是在" + data[i]['t'] + "</span>";
+                    const notice_text = data[i]['c'] === 0 ? "" : "<span>• Marked " + data[i]['c'] + ", last at " + data[i]['t'] + "</span>";
                     str += `<div class="media each_word_block">
                     <div class="col-md-7">
                         <div class="media-body">
@@ -112,13 +114,13 @@ function asyncLoadWords() {
                     <div class="col-md-offset-7">
                         <button value="` + data[i]['w'] + `" onclick="ShowMean(this)" type="button"
                                 class="btn btn-info btn-lg show1button">
-                            显示意思
+                            ShowTranslate
                         </button>
                         <button value="` + data[i]['i'] + `" onclick="MarkWord(this)" type="button"
-                                class="btn btn-warning btn-lg">没记住+1
+                                class="btn btn-warning btn-lg">Mark+1
                         </button>
                         <button value="` + data[i]['i'] + `" onclick="DeleteWord(this)" type="button"
-                                class="btn btn-danger btn-sm">删除
+                                class="btn btn-danger btn-sm">Delete
                         </button>
                     </div>
                 </div>`
@@ -139,7 +141,7 @@ function asyncLoadWords() {
                     </div>
                     <div class="col-md-offset-7">
                         <button onclick="ShowMean(this)" type="button" class="btn btn-info btn-lg show1button">
-                            显示意思
+                            ShowTranslate
                         </button>
                     </div>
                 </div>`

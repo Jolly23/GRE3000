@@ -24,8 +24,8 @@ func LoginHandler(ctx *fiber.Ctx) error {
 
 	if len(username) == 0 || len(password) == 0 {
 		return ctx.Render("login", fiber.Map{
-			"PageTitle":   "登录",
-			"flash_error": "用户名或密码不能为空",
+			"PageTitle":   "Login",
+			"flash_error": "Empty username or password",
 		})
 	}
 
@@ -38,7 +38,7 @@ func LoginHandler(ctx *fiber.Ctx) error {
 	}
 
 	return ctx.Render("login", fiber.Map{
-		"PageTitle":   "登录",
-		"flash_error": "用户名或密码错误",
+		"PageTitle":   "Login",
+		"flash_error": "Wrong username or password",
 	})
 }

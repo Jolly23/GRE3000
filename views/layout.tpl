@@ -26,7 +26,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span><a class="navbar-brand" style="color:#fff;" href="/">GRE3000</a></span>
+                {{if .UserInfo}}
+                <span><a class="navbar-brand" style="color:#fff;" href="/">{{.UserInfo.Username}}'s GRE3000</a></span>
+                {{else}}
+                <span><a class="navbar-brand" style="color:#fff;" href="/">Visitor's GRE3000</a></span>
+                {{end}}
             </div>
             <div id="navbar" class="navbar-collapse collapse header-navbar">
                 <ul class="nav navbar-nav navbar-right">

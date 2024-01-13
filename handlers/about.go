@@ -1,22 +1,16 @@
 package handlers
 
 import (
-	"GRE3000/types"
+	"GRE3000/filters"
 	"github.com/gofiber/fiber/v2"
 )
 
 func AboutPage(ctx *fiber.Ctx) error {
+	user := filters.LoadUser(ctx)
+
 	res := fiber.Map{
 		"PageTitle": "About",
-	}
-
-	res["IsLogin"] = true
-	res["UserInfo"] = types.User{
-		Username:  "",
-		Token:     "",
-		Avatar:    "",
-		Email:     "",
-		Signature: "",
+		"UserInfo":  user,
 	}
 
 	return ctx.Render("about", res)

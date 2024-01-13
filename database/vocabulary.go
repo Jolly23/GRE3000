@@ -50,7 +50,7 @@ func (db *Database) LoadUserWords(userID int, random bool) []*types.UserWord {
 			panic(err)
 		}
 		if word.LastMark != nil {
-			word.LastMarkAge = timeago.Chinese.Format(*word.LastMark)
+			word.LastMarkAge = timeago.English.Format(*word.LastMark)
 		}
 		ret = append(ret, &word)
 	}
