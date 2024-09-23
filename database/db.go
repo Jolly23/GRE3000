@@ -9,11 +9,11 @@ import (
 
 const (
 	PgSslMode     = "disable"
-	PgHostAddress = "link-docker-postgresql"
+	PgHostAddress = "localhost"
 	PgHostPort    = "5432"
 	DatabaseName  = "GRE3000"
-	PgUserName    = "JOLLY"
-	PgPassword    = "200900"
+	PgUserName    = "DAISY"
+	PgPassword    = "778899"
 )
 
 type Database struct {
