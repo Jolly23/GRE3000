@@ -7,7 +7,10 @@ import (
 )
 
 func (db *Database) InsertWord(word, mean string) {
-	_, _ = db.conn.Exec(`insert into vocabulary(word, mean) values ($1, $2)`, word, mean)
+	_, err := db.conn.Exec(`insert into vocabulary(word, mean) values ($1, $2)`, word, mean)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func (db *Database) LoadRawWords(random bool) []*types.RawWord {
