@@ -1,0 +1,15 @@
+[Unit]
+Description=GRE3000
+After=network.target
+
+[Service]
+ExecStart=/root/go/src/GRE3000/GRE3000
+WorkingDirectory=/root/go/src/GRE3000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+# systemctl daemon-reload
+# systemctl restart builder
+# tail -f -n500 /opt/bsc/node/bsc.log

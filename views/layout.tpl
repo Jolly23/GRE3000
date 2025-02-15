@@ -58,7 +58,7 @@
 </div>
 <div class="container">
     <br>
-    <div class="text-center">©2023 Powered by Mars<br>
+    <div class="text-center">©2023 Powered by Mars & Daisy<br>
     </div>
     <br>
 </div>
