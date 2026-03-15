@@ -25,7 +25,7 @@ services:
             dockerfile: Dockerfile
         restart: unless-stopped
         depends_on:
-            db:
+            link-docker-postgresql:
                 condition: service_healthy
         ports:
             - "53502:3000"
