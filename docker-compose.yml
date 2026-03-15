@@ -5,8 +5,8 @@ services:
         ports:
             - "53501:5432"
         environment:
-            POSTGRES_USER: JOLLY
-            POSTGRES_PASSWORD: JOLLY200900
+            POSTGRES_USER: DAISY
+            POSTGRES_PASSWORD: 778899
             POSTGRES_DB: GRE3000
         volumes:
             - /opt/GRE3000/pg_data:/var/lib/postgresql/data
