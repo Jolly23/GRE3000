@@ -1,34 +1,40 @@
-version: '3.1'
-
 services:
     link-docker-postgresql:
-        image: "postgres:11-alpine"
+        image: postgres:17-alpine
         restart: always
         ports:
-            - "5432:5432"
+            - "53501:5432"
         environment:
-            - POSTGRES_USER=JOLLY
-            - POSTGRES_PASSWORD=200900
-            - POSTGRES_DB=GRE3000
+            POSTGRES_USER: JOLLY
+            POSTGRES_PASSWORD: JOLLY200900
+            POSTGRES_DB: GRE3000
         volumes:
-            - /root/pg_data:/var/lib/postgresql/data
+            - /opt/GRE3000/pg_data:/var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U JOLLY -d GRE3000"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+            start_period: 10s
+        networks:
+            - backend
 
-    gre_service_31011:
+    gre_service:
         build:
             context: .
             dockerfile: Dockerfile
+        restart: unless-stopped
+        depends_on:
+            db:
+                condition: service_healthy
         ports:
-            - "31011:3000"
+            - "53502:3000"
         volumes:
-            - /root/logs/gre-service:/go/src/GRE3000/logs
-            - /root/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+            - /opt/GRE3000/logs/gre-service:/go/src/GRE3000/logs
+            - /opt/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+        networks:
+            - backend
 
-    gre_service_31012:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        ports:
-            - "31012:3000"
-        volumes:
-            - /root/logs/gre-service:/go/src/GRE3000/logs
-            - /root/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
+networks:
+    backend:
+        driver: bridge
