@@ -11,7 +11,7 @@ services:
         volumes:
             - /opt/GRE3000/pg_data:/var/lib/postgresql/data
         healthcheck:
-            test: ["CMD-SHELL", "pg_isready -U JOLLY -d GRE3000"]
+            test: ["CMD-SHELL", "pg_isready -U DAISY -d GRE3000"]
             interval: 10s
             timeout: 5s
             retries: 5
@@ -33,7 +33,7 @@ services:
             - /opt/GRE3000/logs/gre-service:/go/src/GRE3000/logs
             - /opt/GRE3000/static/upload/avatar:/go/src/GRE3000/static/upload/avatar
         networks:
-            - backend
+            - backend          # ← 这个必须有
 
 networks:
     backend:
